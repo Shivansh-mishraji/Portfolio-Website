@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Shivansh Mishra — Data Scientist Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;}
+    .dl-bar{max-width:900px;margin:1.5rem auto .75rem;display:flex;gap:.75rem;justify-content:flex-end;padding:0 1rem;}
+    .db{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.4rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;border:none;}
+    .db-p{background:linear-gradient(135deg,#065f46,#0e4f4f);color:#fff;}
+    .db-o{background:#fff;color:#065f46;border:1.5px solid #065f46;}
+    .page{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 4px 40px rgba(0,0,0,.12);border-radius:12px;overflow:hidden;}
+    .hd{background:linear-gradient(135deg,#064e3b 0%,#065f46 40%,#0e4f4f 100%);padding:2.2rem 2.5rem 1.8rem;color:#fff;}
+    .hd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+    .hd h1{font-size:2rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.25rem;}
+    .hd h1 span{color:#6ee7b7;}
+    .hd .role{font-size:.88rem;color:rgba(255,255,255,.7);max-width:420px;line-height:1.5;}
+    .role-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(16,185,129,.25);border:1px solid rgba(110,231,183,.4);border-radius:6px;padding:.35rem .85rem;font-size:.72rem;font-weight:600;color:#6ee7b7;white-space:nowrap;}
+    .contacts{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin-top:1.1rem;font-size:.72rem;color:rgba(255,255,255,.75);}
+    .contacts span{display:flex;align-items:center;gap:.3rem;}
+    .bd{display:grid;grid-template-columns:1fr 1.6fr;gap:0;}
+    .sb{background:#f0fdf4;padding:1.75rem 1.5rem;border-right:1px solid #d1fae5;}
+    .sec{margin-bottom:1.5rem;}
+    .st{font-size:.58rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#065f46;padding-bottom:.3rem;border-bottom:2px solid #065f46;margin-bottom:.75rem;}
+    .sk-cat{font-size:.65rem;font-weight:700;color:#1e293b;text-transform:uppercase;letter-spacing:.06em;margin:.55rem 0 .25rem;}
+    .pills{display:flex;flex-wrap:wrap;gap:.25rem;}
+    .p{font-size:.65rem;padding:.14rem .45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;}
+    .p-c{background:#ecfdf5;color:#064e3b;border:1px solid #6ee7b7;}
+    .p-m{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;}
+    .p-t{background:#fefce8;color:#713f12;border:1px solid #fde68a;}
+    .p-n{background:#f1f5f9;color:#334155;border:1px solid #e2e8f0;}
+    .edu-it{margin-bottom:.85rem;}
+    .edu-deg{font-size:.78rem;font-weight:700;color:#0f172a;margin-bottom:.1rem;}
+    .edu-inst{font-size:.7rem;color:#065f46;font-weight:600;margin-bottom:.1rem;}
+    .edu-date{font-size:.65rem;color:#64748b;font-family:'JetBrains Mono',monospace;}
+    .edu-det{font-size:.68rem;color:#475569;margin-top:.2rem;line-height:1.55;}
+    .mn{padding:1.75rem 2rem;}
+    .mi{margin-bottom:1rem;}
+    .mh{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.15rem;}
+    .mt{font-size:.82rem;font-weight:700;color:#0f172a;}
+    .md2{font-size:.65rem;color:#64748b;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+    .mo{font-size:.72rem;color:#065f46;font-weight:600;margin-bottom:.3rem;}
+    .mb{font-size:.72rem;color:#475569;line-height:1.65;}
+    .mb ul{padding-left:.9rem;}
+    .mb li{margin-bottom:.18rem;}
+    .proj{margin-bottom:.85rem;padding-left:.65rem;border-left:2px solid #065f46;}
+    .pn{font-size:.78rem;font-weight:700;color:#0f172a;display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem;}
+    .pl{font-size:.62rem;color:#065f46;text-decoration:none;font-family:'JetBrains Mono',monospace;}
+    .pd{font-size:.7rem;color:#475569;line-height:1.6;margin-bottom:.25rem;}
+    .ps{display:flex;flex-wrap:wrap;gap:.2rem;}
+    .ach-it{display:flex;gap:.5rem;font-size:.72rem;color:#334155;margin-bottom:.3rem;}
+    .ach-it::before{content:'▸';color:#065f46;flex-shrink:0;}
+    .ft{background:#f0fdf4;border-top:1px solid #d1fae5;padding:.6rem 2.5rem;display:flex;justify-content:space-between;font-size:.65rem;color:#94a3b8;}
+    @media print{body{background:#fff!important;}.dl-bar{display:none!important;}.page{max-width:100%;margin:0;border-radius:0;box-shadow:none;}.hd{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.sb{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.p-c,.p-m,.p-t{-webkit-print-color-adjust:exact;print-color-adjust:exact;}@page{margin:0;size:A4;}}
+  </style>
+</head>
+<body>
+<div class="dl-bar">
+  <a href="index.html" class="db db-o">← Portfolio</a>
+  <button class="db db-p" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+<div class="page">
+  <div class="hd">
+    <div class="hd-top">
+      <div>
+        <h1>Shivansh <span>Mishra</span></h1>
+        <div class="role">Data Scientist · EDA · Statistical Analysis · Visualization · Insight Generation</div>
+      </div>
+      <div class="role-badge">📊 Data Scientist Profile</div>
+    </div>
+    <div class="contacts">
+      <span>📍 Lucknow, UP</span><span>📞 +91 9651165190</span>
+      <span>✉️ shivanshmishraji90@gmail.com</span>
+      <span>🔗 linkedin.com/in/shivansh-mishra-132b97358</span>
+      <span>🐙 github.com/shivansh-mishraji</span>
+    </div>
+  </div>
+  <div class="bd">
+    <div class="sb">
+      <div class="sec">
+        <div class="st">Data Science Stack</div>
+        <div class="sk-cat">Core Languages</div>
+        <div class="pills"><span class="p p-c">Python</span><span class="p p-c">SQL</span><span class="p p-c">C</span></div>
+        <div class="sk-cat">Data Analysis</div>
+        <div class="pills"><span class="p p-c">Pandas</span><span class="p p-c">NumPy</span><span class="p p-c">Scikit-learn</span></div>
+        <div class="sk-cat">Visualization</div>
+        <div class="pills"><span class="p p-m">Matplotlib</span><span class="p p-m">Seaborn</span><span class="p p-m">Plotly</span></div>
+        <div class="sk-cat">Analytical Skills</div>
+        <div class="pills"><span class="p p-c">EDA</span><span class="p p-c">Descriptive Stats</span><span class="p p-c">Correlation Analysis</span><span class="p p-c">Feature Engineering</span><span class="p p-c">Outlier Detection</span><span class="p p-c">Data Cleaning</span><span class="p p-c">Time Series Analysis</span></div>
+        <div class="sk-cat">Tools</div>
+        <div class="pills"><span class="p p-t">Jupyter Notebook</span><span class="p p-t">Google Colab</span><span class="p p-t">MySQL</span><span class="p p-t">SQLite</span><span class="p p-t">Git & GitHub</span><span class="p p-t">VS Code</span></div>
+      </div>
+      <div class="sec">
+        <div class="st">Education</div>
+        <div class="edu-it">
+          <div class="edu-deg">B.Tech — CSE</div>
+          <div class="edu-inst">BBD University, Lucknow</div>
+          <div class="edu-date">2024 – Present</div>
+          <div class="edu-det">Spec: Cloud Computing & Machine Learning</div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-deg">Higher Secondary (PCM+CS)</div>
+          <div class="edu-inst">Red Rose Public School</div>
+          <div class="edu-date">2022 – 2024</div>
+        </div>
+      </div>
+      <div class="sec">
+        <div class="st">Achievements</div>
+        <div class="ach-it">GitHub Student Developer Pack</div>
+        <div class="ach-it">ENTREPRENIA startup pitch finalist</div>
+        <div class="ach-it">Coderush 2.0 Hackathon</div>
+      </div>
+    </div>
+    <div class="mn">
+      <div class="sec">
+        <div class="st">Data Scientist Summary</div>
+        <div style="font-size:.78rem;color:#334155;line-height:1.75;">B.Tech CSE student with strong practical experience in <strong>exploratory data analysis, statistical insight generation</strong>, and data-driven storytelling. Comfortable with the full data science workflow: data acquisition → cleaning → EDA → visualization → modeling → communication. Built multiple projects analyzing real-world datasets (banking, real estate, employment, biology). Seeking <strong>Data Scientist internship roles</strong> to generate impactful insights from data.</div>
+      </div>
+      <div class="sec">
+        <div class="st">Data Analysis Projects</div>
+        <div class="proj">
+          <div class="pn">Unemployment Rate Analysis — India <a href="https://github.com/shivansh-mishraji" class="pl">GitHub</a></div>
+          <div class="pd">Time-series EDA on Indian unemployment trends. Temporal patterns, regional comparisons, pre/post-COVID impact analysis. Data storytelling with annotated Matplotlib charts.</div>
+          <div class="ps"><span class="p p-c">Pandas</span><span class="p p-c">NumPy</span><span class="p p-m">Matplotlib</span><span class="p p-m">Time Series</span><span class="p p-c">EDA</span></div>
+        </div>
+        <div class="proj">
+          <div class="pn">BankChurners — Customer Churn Analysis <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" class="pl">GitHub</a></div>
+          <div class="pd">Comprehensive EDA on 10K+ customer records — correlation heatmaps, churn segmentation by demographics, feature importance ranking, class imbalance analysis.</div>
+          <div class="ps"><span class="p p-c">Pandas</span><span class="p p-m">Seaborn</span><span class="p p-c">Correlation Analysis</span><span class="p p-c">Feature Analysis</span></div>
+        </div>
+        <div class="proj">
+          <div class="pn">House Price EDA & Prediction <a href="https://house-price-prediction-app-tau.vercel.app" class="pl">🌐 LIVE</a></div>
+          <div class="pd">Deep EDA on housing dataset: distribution analysis, multicollinearity detection, categorical encoding, outlier treatment. Model results deployed as live interactive Streamlit app.</div>
+          <div class="ps"><span class="p p-c">EDA</span><span class="p p-c">Feature Engineering</span><span class="p p-m">Seaborn</span><span class="p p-c">Scikit-learn</span><span class="p p-t">Streamlit</span></div>
+        </div>
+        <div class="proj">
+          <div class="pn">Iris Species Classification Analysis <a href="https://github.com/shivansh-mishraji" class="pl">GitHub</a></div>
+          <div class="pd">Comparative analysis of multiple classifiers with visualization of decision boundaries, class separability (PCA), and performance benchmarking across metrics.</div>
+          <div class="ps"><span class="p p-m">Matplotlib</span><span class="p p-c">Scikit-learn</span><span class="p p-c">Statistical Analysis</span></div>
+        </div>
+      </div>
+      <div class="sec">
+        <div class="st">Data Science Skills Demonstrated</div>
+        <div class="mb"><ul>
+          <li><strong>Data Cleaning:</strong> Null value treatment, type casting, deduplication, outlier detection (IQR, Z-score)</li>
+          <li><strong>EDA:</strong> Distribution plots, pair plots, correlation matrices, box plots, violin plots</li>
+          <li><strong>Feature Engineering:</strong> Categorical encoding, scaling, interaction features, selection</li>
+          <li><strong>Statistical Thinking:</strong> Descriptive stats, skewness, kurtosis, variance analysis</li>
+          <li><strong>Communication:</strong> Clear chart annotations, insight summaries, actionable findings</li>
+        </ul></div>
+      </div>
+      <div class="sec">
+        <div class="st">Currently Learning</div>
+        <div class="pills" style="gap:.3rem"><span class="p p-c">Hypothesis testing</span><span class="p p-m">A/B testing concepts</span><span class="p p-c">SQL window functions</span><span class="p p-t">Dashboard design</span><span class="p p-c">Advanced Seaborn</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Shivansh Mishra · Data Scientist Resume · Lucknow, India</span><span>Open to internships · resume-webpage-ashy.vercel.app</span></div>
+</div>
+</body>
+</html>
