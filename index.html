@@ -516,8 +516,8 @@
           <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fab fa-python"></i>Python</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" data-pct="85"></div></div></div>
           <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-database"></i>SQL</span><span class="bar-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-pct="75"></div></div></div>
           <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-terminal"></i>C Programming</span><span class="bar-pct">65%</span></div><div class="bar-track"><div class="bar-fill" data-pct="65"></div></div></div>
-          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fab fa-js"></i>JavaScript</span><span class="bar-pct">55%</span></div><div class="bar-track"><div class="bar-fill" data-pct="55"></div></div></div>
         </div>
+        <p style="margin-top:1.25rem;font-size:.82rem;color:var(--txt3);display:flex;align-items:center;gap:.5rem;"><i class="fas fa-info-circle" style="color:var(--cyan)"></i>Other languages (JS, React, FastAPI etc.) are used via <strong style="color:var(--violet-l)">AI-assisted vibe coding</strong> — see Web &amp; Backend tab.</p>
       </div>
 
       <!-- Data Science & ML -->
@@ -885,14 +885,18 @@
       </div>
       <div class="rvr">
         <form class="cf" id="cform" onsubmit="doSubmit(event)">
+          <!-- Formspree: routes submissions to shivanshmishraji90@gmail.com -->
+          <input type="hidden" name="_subject" value="New Portfolio Message" />
+          <input type="hidden" name="_replyto" id="_replyto" />
           <div class="frow">
-            <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" placeholder="John Doe" required /></div>
-            <div class="fg"><label for="fe">Email</label><input type="email" id="fe" placeholder="john@email.com" required /></div>
+            <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" name="name" placeholder="John Doe" required /></div>
+            <div class="fg"><label for="fe">Email</label><input type="email" id="fe" name="email" placeholder="john@email.com" required /></div>
           </div>
-          <div class="fg"><label for="fs2">Subject</label><input type="text" id="fs2" placeholder="Internship / Collaboration / Just Saying Hi" /></div>
-          <div class="fg"><label for="fm">Message</label><textarea id="fm" placeholder="Hi Shivansh, I'd love to connect about..." required></textarea></div>
+          <div class="fg"><label for="fs2">Subject</label><input type="text" id="fs2" name="subject" placeholder="Internship / Collaboration / Just Saying Hi" /></div>
+          <div class="fg"><label for="fm">Message</label><textarea id="fm" name="message" placeholder="Hi Shivansh, I'd love to connect about..." required></textarea></div>
           <button type="submit" class="btn-send" id="ct-send"><i class="fas fa-paper-plane"></i> Send Message</button>
-          <div id="fs">✅ Message sent! I'll get back to you soon.</div>
+          <div id="fs" style="display:none"></div>
+          <div id="fe-err" style="display:none;background:rgba(236,72,153,.09);border:1px solid rgba(236,72,153,.28);border-radius:var(--rs);padding:.85rem;color:#f472b6;font-size:.88rem;text-align:center;"></div>
         </form>
       </div>
     </div>
@@ -1013,17 +1017,61 @@
     c.addEventListener('mouseleave',()=>c.style.transform='');
   });
 
-  /* ─── CONTACT FORM ───────────────────────────── */
-  function doSubmit(e){
+  /* ─── CONTACT FORM — Formspree (emails go to shivanshmishraji90@gmail.com) ─── */
+  async function doSubmit(e){
     e.preventDefault();
-    const btn=document.getElementById('ct-send');
-    const name=document.getElementById('fn').value;
-    const email=document.getElementById('fe').value;
-    const sub=document.getElementById('fs2').value||'Portfolio Contact';
-    const msg=document.getElementById('fm').value;
-    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...'; btn.disabled=true;
-    window.location.href=`mailto:shivanshmishraji90@gmail.com?subject=${encodeURIComponent(sub+' — from '+name)}&body=${encodeURIComponent('From: '+name+'\nEmail: '+email+'\n\n'+msg)}`;
-    setTimeout(()=>{ btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message'; btn.disabled=false; document.getElementById('fs').style.display='block'; document.getElementById('cform').reset(); setTimeout(()=>document.getElementById('fs').style.display='none',5000); },1500);
+    const btn   = document.getElementById('ct-send');
+    const ok    = document.getElementById('fs');
+    const err   = document.getElementById('fe-err');
+    const name  = document.getElementById('fn').value.trim();
+    const email = document.getElementById('fe').value.trim();
+    const sub   = document.getElementById('fs2').value.trim() || 'Portfolio Contact';
+    const msg   = document.getElementById('fm').value.trim();
+
+    // sync reply-to hidden field
+    document.getElementById('_replyto').value = email;
+
+    // UI: loading state
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+    btn.disabled  = true;
+    ok.style.display  = 'none';
+    err.style.display = 'none';
+
+    try {
+      const res = await fetch('https://formspree.io/f/xwpbgjnb', {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body   : JSON.stringify({ name, email, subject: sub, message: msg })
+      });
+
+      if (res.ok) {
+        // Success
+        ok.style.display = 'block';
+        ok.innerHTML = '✅ Message sent! I\'ll get back to you at <strong>' + email + '</strong> soon.';
+        ok.style.background   = 'rgba(16,185,129,.09)';
+        ok.style.border       = '1px solid rgba(16,185,129,.28)';
+        ok.style.borderRadius = 'var(--rs)';
+        ok.style.padding      = '.85rem';
+        ok.style.color        = 'var(--green)';
+        ok.style.fontSize     = '.88rem';
+        ok.style.textAlign    = 'center';
+        document.getElementById('cform').reset();
+        setTimeout(() => ok.style.display = 'none', 7000);
+      } else {
+        // Formspree returned an error
+        const data = await res.json().catch(()=>({}));
+        const msg2 = data?.errors?.[0]?.message || 'Something went wrong. Please email me directly.';
+        err.style.display = 'block';
+        err.innerHTML = '⚠️ ' + msg2 + ' &mdash; <a href="mailto:shivanshmishraji90@gmail.com" style="color:inherit">shivanshmishraji90@gmail.com</a>';
+      }
+    } catch (_) {
+      // Network error fallback
+      err.style.display = 'block';
+      err.innerHTML = '⚠️ Network error. Please email me at <a href="mailto:shivanshmishraji90@gmail.com" style="color:inherit">shivanshmishraji90@gmail.com</a>';
+    }
+
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.disabled  = false;
   }
 
   /* ─── SMOOTH SCROLL ──────────────────────────── */
