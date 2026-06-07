@@ -1030,19 +1030,18 @@
         </div>
       </div>
       <div class="rvr">
-        <form class="cf" id="cform" onsubmit="doSubmit(event)">
-          <!-- Formspree: routes submissions to shivanshmishraji90@gmail.com -->
-          <input type="hidden" name="_subject" value="New Portfolio Message" />
-          <input type="hidden" name="_replyto" id="_replyto" />
+        <form class="cf" id="cform" action="https://formsubmit.co/shivanshmishraji90@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://resume-webpage-ashy.vercel.app/#contact">
+          <input type="hidden" name="_subject" value="New message from Portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
           <div class="frow">
             <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" name="name" placeholder="John Doe" required /></div>
             <div class="fg"><label for="fe">Email</label><input type="email" id="fe" name="email" placeholder="john@email.com" required /></div>
           </div>
           <div class="fg"><label for="fs2">Subject</label><input type="text" id="fs2" name="subject" placeholder="Internship / Collaboration / Just Saying Hi" /></div>
           <div class="fg"><label for="fm">Message</label><textarea id="fm" name="message" placeholder="Hi Shivansh, I'd love to connect about..." required></textarea></div>
-          <button type="submit" class="btn-send" id="ct-send"><i class="fas fa-paper-plane"></i> Send Message</button>
-          <div id="fs" style="display:none"></div>
-          <div id="fe-err" style="display:none;background:rgba(236,72,153,.09);border:1px solid rgba(236,72,153,.28);border-radius:var(--rs);padding:.85rem;color:#f472b6;font-size:.88rem;text-align:center;"></div>
+          <button type="submit" class="btn-send"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
       </div>
     </div>
@@ -1163,62 +1162,7 @@
     c.addEventListener('mouseleave',()=>c.style.transform='');
   });
 
-  /* ─── CONTACT FORM — Formspree (emails go to shivanshmishraji90@gmail.com) ─── */
-  async function doSubmit(e){
-    e.preventDefault();
-    const btn   = document.getElementById('ct-send');
-    const ok    = document.getElementById('fs');
-    const err   = document.getElementById('fe-err');
-    const name  = document.getElementById('fn').value.trim();
-    const email = document.getElementById('fe').value.trim();
-    const sub   = document.getElementById('fs2').value.trim() || 'Portfolio Contact';
-    const msg   = document.getElementById('fm').value.trim();
 
-    // sync reply-to hidden field
-    document.getElementById('_replyto').value = email;
-
-    // UI: loading state
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-    btn.disabled  = true;
-    ok.style.display  = 'none';
-    err.style.display = 'none';
-
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
-        method : 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body   : JSON.stringify({ name, email, subject: sub, message: msg })
-      });
-
-      if (res.ok) {
-        // Success
-        ok.style.display = 'block';
-        ok.innerHTML = '✅ Message sent! I\'ll get back to you at <strong>' + email + '</strong> soon.';
-        ok.style.background   = 'rgba(16,185,129,.09)';
-        ok.style.border       = '1px solid rgba(16,185,129,.28)';
-        ok.style.borderRadius = 'var(--rs)';
-        ok.style.padding      = '.85rem';
-        ok.style.color        = 'var(--green)';
-        ok.style.fontSize     = '.88rem';
-        ok.style.textAlign    = 'center';
-        document.getElementById('cform').reset();
-        setTimeout(() => ok.style.display = 'none', 7000);
-      } else {
-        // Formspree returned an error
-        const data = await res.json().catch(()=>({}));
-        const msg2 = data?.errors?.[0]?.message || 'Something went wrong. Please email me directly.';
-        err.style.display = 'block';
-        err.innerHTML = '⚠️ ' + msg2 + ' &mdash; <a href="mailto:shivanshmishraji90@gmail.com" style="color:inherit">shivanshmishraji90@gmail.com</a>';
-      }
-    } catch (_) {
-      // Network error fallback
-      err.style.display = 'block';
-      err.innerHTML = '⚠️ Network error. Please email me at <a href="mailto:shivanshmishraji90@gmail.com" style="color:inherit">shivanshmishraji90@gmail.com</a>';
-    }
-
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    btn.disabled  = false;
-  }
 
   /* ─── SMOOTH SCROLL ──────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{ const t=document.querySelector(a.getAttribute('href')); if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});} }));
