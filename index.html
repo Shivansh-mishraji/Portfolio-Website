@@ -191,7 +191,7 @@
     /* ══════════════════════════════════════════════════════
        SKILLS
     ══════════════════════════════════════════════════════ */
-    #skills {}
+
     .tabs { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:2.25rem; }
     .tab { padding:.5rem 1.25rem; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--txt2); font-size:.85rem; font-family:var(--body); cursor:pointer; transition:all var(--t); }
     .tab.on, .tab:hover { background:linear-gradient(135deg,var(--violet),var(--cyan)); border-color:transparent; color:#fff; }
@@ -200,7 +200,7 @@
     .panel.on { display:block; }
 
     .bars { display:flex; flex-direction:column; gap:1.3rem; }
-    .bar-row {}
+
     .bar-hd { display:flex; justify-content:space-between; margin-bottom:.45rem; }
     .bar-name { font-size:.88rem; font-weight:500; display:flex; align-items:center; gap:.45rem; }
     .bar-name i { color:var(--violet-l); font-size:.82rem; }
@@ -215,7 +215,7 @@
     /* ══════════════════════════════════════════════════════
        PROJECTS
     ══════════════════════════════════════════════════════ */
-    #projects {}
+
     .proj-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:1.6rem; }
     .pcard { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1.85rem; position:relative; overflow:hidden; transition:border-color var(--t),transform var(--t),box-shadow var(--t); }
     .pcard::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--violet),var(--cyan)); transform:scaleX(0); transform-origin:left; transition:transform var(--t); }
@@ -255,7 +255,7 @@
     /* ══════════════════════════════════════════════════════
        CURRENT FOCUS
     ══════════════════════════════════════════════════════ */
-    #focus {}
+
     .focus-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.25rem; }
     .fc { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:all var(--t); }
     .fc:hover { border-color:var(--violet); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.2); }
@@ -266,7 +266,7 @@
     /* ══════════════════════════════════════════════════════
        EDUCATION
     ══════════════════════════════════════════════════════ */
-    #education {}
+
     .edu-g { display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
     .ecard { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:2rem; position:relative; overflow:hidden; transition:border-color var(--t),transform var(--t); }
     .ecard:hover { border-color:rgba(124,58,237,.4); transform:translateY(-4px); }
@@ -280,7 +280,7 @@
     /* ══════════════════════════════════════════════════════
        INTERESTS
     ══════════════════════════════════════════════════════ */
-    #interests {}
+
     .int-g { display:grid; grid-template-columns:repeat(auto-fill,minmax(145px,1fr)); gap:.95rem; }
     .icard { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1.6rem 1rem; text-align:center; transition:all var(--t); cursor:default; position:relative; overflow:hidden; }
     .icard::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(124,58,237,.07),rgba(6,182,212,.04)); opacity:0; transition:opacity var(--t); }
