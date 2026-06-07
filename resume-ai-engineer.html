@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Shivansh Mishra — AI Engineer Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;}
+    .dl-bar{max-width:900px;margin:1.5rem auto .75rem;display:flex;gap:.75rem;justify-content:flex-end;padding:0 1rem;}
+    .db{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.4rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;border:none;}
+    .db-p{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;}
+    .db-o{background:#fff;color:#7c3aed;border:1.5px solid #7c3aed;}
+    .page{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 4px 40px rgba(0,0,0,.12);border-radius:12px;overflow:hidden;}
+    .hd{background:linear-gradient(135deg,#4c1d95 0%,#312e81 40%,#1e3a8a 100%);padding:2.2rem 2.5rem 1.8rem;color:#fff;}
+    .hd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+    .hd h1{font-size:2rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.25rem;}
+    .hd h1 span{color:#c4b5fd;}
+    .hd .role{font-size:.88rem;color:rgba(255,255,255,.7);max-width:420px;line-height:1.5;}
+    .role-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(139,92,246,.3);border:1px solid rgba(196,181,253,.4);border-radius:6px;padding:.35rem .85rem;font-size:.72rem;font-weight:600;color:#c4b5fd;white-space:nowrap;}
+    .contacts{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin-top:1.1rem;font-size:.72rem;color:rgba(255,255,255,.75);}
+    .contacts span{display:flex;align-items:center;gap:.3rem;}
+    .bd{display:grid;grid-template-columns:1fr 1.6fr;gap:0;}
+    .sb{background:#faf5ff;padding:1.75rem 1.5rem;border-right:1px solid #e9d5ff;}
+    .sec{margin-bottom:1.5rem;}
+    .st{font-size:.58rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#7c3aed;padding-bottom:.3rem;border-bottom:2px solid #7c3aed;margin-bottom:.75rem;}
+    .sk-cat{font-size:.65rem;font-weight:700;color:#1e293b;text-transform:uppercase;letter-spacing:.06em;margin:.55rem 0 .25rem;}
+    .pills{display:flex;flex-wrap:wrap;gap:.25rem;}
+    .p{font-size:.65rem;padding:.14rem .45rem;border-radius:4px;font-family:'JetBrains Mono',monospace;}
+    .p-c{background:#ede9fe;color:#4c1d95;border:1px solid #c4b5fd;}
+    .p-m{background:#dbeafe;color:#1e3a8a;border:1px solid #93c5fd;}
+    .p-t{background:#ecfdf5;color:#064e3b;border:1px solid #6ee7b7;}
+    .p-n{background:#f1f5f9;color:#334155;border:1px solid #e2e8f0;}
+    .edu-it{margin-bottom:.85rem;}
+    .edu-deg{font-size:.78rem;font-weight:700;margin-bottom:.1rem;}
+    .edu-inst{font-size:.7rem;color:#7c3aed;font-weight:600;margin-bottom:.1rem;}
+    .edu-date{font-size:.65rem;color:#64748b;font-family:'JetBrains Mono',monospace;}
+    .edu-det{font-size:.68rem;color:#475569;margin-top:.2rem;line-height:1.55;}
+    .mn{padding:1.75rem 2rem;}
+    .mi{margin-bottom:1rem;}
+    .mh{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.15rem;}
+    .mt{font-size:.82rem;font-weight:700;}
+    .md2{font-size:.65rem;color:#64748b;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+    .mo{font-size:.72rem;color:#7c3aed;font-weight:600;margin-bottom:.3rem;}
+    .mb{font-size:.72rem;color:#475569;line-height:1.65;}
+    .mb ul{padding-left:.9rem;}
+    .mb li{margin-bottom:.18rem;}
+    .proj{margin-bottom:.85rem;padding-left:.65rem;border-left:2px solid #7c3aed;}
+    .pn{font-size:.78rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;margin-bottom:.1rem;}
+    .pl{font-size:.62rem;color:#7c3aed;text-decoration:none;font-family:'JetBrains Mono',monospace;}
+    .pd{font-size:.7rem;color:#475569;line-height:1.6;margin-bottom:.25rem;}
+    .ps{display:flex;flex-wrap:wrap;gap:.2rem;}
+    .ach-it{display:flex;gap:.5rem;font-size:.72rem;color:#334155;margin-bottom:.3rem;}
+    .ach-it::before{content:'▸';color:#7c3aed;flex-shrink:0;}
+    .ft{background:#faf5ff;border-top:1px solid #e9d5ff;padding:.6rem 2.5rem;display:flex;justify-content:space-between;font-size:.65rem;color:#94a3b8;}
+    @media print{body{background:#fff!important;}.dl-bar{display:none!important;}.page{max-width:100%;margin:0;border-radius:0;box-shadow:none;}.hd{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.sb{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.p-c,.p-m,.p-t{-webkit-print-color-adjust:exact;print-color-adjust:exact;}@page{margin:0;size:A4;}}
+  </style>
+</head>
+<body>
+<div class="dl-bar">
+  <a href="index.html" class="db db-o">← Portfolio</a>
+  <button class="db db-p" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+<div class="page">
+  <div class="hd">
+    <div class="hd-top">
+      <div>
+        <h1>Shivansh <span>Mishra</span></h1>
+        <div class="role">AI Engineer · AI Product Builder · Vibe Coding · Rapid Prototyping · System Design</div>
+      </div>
+      <div class="role-badge">🧠 AI Engineer Profile</div>
+    </div>
+    <div class="contacts">
+      <span>📍 Lucknow, UP</span><span>📞 +91 9651165190</span>
+      <span>✉️ shivanshmishraji90@gmail.com</span>
+      <span>🔗 linkedin.com/in/shivansh-mishra-132b97358</span>
+      <span>🐙 github.com/shivansh-mishraji</span>
+    </div>
+  </div>
+  <div class="bd">
+    <div class="sb">
+      <div class="sec">
+        <div class="st">AI Engineer Stack</div>
+        <div class="sk-cat">Core Languages</div>
+        <div class="pills"><span class="p p-c">Python</span><span class="p p-c">SQL</span><span class="p p-c">C</span></div>
+        <div class="sk-cat">AI / ML Libraries</div>
+        <div class="pills"><span class="p p-c">Scikit-learn</span><span class="p p-c">Pandas</span><span class="p p-c">NumPy</span></div>
+        <div class="sk-cat">AI-Assisted Development</div>
+        <div class="pills"><span class="p p-c">GitHub Copilot</span><span class="p p-c">Cursor</span><span class="p p-c">Vibe Coding</span><span class="p p-c">Prompt Engineering</span></div>
+        <div class="sk-cat">Product & Deployment</div>
+        <div class="pills"><span class="p p-m">Streamlit</span><span class="p p-m">FastAPI (AI)</span><span class="p p-m">Flask (AI)</span><span class="p p-m">React (AI)</span><span class="p p-t">Docker</span><span class="p p-t">Vercel</span><span class="p p-t">Render</span><span class="p p-t">Git & GitHub</span></div>
+        <div class="sk-cat">Product Thinking</div>
+        <div class="pills"><span class="p p-c">MVP Design</span><span class="p p-c">User-First Logic</span><span class="p p-c">System Design</span><span class="p p-c">AI Product Strategy</span></div>
+      </div>
+      <div class="sec">
+        <div class="st">Education</div>
+        <div class="edu-it">
+          <div class="edu-deg">B.Tech — CSE</div>
+          <div class="edu-inst">BBD University, Lucknow</div>
+          <div class="edu-date">2024 – Present</div>
+          <div class="edu-det">Spec: Cloud Computing & Machine Learning</div>
+        </div>
+        <div class="edu-it">
+          <div class="edu-deg">Higher Secondary (PCM+CS)</div>
+          <div class="edu-inst">Red Rose Public School</div>
+          <div class="edu-date">2022 – 2024</div>
+        </div>
+      </div>
+      <div class="sec">
+        <div class="st">Achievements</div>
+        <div class="ach-it">GitHub Student Developer Pack</div>
+        <div class="ach-it">ENTREPRENIA startup pitch finalist — Nyaya Mitra AI legal app</div>
+        <div class="ach-it">Coderush 2.0 Hackathon</div>
+        <div class="ach-it">Containerized & deployed Docker ML backend</div>
+      </div>
+    </div>
+    <div class="mn">
+      <div class="sec">
+        <div class="st">AI Engineer Summary</div>
+        <div style="font-size:.78rem;color:#334155;line-height:1.75;">B.Tech CSE student with a strong focus on <strong>AI-first product development</strong>. Builds and ships complete applications using AI-assisted "vibe coding" methodology, combining Python expertise with AI tools (GitHub Copilot, Cursor) to rapidly prototype and deploy. Designed Nyaya Mitra — an AI-powered legal product with a custom panic-button logic system. Deployed multiple ML-backed web apps. Seeking <strong>AI Engineering / Product Engineer internships</strong> focused on building intelligent systems.</div>
+      </div>
+      <div class="sec">
+        <div class="st">AI Product Projects</div>
+        <div class="proj">
+          <div class="pn">Nyaya Mitra — AI Legal Super-App <span class="pl" style="color:#f59e0b">🔧 In Dev</span></div>
+          <div class="pd">AI-first legal accessibility platform with a custom <strong>Raksha Mode</strong> panic-button logic system. Demonstrates product system design, AI-first architecture, and user-centered problem solving for social impact.</div>
+          <div class="ps"><span class="p p-c">AI Product</span><span class="p p-c">Logic System Design</span><span class="p p-c">Legal Tech</span><span class="p p-c">Vibe Coding</span></div>
+        </div>
+        <div class="proj">
+          <div class="pn">House Price AI App — End-to-End Deployment <a href="https://house-price-prediction-app-tau.vercel.app" class="pl">🌐 LIVE</a></div>
+          <div class="pd">Complete AI pipeline from data to user-facing prediction app. ML model served via Streamlit UI, deployed on Vercel. Demonstrates full-stack AI product delivery.</div>
+          <div class="ps"><span class="p p-c">Scikit-learn</span><span class="p p-m">Streamlit</span><span class="p p-t">Vercel</span><span class="p p-c">ML Deployment</span></div>
+        </div>
+        <div class="proj">
+          <div class="pn">Contact Forge — AI-Assisted Web App <a href="https://contactforge-cloud-web.vercel.app/" class="pl">🌐 LIVE</a></div>
+          <div class="pd">Deployed full-stack web application built using AI-assisted vibe coding. Demonstrates ability to ship production-ready applications rapidly by leveraging AI tooling effectively.</div>
+          <div class="ps"><span class="p p-c">Vibe Coding</span><span class="p p-c">GitHub Copilot</span><span class="p p-t">Vercel</span><span class="p p-c">Rapid Prototyping</span></div>
+        </div>
+        <div class="proj">
+          <div class="pn">Text-to-Handwriting Converter <a href="https://github.com/shivansh-mishraji" class="pl">GitHub</a></div>
+          <div class="pd">AI-assisted tool converting digital text to realistic handwriting-style output. Built with vibe coding workflow demonstrating creative AI application development.</div>
+          <div class="ps"><span class="p p-c">AI-Assisted</span><span class="p p-c">Python</span><span class="p p-c">Creative AI</span></div>
+        </div>
+      </div>
+      <div class="sec">
+        <div class="st">AI Engineering Competencies</div>
+        <div class="mb"><ul>
+          <li><strong>AI-Assisted Development:</strong> Proficient with GitHub Copilot and AI coding tools for 10x faster prototyping</li>
+          <li><strong>ML Integration:</strong> Embeds trained ML models into production web applications (Streamlit, FastAPI)</li>
+          <li><strong>Deployment:</strong> Containerizes (Docker) and deploys (Vercel, Render) AI-backed services end-to-end</li>
+          <li><strong>Product Thinking:</strong> Designs AI features around user problems, not just technical demos</li>
+          <li><strong>Prompt Engineering:</strong> Effective at directing AI tools to accelerate development cycles</li>
+        </ul></div>
+      </div>
+      <div class="sec">
+        <div class="st">Currently Learning</div>
+        <div class="pills" style="gap:.3rem"><span class="p p-c">LLM APIs (OpenAI / Gemini)</span><span class="p p-m">RAG architecture</span><span class="p p-t">FastAPI for AI serving</span><span class="p p-c">Agent frameworks</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Shivansh Mishra · AI Engineer Resume · Lucknow, India</span><span>Open to internships · resume-webpage-ashy.vercel.app</span></div>
+</div>
+</body>
+</html>
