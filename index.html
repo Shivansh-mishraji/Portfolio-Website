@@ -461,7 +461,7 @@
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-p" id="h-projects"><i class="fas fa-rocket"></i> View Projects</a>
-          <a href="resume.html" target="_blank" class="btn-o" id="h-resume" style="border-color:rgba(124,58,237,.5);color:var(--violet-l);"><i class="fas fa-file-alt"></i> Download Resume</a>
+          <a href="resume-master.html" target="_blank" class="btn-o" id="h-resume" style="border-color:rgba(124,58,237,.5);color:var(--violet-l);"><i class="fas fa-file-alt"></i> Download Resume</a>
           <a href="#contact" class="btn-o" id="h-contact"><i class="fas fa-envelope"></i> Get In Touch</a>
         </div>
         <div class="hero-socials">
@@ -844,11 +844,31 @@
     <div class="rv">
       <span class="lbl">// download</span>
       <h2 class="ttl">Resume &amp; CV</h2>
-      <p class="sub">Role-tailored resumes — each version highlights the skills and projects most relevant to that career path. Open in browser, then <strong style="color:var(--violet-l)">Ctrl+P → Save as PDF</strong> to download.</p>
+      <p class="sub">Role-tailored resumes for specific applications. Use the <strong style="color:var(--violet-l)">Master Resume</strong> for general applications, or pick a role-specific version. Open in browser, then <strong style="color:var(--violet-l)">Ctrl+P → Save as PDF</strong>.</p>
     </div>
 
     <!-- Role Cards Grid -->
     <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem;">
+
+
+      <!-- Master Resume (Full) -->
+      <div class="resume-role-card" onclick="window.open('resume-master.html','_blank')" id="cv-master" style="cursor:pointer;grid-column:1/-1;">
+        <div class="rrc-top" style="background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(6,182,212,.15),rgba(16,185,129,.1));">
+          <div class="rrc-icon">&#127775;</div>
+          <div class="rrc-badge" style="background:rgba(124,58,237,.25);color:#c7d2fe;border-color:rgba(124,58,237,.5);">MASTER RESUME &mdash; ALL ROLES</div>
+        </div>
+        <div class="rrc-body">
+          <h3 class="rrc-title">Complete Master Resume</h3>
+          <p class="rrc-desc">Comprehensive, all-in-one resume covering ML Engineering, Data Science, AI Product, and Data Analysis. Best for general internship applications — includes all projects, full tech stack, and competencies.</p>
+          <div class="rrc-skills">
+            <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">ML &amp; Data</span>
+            <span class="rrc-sk" style="background:rgba(6,182,212,.1);color:var(--cyan);">AI Products</span>
+            <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">EDA &amp; Analysis</span>
+            <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">All Projects</span>
+          </div>
+          <a href="resume-master.html" target="_blank" class="rrc-btn" id="dl-master" onclick="event.stopPropagation()" style="background:linear-gradient(135deg,var(--violet),var(--cyan));"><i class="fas fa-external-link-alt"></i> View &amp; Download PDF</a>
+        </div>
+      </div>
 
       <!-- ML Engineer -->
       <div class="resume-role-card" onclick="window.open('resume-ml-engineer.html','_blank')" id="cv-ml" style="cursor:pointer;">
