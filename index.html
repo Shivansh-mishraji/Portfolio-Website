@@ -844,31 +844,34 @@
     <div class="rv">
       <span class="lbl">// download</span>
       <h2 class="ttl">Resume &amp; CV</h2>
-      <p class="sub">Role-tailored resumes for specific applications. Use the <strong style="color:var(--violet-l)">Master Resume</strong> for general applications, or pick a role-specific version. Open in browser, then <strong style="color:var(--violet-l)">Ctrl+P → Save as PDF</strong>.</p>
+      <p class="sub">Use the <strong style="color:var(--violet-l)">Master Resume</strong> for general applications. For role-specific applications, pick the version below. Open in browser → <strong style="color:var(--violet-l)">Ctrl+P → Save as PDF</strong>.</p>
     </div>
 
-    <!-- Role Cards Grid -->
-    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem;">
-
-
-      <!-- Master Resume (Full) -->
-      <div class="resume-role-card" onclick="window.open('resume-master.html','_blank')" id="cv-master" style="cursor:pointer;grid-column:1/-1;">
-        <div class="rrc-top" style="background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(6,182,212,.15),rgba(16,185,129,.1));">
-          <div class="rrc-icon">&#127775;</div>
-          <div class="rrc-badge" style="background:rgba(124,58,237,.25);color:#c7d2fe;border-color:rgba(124,58,237,.5);">MASTER RESUME &mdash; ALL ROLES</div>
-        </div>
-        <div class="rrc-body">
-          <h3 class="rrc-title">Complete Master Resume</h3>
-          <p class="rrc-desc">Comprehensive, all-in-one resume covering ML Engineering, Data Science, AI Product, and Data Analysis. Best for general internship applications — includes all projects, full tech stack, and competencies.</p>
-          <div class="rrc-skills">
-            <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">ML &amp; Data</span>
-            <span class="rrc-sk" style="background:rgba(6,182,212,.1);color:var(--cyan);">AI Products</span>
-            <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">EDA &amp; Analysis</span>
-            <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">All Projects</span>
+    <!-- ★ MASTER RESUME BANNER -->
+    <div class="rv" style="margin-top:2rem;">
+      <a href="resume-master.html" target="_blank" id="cv-master" style="display:flex;align-items:center;gap:1.5rem;padding:1.4rem 2rem;background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(6,182,212,.12),rgba(16,185,129,.08));border:1px solid rgba(124,58,237,.4);border-radius:var(--r);text-decoration:none;transition:all var(--t);position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 48px rgba(124,58,237,.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-size:2.4rem;flex-shrink:0;">&#11088;</div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.3rem;">
+            <span style="font-family:var(--head);font-size:1.1rem;font-weight:700;color:var(--txt);">Complete Master Resume</span>
+            <span style="font-family:var(--mono);font-size:.62rem;padding:.18rem .6rem;border-radius:50px;background:rgba(124,58,237,.25);border:1px solid rgba(124,58,237,.5);color:#c7d2fe;letter-spacing:.08em;">RECOMMENDED</span>
           </div>
-          <a href="resume-master.html" target="_blank" class="rrc-btn" id="dl-master" onclick="event.stopPropagation()" style="background:linear-gradient(135deg,var(--violet),var(--cyan));"><i class="fas fa-external-link-alt"></i> View &amp; Download PDF</a>
+          <p style="font-size:.85rem;color:var(--txt2);line-height:1.6;margin:0;">All-in-one resume covering ML Engineering, Data Science, AI Product &amp; Data Analysis — includes all projects, full stack, and competencies.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.65rem;">
+            <span style="font-size:.7rem;padding:.18rem .55rem;border-radius:4px;background:rgba(124,58,237,.1);color:var(--violet-l);font-family:var(--mono);">ML &amp; Data</span>
+            <span style="font-size:.7rem;padding:.18rem .55rem;border-radius:4px;background:rgba(6,182,212,.1);color:var(--cyan);font-family:var(--mono);">AI Products</span>
+            <span style="font-size:.7rem;padding:.18rem .55rem;border-radius:4px;background:rgba(16,185,129,.1);color:var(--green);font-family:var(--mono);">EDA &amp; Analysis</span>
+            <span style="font-size:.7rem;padding:.18rem .55rem;border-radius:4px;background:rgba(245,158,11,.1);color:var(--amber);font-family:var(--mono);">All Projects</span>
+          </div>
         </div>
-      </div>
+        <div style="flex-shrink:0;">
+          <span style="display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;background:linear-gradient(135deg,var(--violet),var(--cyan));border-radius:50px;color:#fff;font-size:.85rem;font-weight:600;white-space:nowrap;"><i class="fas fa-external-link-alt"></i> View &amp; Download</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- ROLE-SPECIFIC CARDS — 2×2 grid -->
+    <div class="rv" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:1.25rem;">
 
       <!-- ML Engineer -->
       <div class="resume-role-card" onclick="window.open('resume-ml-engineer.html','_blank')" id="cv-ml" style="cursor:pointer;">
@@ -878,7 +881,7 @@
         </div>
         <div class="rrc-body">
           <h3 class="rrc-title">Machine Learning Engineer</h3>
-          <p class="rrc-desc">Optimized for ML engineering roles. Highlights end-to-end pipelines, Scikit-learn, model training, cross-validation, GridSearchCV, and production deployment.</p>
+          <p class="rrc-desc">End-to-end ML pipelines, Scikit-learn, cross-validation, GridSearchCV, and production deployment.</p>
           <div class="rrc-skills">
             <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">Scikit-learn</span>
             <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">Pipelines</span>
@@ -897,7 +900,7 @@
         </div>
         <div class="rrc-body">
           <h3 class="rrc-title">Data Scientist</h3>
-          <p class="rrc-desc">Built for data science roles. Focuses on EDA, statistical analysis, data visualization, insight storytelling, and model building on real-world datasets.</p>
+          <p class="rrc-desc">EDA, statistical analysis, data visualization, insight storytelling, and predictive modeling on real-world datasets.</p>
           <div class="rrc-skills">
             <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">EDA</span>
             <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">Statistics</span>
@@ -916,7 +919,7 @@
         </div>
         <div class="rrc-body">
           <h3 class="rrc-title">AI Engineer</h3>
-          <p class="rrc-desc">Designed for AI product and engineering roles. Spotlights AI-first product thinking, vibe coding with GitHub Copilot, Nyaya Mitra, and end-to-end AI app deployment.</p>
+          <p class="rrc-desc">AI-first product thinking, vibe coding with GitHub Copilot, Nyaya Mitra, and end-to-end AI app deployment.</p>
           <div class="rrc-skills">
             <span class="rrc-sk" style="background:rgba(99,102,241,.1);color:#a5b4fc;">AI Products</span>
             <span class="rrc-sk" style="background:rgba(99,102,241,.1);color:#a5b4fc;">Vibe Coding</span>
@@ -935,7 +938,7 @@
         </div>
         <div class="rrc-body">
           <h3 class="rrc-title">Data Analyst</h3>
-          <p class="rrc-desc">Tailored for analyst roles. Emphasizes SQL querying, business-problem-framed EDA, KPI tracking, trend analysis, and data storytelling for decision-making.</p>
+          <p class="rrc-desc">SQL querying, business-framed EDA, KPI tracking, trend analysis, and data storytelling for decision-making.</p>
           <div class="rrc-skills">
             <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">SQL</span>
             <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">KPI Analysis</span>
@@ -946,16 +949,13 @@
         </div>
       </div>
 
-    </div><!-- /grid -->
+    </div><!-- /2x2 grid -->
 
     <!-- How-to tip -->
-    <div class="rv" style="margin-top:2rem;">
-      <div style="background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.18);border-radius:var(--r);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;">
-        <i class="fas fa-lightbulb" style="color:var(--cyan);font-size:1.2rem;margin-top:.1rem;flex-shrink:0;"></i>
-        <div>
-          <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;color:var(--cyan-l);">How to save as PDF</div>
-          <div style="font-size:.82rem;color:var(--txt2);line-height:1.7;">Click any card above → the resume opens in a new tab. Then press <kbd style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:.1rem .4rem;font-family:var(--mono);font-size:.78rem;">Ctrl+P</kbd> (or <kbd style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:.1rem .4rem;font-family:var(--mono);font-size:.78rem;">⌘+P</kbd> on Mac) → select <strong>Save as PDF</strong> as the destination. Each resume is print-optimized with proper page margins and color-accurate printing.</div>
-        </div>
+    <div class="rv" style="margin-top:1.5rem;">
+      <div style="background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.18);border-radius:var(--r);padding:1rem 1.4rem;display:flex;align-items:center;gap:1rem;">
+        <i class="fas fa-lightbulb" style="color:var(--cyan);font-size:1.1rem;flex-shrink:0;"></i>
+        <div style="font-size:.82rem;color:var(--txt2);line-height:1.6;">Click any card → resume opens in a new tab. Press <kbd style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:.1rem .4rem;font-family:var(--mono);font-size:.76rem;">Ctrl+P</kbd> → select <strong>Save as PDF</strong>. Each resume is print-optimized for A4, single page.</div>
       </div>
     </div>
 
