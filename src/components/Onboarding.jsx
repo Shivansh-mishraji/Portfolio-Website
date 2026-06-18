@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import anime from 'animejs/lib/anime.es.js';
+import * as animeModule from 'animejs';
+const anime = animeModule.default || animeModule;
 
 export default function Onboarding({ onComplete }) {
   const containerRef = useRef(null);
