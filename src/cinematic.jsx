@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { createRoot } from 'react-dom/client';
 import CinematicBackground from './components/CinematicBackground';
 import CustomCursor from './components/CustomCursor';
@@ -20,7 +20,7 @@ if (bgContainer) {
 // Inject Onboarding Sequence
 const onboardingContainer = document.getElementById('onboarding-container');
 if (onboardingContainer) {
-  const handleComplete = (performanceMode) => {
+  const handleComplete = () => {
     // If they chose performance mode, we could trigger a custom event or update a global var
     // For now, simply removing the onboarding is enough.
     onboardingContainer.style.display = 'none';

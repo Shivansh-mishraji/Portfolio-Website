@@ -1,14 +1,13 @@
-import React, { useRef, useMemo } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useRef, useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
-import * as THREE from 'three';
 
 const ParticleField = ({ count = 600 }) => {
   const points = useRef();
   const lines = useRef();
 
-  // Generate random positions
-  const [positions, linesPositions] = useMemo(() => {
+  // Generate random positions using lazy state initialization to satisfy ESLint
+  const [[positions, linesPositions]] = useState(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       pos[i * 3] = (Math.random() - 0.5) * 20;
@@ -16,7 +15,6 @@ const ParticleField = ({ count = 600 }) => {
       pos[i * 3 + 2] = (Math.random() - 0.5) * 20;
     }
     
-    // Create random static connections to look like a neural network
     const linesPos = [];
     for (let i = 0; i < count; i++) {
       const connections = Math.floor(Math.random() * 3);
@@ -28,8 +26,8 @@ const ParticleField = ({ count = 600 }) => {
         );
       }
     }
-    return [pos, new Float32Array(linesPos)];
-  }, [count]);
+    return [[pos, new Float32Array(linesPos)]];
+  });
 
   const mouse = useRef([0, 0]);
 
