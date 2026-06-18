@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="/src/cinematic.css">
   <script type="module" src="/src/cinematic.jsx"></script>
+
   <style>
     /* ══════════════════════════════════════════════════════
        ROOT DESIGN SYSTEM
@@ -402,14 +403,15 @@
   <div id="cinematic-bg-container"></div>
   <div id="onboarding-container"></div>
   <div id="custom-cursor-container"></div>
+
 <!-- Progress -->
 <div id="prog"></div>
 
-<!-- Canvas (Hidden in favor of WebGL cinematic bg) -->
-<canvas id="canvas" style="display: none;"></canvas>
+<!-- Canvas -->
+<canvas id="canvas"></canvas>
 
-<!-- Cursor glow (Hidden in favor of cinematic cursor) -->
-<div id="cursor" style="display: none;"></div>
+<!-- Cursor glow -->
+<div id="cursor"></div>
 
 <!-- Back to top -->
 <button id="btt" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>

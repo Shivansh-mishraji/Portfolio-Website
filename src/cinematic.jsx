@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import CinematicBackground from './components/CinematicBackground';
 import CustomCursor from './components/CustomCursor';
 import Onboarding from './components/Onboarding';
+import AdvancedEffects from './components/AdvancedEffects';
 
 // Inject Custom Cursor
 const cursorContainer = document.getElementById('custom-cursor-container');
@@ -45,3 +46,9 @@ if (onboardingContainer) {
   
   createRoot(onboardingContainer).render(<Onboarding onComplete={handleComplete} />);
 }
+
+// Inject Advanced Effects
+const effectsContainer = document.createElement('div');
+effectsContainer.id = 'advanced-effects-container';
+document.body.appendChild(effectsContainer);
+createRoot(effectsContainer).render(<AdvancedEffects />);
