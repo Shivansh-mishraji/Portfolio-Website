@@ -79,3 +79,6 @@ body {
   pointer-events: none;
 }
 
+
+/* Disable heavy SVG noise on mobile to prevent lag */
+@media (max-width: 768px) { .cinematic-grain { display: none !important; } }
