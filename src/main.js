@@ -6,7 +6,7 @@
   function resize(){ cnv.width=innerWidth; cnv.height=innerHeight; init(); }
   function init(){
     pts=[];
-    const n=Math.floor(innerWidth*innerHeight/16000);
+    const n=window.innerWidth < 768 ? Math.floor(innerWidth*innerHeight/35000) : Math.floor(innerWidth*innerHeight/16000);
     for(let i=0;i<n;i++) pts.push({ x:Math.random()*cnv.width, y:Math.random()*cnv.height, vx:(Math.random()-.5)*.3, vy:(Math.random()-.5)*.3, r:Math.random()*1.5+.4, o:Math.random()*.5+.1, c:['#7c3aed','#06b6d4','#ffffff'][Math.floor(Math.random()*3)] });
   }
   resize(); window.addEventListener('resize',resize);
@@ -21,9 +21,13 @@
       cx.beginPath(); cx.arc(p.x,p.y,p.r,0,Math.PI*2); cx.fillStyle=p.c; cx.globalAlpha=p.o; cx.fill();
     });
     cx.globalAlpha=1;
-    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
-      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<110 && window.innerWidth > 768){ cx.beginPath(); cx.moveTo(pts[i].x,pts[i].y); cx.lineTo(pts[j].x,pts[j].y); cx.strokeStyle=`rgba(124,58,237,${.07*(1-d/110)})`; cx.lineWidth=.5; cx.stroke(); }
+    if(window.innerWidth > 768) { 
+      for(let i=0;i<pts.length;i++) {
+        for(let j=i+1;j<pts.length;j++){
+          const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<110){ cx.beginPath(); cx.moveTo(pts[i].x,pts[i].y); cx.lineTo(pts[j].x,pts[j].y); cx.strokeStyle=`rgba(124,58,237,${.07*(1-d/110)})`; cx.lineWidth=.5; cx.stroke(); }
+        }
+      }
     }
     requestAnimationFrame(draw);
   }

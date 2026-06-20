@@ -30,7 +30,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family:var(--body); background:var(--bg); color:var(--txt); line-height:1.6; overflow-x:hidden; }
+    body { overscroll-behavior-y: none; font-family:var(--body); background:var(--bg); color:var(--txt); line-height:1.6; overflow-x:hidden; }
     ::selection { background:var(--violet); color:#fff; }
     ::-webkit-scrollbar { width:4px; }
     ::-webkit-scrollbar-track { background:var(--bg2); }
@@ -84,7 +84,7 @@
     section { position:relative; z-index:2; padding:6rem 2rem; }
     .con { max-width:1100px; margin:0 auto; }
     .lbl { font-family:var(--mono); font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; color:var(--cyan); margin-bottom:.6rem; display:block; }
-    .ttl { font-family:var(--head); font-size:clamp(1.9rem,4vw,2.8rem); font-weight:700; letter-spacing:-.03em; margin-bottom:.75rem; background:linear-gradient(135deg,var(--txt) 55%,var(--violet-l)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .ttl { font-family:var(--head); font-size:clamp(1.6rem, 5vw, 2.8rem); font-weight:700; letter-spacing:-.03em; margin-bottom:.75rem; background:linear-gradient(135deg,var(--txt) 55%,var(--violet-l)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .sub { color:var(--txt2); font-size:1rem; max-width:600px; margin-bottom:3rem; line-height:1.85; }
 
     /* reveal */
@@ -175,7 +175,9 @@
        SKILLS
     ══════════════════════════════════════════════════════ */
 
-    .tabs { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:2.25rem; }
+    .tabs { display:flex; gap:.5rem; margin-bottom:2.25rem; overflow-x:auto; padding-bottom:0.5rem; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+    .tabs::-webkit-scrollbar { display:none; }
+    .tab { flex-shrink:0; /* Keep tab styling below */ }
     .tab { padding:.5rem 1.25rem; border-radius:50px; border:1px solid var(--border); background:transparent; color:var(--txt2); font-size:.85rem; font-family:var(--body); cursor:pointer; transition:all var(--t); }
 @media (hover: hover) and (pointer: fine) {     .tab.on, .tab:hover { background:linear-gradient(135deg,var(--violet),var(--cyan)); border-color:transparent; color:#fff; } }
 
@@ -379,3 +381,6 @@
       .focus-cards{ grid-template-columns:1fr; }
     }
   
+    @media (hover: none) and (pointer: coarse), (max-width: 768px) {
+      #cursor { display:none !important; }
+    }
