@@ -9,7 +9,12 @@
     const n=window.innerWidth < 768 ? Math.floor(innerWidth*innerHeight/35000) : Math.floor(innerWidth*innerHeight/16000);
     for(let i=0;i<n;i++) pts.push({ x:Math.random()*cnv.width, y:Math.random()*cnv.height, vx:(Math.random()-.5)*.3, vy:(Math.random()-.5)*.3, r:Math.random()*1.5+.4, o:Math.random()*.5+.1, c:['#7c3aed','#06b6d4','#ffffff'][Math.floor(Math.random()*3)] });
   }
-  resize(); window.addEventListener('resize',resize);
+  resize(); 
+  let resizeTo;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTo);
+    resizeTo = setTimeout(resize, 200);
+  });
   function draw(){
     cx.clearRect(0,0,cnv.width,cnv.height);
     pts.forEach(p=>{
