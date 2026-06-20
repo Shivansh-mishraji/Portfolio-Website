@@ -384,3 +384,8 @@
     @media (hover: none) and (pointer: coarse), (max-width: 768px) {
       #cursor { display:none !important; }
     }
+
+/* GitHub Stats UI */
+.gh-stats { margin-top:2.5rem; display:flex; flex-direction:column; gap:1rem; align-items:center; width:100%; }
+.gh-stats img { max-width:100%; height:auto; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.2); transition:transform var(--t); cursor:crosshair; }
+@media (hover: hover) and (pointer: fine) { .gh-stats img:hover { transform:translateY(-3px); } }
