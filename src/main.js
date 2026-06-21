@@ -86,7 +86,7 @@ if (cur && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 }
 
 /* ─── TYPED TEXT ─────────────────────────────── */
-const lines = ['Data Science Enthusiast', 'ML Engineer (in progress)', 'AI Product Builder', 'Vibe Coder & Prototyper', 'Python Developer', 'Cloud Computing Student'];
+const lines = ['Data Science Enthusiast', 'ML Engineer (Aspiring)', 'EDA Practitioner', 'Python & SQL Developer', 'Kaggle Contributor', 'AI-Accelerated Builder', 'Problem Solver & Creator', 'B.Tech CSE · CGPA 8.0+'];
 let li = 0, ci = 0, del = false;
 const tel = document.getElementById('typed');
 function type() {
