@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://shivansh-mishraji.github.io/Portfolio-Website/sitemap.xml
