@@ -1,28 +1,14 @@
 /* Cinematic Overrides and Effects */
 
+/* Grain removed — SVG feTurbulence filter on a 200%x200% div is one of
+   the heaviest possible CSS operations (forces full-screen rasterization
+   every 800ms step). Replaced with a tiny repeating PNG noise at low opacity
+   that never repaints — compositor-only, zero CPU/GPU cost. */
 .cinematic-grain {
-  position: fixed;
-  top: -50%; left: -50%; right: -50%; bottom: -50%;
-  width: 200%; height: 200%;
-  background: transparent url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.08%22/%3E%3C/svg%3E');
-  pointer-events: none;
-  /* z-index must be BELOW onboarding-container (9999) */
-  z-index: 9990;
-  animation: grainShift 8s steps(10) infinite;
-}
-
-@keyframes grainShift {
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  20% { transform: translate(-15%, 5%); }
-  30% { transform: translate(7%, -25%); }
-  40% { transform: translate(-5%, 25%); }
-  50% { transform: translate(-15%, 10%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 15%); }
-  80% { transform: translate(3%, 35%); }
-  90% { transform: translate(-10%, 10%); }
-  100% { transform: translate(0, 0); }
+  position: fixed; inset: 0; z-index: 9990; pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4t5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHqo2ougQhEkuSmVzyhHWdxB3JWYbU2ToPGDPCvbBzOVkGa3mN3SJP5bK3b8cYFDC6OzqhSJIqfbSASCEAbT3pQTu4E7+26TShE+IWCkj75B1BnrTTkT3WCQvl9IrVsOJY/PELJBCFMILbGr3VYiMLCPEQvFJqm1XuRmHZNNLHUGTu0iBXVGAVMR0YWTkBwANBAAB");
+  background-size: 128px 128px;
 }
 
 .heading-gradient {

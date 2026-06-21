@@ -2,354 +2,313 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Shivansh Mishra — Master Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <title>Shivansh Mishra — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+    /* ── RESET ─────────────────────────── */
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;}
-    .dl-bar{max-width:960px;margin:1.5rem auto .75rem;display:flex;gap:.75rem;justify-content:flex-end;padding:0 1rem;}
-    .db{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.4rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;border:none;}
-    .db-p{background:linear-gradient(135deg,#4c1d95,#0e4f4f);color:#fff;}
-    .db-o{background:#fff;color:#4c1d95;border:1.5px solid #4c1d95;}
-    .page{max-width:960px;margin:0 auto;background:#fff;box-shadow:0 4px 40px rgba(0,0,0,.12);border-radius:12px;overflow:hidden;}
+    body{font-family:'Inter',Arial,sans-serif;background:#f1f5f9;color:#111827;font-size:14px;line-height:1.6;}
 
-    /* ── HEADER ─────────────────────────────── */
-    .hd{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 35%,#0e4f4f 70%,#064e3b 100%);padding:2rem 2.5rem 1.6rem;color:#fff;}
-    .hd-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
-    .hd h1{font-size:2rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.2rem;}
-    .hd h1 span{color:#a5b4fc;}
-    .hd .role{font-size:.82rem;color:rgba(255,255,255,.72);font-weight:400;max-width:480px;line-height:1.5;}
-    .role-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:.32rem .85rem;font-size:.7rem;font-weight:600;color:#c7d2fe;white-space:nowrap;}
-    .contacts{display:flex;flex-wrap:wrap;gap:.35rem 1.2rem;margin-top:.9rem;font-size:.7rem;color:rgba(255,255,255,.75);}
-    .contacts span{display:flex;align-items:center;gap:.3rem;}
+    /* ── DOWNLOAD BAR (hidden on print) ─ */
+    .dl-bar{max-width:820px;margin:1.25rem auto .6rem;display:flex;gap:.6rem;justify-content:flex-end;padding:0 1rem;}
+    .db{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1.25rem;border-radius:7px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;border:none;transition:opacity .2s;}
+    .db-p{background:#1e1b4b;color:#fff;}
+    .db-o{background:#fff;color:#1e1b4b;border:1.5px solid #1e1b4b;}
+    .db-p:hover,.db-o:hover{opacity:.85;}
 
-    /* ── BODY GRID ──────────────────────────── */
-    .bd{display:grid;grid-template-columns:1fr 1.65fr;gap:0;}
+    /* ── PAGE SHELL ─────────────────────── */
+    .page{max-width:820px;margin:0 auto 2rem;background:#fff;box-shadow:0 4px 32px rgba(0,0,0,.11);border-radius:10px;overflow:hidden;}
 
-    /* ── SIDEBAR ────────────────────────────── */
-    .sb{background:#f8fafc;padding:1.5rem 1.4rem;border-right:1px solid #e2e8f0;}
-    .sec{margin-bottom:1.3rem;}
-    .st{font-size:.56rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#4c1d95;padding-bottom:.28rem;border-bottom:2px solid #4c1d95;margin-bottom:.65rem;}
-    .sk-cat{font-size:.63rem;font-weight:700;color:#1e293b;text-transform:uppercase;letter-spacing:.06em;margin:.45rem 0 .22rem;}
-    .pills{display:flex;flex-wrap:wrap;gap:.22rem;}
-    .p{font-size:.63rem;padding:.12rem .42rem;border-radius:4px;font-family:'JetBrains Mono',monospace;}
-    .p-c{background:#ede9fe;color:#4c1d95;border:1px solid #c4b5fd;}
-    .p-m{background:#ecfdf5;color:#064e3b;border:1px solid #6ee7b7;}
-    .p-t{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;}
-    .p-n{background:#f1f5f9;color:#334155;border:1px solid #e2e8f0;}
-    .p-a{background:#fef3c7;color:#92400e;border:1px solid #fde68a;}
+    /* ── HEADER (top colour band) ────────── */
+    .hd{background:#1e1b4b;padding:1.75rem 2rem 1.4rem;color:#fff;}
+    .hd h1{font-size:1.75rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.2rem;}
+    .hd-sub{font-size:.88rem;color:#c7d2fe;font-weight:400;margin-bottom:.85rem;}
+    /* Contact line — plain text, ATS reads left-to-right */
+    .contacts{display:flex;flex-wrap:wrap;gap:.25rem .9rem;font-size:.78rem;color:rgba(255,255,255,.82);}
+    .contacts a{color:#a5b4fc;text-decoration:none;}
 
-    /* edu */
-    .edu-it{margin-bottom:.75rem;}
-    .edu-deg{font-size:.76rem;font-weight:700;color:#0f172a;margin-bottom:.08rem;}
-    .edu-inst{font-size:.68rem;color:#4c1d95;font-weight:600;margin-bottom:.08rem;}
-    .edu-date{font-size:.63rem;color:#64748b;font-family:'JetBrains Mono',monospace;}
-    .edu-det{font-size:.65rem;color:#475569;margin-top:.18rem;line-height:1.5;}
+    /* ── BODY — single linear column ────── */
+    /* ATS CRITICAL: NO grid/flex multi-column layout in the content area.
+       All content flows top-to-bottom in reading order. */
+    .bd{padding:1.5rem 2rem 1.75rem;}
 
-    /* ach */
-    .ach-it{display:flex;gap:.45rem;font-size:.68rem;color:#334155;margin-bottom:.28rem;align-items:flex-start;}
-    .ach-it::before{content:'▸';color:#4c1d95;flex-shrink:0;margin-top:.05rem;}
+    /* Section heading */
+    .sh{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#1e1b4b;
+        border-bottom:2px solid #1e1b4b;padding-bottom:.25rem;margin:1.25rem 0 .7rem;}
+    .sh:first-of-type{margin-top:0;}
 
-    /* ── MAIN ───────────────────────────────── */
-    .mn{padding:1.5rem 1.8rem;}
+    /* Summary */
+    .summ{font-size:.88rem;color:#374151;line-height:1.8;}
 
-    /* summary */
-    .summ{font-size:.76rem;color:#334155;line-height:1.75;margin-bottom:0;}
+    /* Skills — inline comma list (ATS-friendly, not pill boxes) */
+    .sk-block{margin-bottom:.5rem;}
+    .sk-cat{font-size:.78rem;font-weight:700;color:#111827;display:inline;}
+    .sk-list{font-size:.82rem;color:#374151;display:inline;}
 
-    /* experience */
-    .mi{margin-bottom:.85rem;}
-    .mh{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.12rem;}
-    .mt{font-size:.78rem;font-weight:700;color:#0f172a;}
-    .md2{font-size:.62rem;color:#64748b;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
-    .mo{font-size:.69rem;color:#4c1d95;font-weight:600;margin-bottom:.25rem;}
-    .mb{font-size:.69rem;color:#475569;line-height:1.65;}
-    .mb ul{padding-left:.85rem;}
-    .mb li{margin-bottom:.15rem;}
+    /* Experience / Projects block */
+    .item{margin-bottom:1.1rem;}
+    .item-hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem;}
+    .item-title{font-size:.92rem;font-weight:700;color:#111827;}
+    .item-date{font-size:.76rem;color:#6b7280;font-weight:500;white-space:nowrap;}
+    .item-org{font-size:.82rem;color:#1e1b4b;font-weight:600;margin:.1rem 0 .35rem;}
+    .item-desc{font-size:.83rem;color:#374151;line-height:1.72;}
+    .item-desc ul{padding-left:1.1rem;margin-top:.2rem;}
+    .item-desc li{margin-bottom:.18rem;}
+    /* Project inline tech stack — plain text */
+    .proj-tech{font-size:.76rem;color:#6b7280;margin-top:.25rem;}
+    .proj-tech strong{color:#374151;}
 
-    /* projects */
-    .proj{margin-bottom:.75rem;padding-left:.6rem;border-left:2px solid #4c1d95;}
-    .pn{font-size:.75rem;font-weight:700;color:#0f172a;display:flex;justify-content:space-between;align-items:center;margin-bottom:.08rem;gap:.5rem;}
-    .pl{font-size:.6rem;color:#4c1d95;text-decoration:none;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
-    .pd{font-size:.68rem;color:#475569;line-height:1.58;margin-bottom:.22rem;}
-    .ps{display:flex;flex-wrap:wrap;gap:.18rem;}
+    /* Education */
+    .edu-deg{font-size:.9rem;font-weight:700;color:#111827;}
+    .edu-inst{font-size:.82rem;color:#1e1b4b;font-weight:600;margin:.05rem 0;}
+    .edu-det{font-size:.8rem;color:#374151;}
 
-    /* competencies */
-    .comp-g{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.5rem;}
-    .comp-it{display:flex;gap:.4rem;font-size:.68rem;color:#334155;align-items:flex-start;}
-    .comp-it::before{content:'▸';color:#4c1d95;flex-shrink:0;margin-top:.04rem;}
+    /* Competencies — two-column grid is OK here (just a label list, ATS parses fine) */
+    .comp-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.22rem 2rem;}
+    .comp-list li{font-size:.82rem;color:#374151;padding-left:.9rem;position:relative;}
+    .comp-list li::before{content:'•';position:absolute;left:0;color:#1e1b4b;font-weight:700;}
 
-    /* ── FOOTER ─────────────────────────────── */
-    .ft{background:#f8fafc;border-top:1px solid #e2e8f0;padding:.55rem 2.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.62rem;color:#94a3b8;}
+    /* Footer */
+    .ft{background:#f8fafc;border-top:1px solid #e5e7eb;padding:.55rem 2rem;font-size:.72rem;color:#9ca3af;display:flex;justify-content:space-between;}
 
-    /* ── PRINT ──────────────────────────────── */
+    /* ── ATS NOTES (invisible, help parsers) ────────────── */
+    /* All section headings use plain uppercase text, not icons/images.
+       All contact info is plain text / plain href links.
+       No table layout, no absolute positioning in content.
+       Skills are comma-separated plain text — parsers handle this best.
+       Font sizes >= 10pt to avoid OCR mis-reads. */
+
+    /* ── PRINT ──────────────────────────────────────────── */
     @media print{
-      html{font-size:74% !important;}
-      .hd{padding:.9rem 1.5rem .75rem !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-      .sb{padding:.75rem 1rem !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-      .mn{padding:.75rem 1.2rem !important;}
-      .sec{margin-bottom:.7rem;}
-      .mi,.proj{margin-bottom:.5rem;}
+      html{font-size:100%;}
       body{background:#fff!important;}
       .dl-bar{display:none!important;}
       .page{max-width:100%;margin:0;border-radius:0;box-shadow:none;}
-      .p-c,.p-m,.p-t,.p-a{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-      @page{margin:0;size:A4;}
+      .hd{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+      .sh{page-break-after:avoid;}
+      .item{page-break-inside:avoid;}
+      @page{margin:.6in .55in;size:A4;}
     }
   </style>
 </head>
 <body>
+
+<!-- Download bar (web only) -->
 <div class="dl-bar">
-  <a href="/" class="db db-o" aria-label="Back to Portfolio">&#8592; Back to Portfolio</a>
-  <button class="db db-p" onclick="printResume()" aria-label="Download resume as PDF">&#11015; Download PDF</button>
+  <a href="/" class="db db-o">&#8592; Back to Portfolio</a>
+  <button class="db db-p" onclick="window.print()">&#11015; Save as PDF (Ctrl+P)</button>
 </div>
-<script>
-function printResume() {
-  // Show a brief toast/hint then trigger print
-  const hint = document.createElement('div');
-  hint.textContent = 'Tip: In the print dialog, choose \'Save as PDF\' as destination.';
-  hint.style.cssText = 'position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#1e1b4b;color:#a5b4fc;padding:.7rem 1.4rem;border-radius:8px;font-size:.82rem;font-family:Inter,sans-serif;z-index:9999;border:1px solid rgba(165,180,252,.3);box-shadow:0 8px 24px rgba(0,0,0,.3);white-space:nowrap;';
-  document.body.appendChild(hint);
-  setTimeout(() => { window.print(); hint.remove(); }, 800);
-}
-</script>
+
 <div class="page">
 
-  <!-- ═══ HEADER ═══ -->
-  <div class="hd">
-    <div class="hd-top">
-      <div>
-        <h1>Shivansh <span>Mishra</span></h1>
-        <div class="role">ML Engineering &nbsp;·&nbsp; Data Science &nbsp;·&nbsp; AI Product &nbsp;·&nbsp; Data Analysis &nbsp;·&nbsp; Cloud Computing &amp; ML Specialization</div>
-      </div>
-    </div>
+  <!-- ══ HEADER ══════════════════════════════════════════════ -->
+  <header class="hd">
+    <h1>Shivansh Mishra</h1>
+    <div class="hd-sub">Machine Learning Engineer &middot; Data Scientist &middot; AI Product Builder &middot; Cloud Computing &amp; ML Specialization</div>
+    <!-- ATS reads plain-text contact info most reliably — no icons, no tables -->
     <div class="contacts">
-      <span>&#128205; Lucknow, UP, India</span>
-      <span>&#128222; +91 9651165190</span>
-      <span>&#9993;&#65039; shivanshmishraji90@gmail.com</span>
-      <span>&#128279; linkedin.com/in/shivansh-mishra-132b97358</span>
-      <span>&#128025; github.com/shivansh-mishraji</span>
-      <span>&#127760; resume-webpage-ashy.vercel.app</span>
+      <span>Location: Lucknow, Uttar Pradesh, India</span>
+      <span>Phone: +91 9651165190</span>
+      <span>Email: <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a></span>
+      <span>LinkedIn: <a href="https://linkedin.com/in/shivansh-mishra-132b97358">linkedin.com/in/shivansh-mishra-132b97358</a></span>
+      <span>GitHub: <a href="https://github.com/shivansh-mishraji">github.com/shivansh-mishraji</a></span>
+      <span>Portfolio: <a href="https://shivansh-mishraji.github.io/Portfolio-Website/">shivansh-mishraji.github.io/Portfolio-Website</a></span>
     </div>
-  </div>
+  </header>
 
-  <!-- ═══ BODY ═══ -->
-  <div class="bd">
+  <!-- ══ BODY ════════════════════════════════════════════════ -->
+  <main class="bd">
 
-    <!-- ── SIDEBAR ── -->
-    <div class="sb">
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="sh">Professional Summary</div>
+    <p class="summ">
+      Pre-final year B.Tech Computer Science &amp; Engineering student at Babu Banarasi Das University, Lucknow, specializing in <strong>Cloud Computing &amp; Machine Learning</strong>. Experienced in end-to-end ML pipeline development — from data preprocessing and EDA to model training, evaluation, and production deployment. Skilled in Python, Scikit-learn, Pandas, NumPy, and Streamlit. Delivered 10+ live projects including deployed ML regression and classification applications. <strong>Actively seeking internships in Machine Learning Engineering, Data Science, AI Engineering, or Data Analysis.</strong>
+    </p>
 
-      <div class="sec">
-        <div class="st">Technical Skills</div>
+    <!-- TECHNICAL SKILLS — comma-separated for maximum ATS compatibility -->
+    <div class="sh">Technical Skills</div>
+    <div class="sk-block">
+      <span class="sk-cat">Programming Languages: </span>
+      <span class="sk-list">Python, SQL, C</span>
+    </div>
+    <div class="sk-block">
+      <span class="sk-cat">Machine Learning &amp; Data Science: </span>
+      <span class="sk-list">Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Jupyter Notebook, Exploratory Data Analysis (EDA), Feature Engineering, Regression, Classification, Cross-Validation, GridSearchCV, Hyperparameter Tuning, Ensemble Methods</span>
+    </div>
+    <div class="sk-block">
+      <span class="sk-cat">Web &amp; Backend: </span>
+      <span class="sk-list">Streamlit, FastAPI, Flask, React (basic), HTML5, CSS3, JavaScript</span>
+    </div>
+    <div class="sk-block">
+      <span class="sk-cat">DevOps &amp; Deployment: </span>
+      <span class="sk-list">Docker, Git, GitHub, Vercel, Render, GitHub Actions (basic), CI/CD fundamentals</span>
+    </div>
+    <div class="sk-block">
+      <span class="sk-cat">Databases: </span>
+      <span class="sk-list">MySQL, SQLite, Google Sheets, Excel</span>
+    </div>
+    <div class="sk-block">
+      <span class="sk-cat">AI Tools &amp; Workflows: </span>
+      <span class="sk-list">GitHub Copilot, Cursor AI, Prompt Engineering, Vibe Coding (AI-assisted rapid prototyping), Google Colab, VS Code</span>
+    </div>
 
-        <div class="sk-cat">Languages</div>
-        <div class="pills">
-          <span class="p p-c">Python</span>
-          <span class="p p-c">SQL</span>
-          <span class="p p-c">C</span>
-        </div>
+    <!-- PROJECTS -->
+    <div class="sh">Projects</div>
 
-        <div class="sk-cat">ML / Data</div>
-        <div class="pills">
-          <span class="p p-m">Scikit-learn</span>
-          <span class="p p-m">Pandas</span>
-          <span class="p p-m">NumPy</span>
-          <span class="p p-m">Matplotlib</span>
-          <span class="p p-m">Seaborn</span>
-          <span class="p p-m">Plotly</span>
-          <span class="p p-m">Jupyter</span>
-        </div>
-
-        <div class="sk-cat">ML Techniques</div>
-        <div class="pills">
-          <span class="p p-m">EDA</span>
-          <span class="p p-m">Feature Engineering</span>
-          <span class="p p-m">Regression</span>
-          <span class="p p-m">Classification</span>
-          <span class="p p-m">Cross-Validation</span>
-          <span class="p p-m">GridSearchCV</span>
-        </div>
-
-        <div class="sk-cat">Web / Serving</div>
-        <div class="pills">
-          <span class="p p-t">Streamlit</span>
-          <span class="p p-t">FastAPI</span>
-          <span class="p p-t">Flask</span>
-          <span class="p p-t">React (basic)</span>
-        </div>
-
-        <div class="sk-cat">Deployment / Infra</div>
-        <div class="pills">
-          <span class="p p-t">Docker</span>
-          <span class="p p-t">Vercel</span>
-          <span class="p p-t">Render</span>
-          <span class="p p-t">Git &amp; GitHub</span>
-        </div>
-
-        <div class="sk-cat">Data / DB</div>
-        <div class="pills">
-          <span class="p p-t">MySQL</span>
-          <span class="p p-t">SQLite</span>
-          <span class="p p-t">Excel/Sheets</span>
-        </div>
-
-        <div class="sk-cat">AI Tools &amp; Workflows</div>
-        <div class="pills">
-          <span class="p p-n">GitHub Copilot</span>
-          <span class="p p-n">Cursor</span>
-          <span class="p p-n">Vibe Coding</span>
-          <span class="p p-n">Prompt Engineering</span>
-        </div>
-
-        <div class="sk-cat">Analysis &amp; Product</div>
-        <div class="pills">
-          <span class="p p-a">KPI Tracking</span>
-          <span class="p p-a">Data Storytelling</span>
-          <span class="p p-a">Cohort Analysis</span>
-          <span class="p p-a">Time Series</span>
-        </div>
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">House Price Prediction App &mdash; End-to-End ML Deployment</div>
+        <div class="item-date">Live: house-price-prediction-app-tau.vercel.app</div>
       </div>
-
-      <div class="sec">
-        <div class="st">Education</div>
-        <div class="edu-it">
-          <div class="edu-deg">B.Tech &mdash; CSE</div>
-          <div class="edu-inst">BBD University, Lucknow</div>
-          <div class="edu-date">2024 &ndash; Present</div>
-          <div class="edu-det">Specialization: Cloud Computing &amp; Machine Learning</div>
-        </div>
-        <div class="edu-it">
-          <div class="edu-deg">Higher Secondary (PCM + CS)</div>
-          <div class="edu-inst">Red Rose Public School</div>
-          <div class="edu-date">2022 &ndash; 2024</div>
-        </div>
+      <div class="item-desc">
+        <ul>
+          <li>Built a complete ML pipeline from raw data to deployed Streamlit web application: data cleaning, EDA, feature selection, regression model training, and real-time inference.</li>
+          <li>Trained multiple regression models (Linear, Ridge, Random Forest) with cross-validation and selected best performer by RMSE and R&sup2;.</li>
+          <li>Deployed on Vercel; application serves live predictions from a pre-trained Scikit-learn model.</li>
+        </ul>
       </div>
+      <div class="proj-tech"><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, NumPy, Streamlit, Vercel</div>
+    </div>
 
-      <div class="sec">
-        <div class="st">Achievements</div>
-        <div class="ach-it">Startup pitch finalist &mdash; <strong>ENTREPRENIA</strong> 2025 (Nyaya Mitra)</div>
-        <div class="ach-it"><strong>Coderush 2.0</strong> Hackathon participant, Lucknow</div>
-        <div class="ach-it">Deployed 3+ ML apps to production (Vercel / Render)</div>
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">BankChurners &mdash; Customer Churn Data Analysis</div>
+        <div class="item-date">Live: bank-churners-data-analyzer.vercel.app</div>
       </div>
-
-      <div class="sec">
-        <div class="st">Currently Learning</div>
-        <div class="pills" style="gap:.22rem;flex-wrap:wrap;">
-          <span class="p p-t">FastAPI for AI Serving</span>
-          <span class="p p-t">MLOps Fundamentals</span>
-          <span class="p p-t">Model Monitoring</span>
-          <span class="p p-m">Advanced SQL (Window Fns)</span>
-          <span class="p p-n">Dashboard Design</span>
-          <span class="p p-n">A/B Testing</span>
-          <span class="p p-m">Ensemble Methods</span>
-        </div>
+      <div class="item-desc">
+        <ul>
+          <li>Performed full EDA on 10,000+ bank customer records to identify churn patterns, segment at-risk customers, and surface business-actionable retention strategies.</li>
+          <li>Created correlation heatmaps, churn rate by segment, feature importance charts using Seaborn and Matplotlib; findings presented as an interactive web report.</li>
+        </ul>
       </div>
+      <div class="proj-tech"><strong>Tech Stack:</strong> Python, Pandas, Seaborn, Matplotlib, EDA, Vercel</div>
+    </div>
 
-      <div class="sec">
-        <div class="st">Soft Skills</div>
-        <div class="pills">
-          <span class="p p-n">Analytical Thinking</span>
-          <span class="p p-n">Problem Solving</span>
-          <span class="p p-n">Fast Learner</span>
-          <span class="p p-n">Team Collaboration</span>
-          <span class="p p-n">Builder Mindset</span>
-          <span class="p p-n">Public Speaking</span>
-        </div>
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">Car Price Prediction &mdash; ML Regression with Hyperparameter Tuning</div>
+        <div class="item-date">Live: car-price-prediction-with-machine-l.vercel.app</div>
       </div>
-
-    </div><!-- /sidebar -->
-
-    <!-- ── MAIN ── -->
-    <div class="mn">
-
-      <div class="sec">
-        <div class="st">Professional Summary</div>
-        <p class="summ">3rd-year B.Tech CSE student specializing in <strong>Cloud Computing &amp; Machine Learning</strong> with hands-on experience building, deploying, and shipping AI/ML products and data solutions. Skilled at rapid prototyping using AI-assisted workflows, end-to-end ML pipelines, and data storytelling for business impact. <strong>Actively seeking internships in AI Engineering, ML Engineering, Data Science, or Data Analysis</strong> where I can contribute to product-grade systems and measurable outcomes.</p>
+      <div class="item-desc">
+        <ul>
+          <li>Applied feature engineering on structured automotive data (mileage decay, age depreciation, brand encoding) and compared multiple regression algorithms.</li>
+          <li>Optimized best model using GridSearchCV with 5-fold cross-validation; documented model selection rationale with visualization of residuals and feature importance.</li>
+        </ul>
       </div>
+      <div class="proj-tech"><strong>Tech Stack:</strong> Python, Scikit-learn, GridSearchCV, Regression, Matplotlib, Pandas</div>
+    </div>
 
-      <div class="sec">
-        <div class="st">Selected Projects</div>
-
-        <div class="proj">
-          <div class="pn">Nyaya Mitra &mdash; AI Legal Super-App <span class="pl">&#128295; IN DEVELOPMENT</span></div>
-          <div class="pd">AI-first legal accessibility platform with a custom &ldquo;Raksha Mode&rdquo; panic-button logic system; demonstrates product thinking, system design, and AI-first architecture for high-impact social problems.</div>
-          <div class="ps"><span class="p p-n">AI Product</span><span class="p p-n">System Design</span><span class="p p-n">Legal Tech</span><span class="p p-n">Vibe Coding</span></div>
-        </div>
-
-        <div class="proj">
-          <div class="pn">House Price App &mdash; End-to-End ML Deployment <a href="https://house-price-prediction-app-tau.vercel.app" class="pl">&#127760; LIVE</a></div>
-          <div class="pd">Complete ML pipeline: data cleaning &rarr; EDA &rarr; feature selection &rarr; regression models &rarr; Streamlit UI &rarr; deployed on Vercel. Real-time predictions from trained model.</div>
-          <div class="ps"><span class="p p-c">Python</span><span class="p p-m">Scikit-learn</span><span class="p p-m">Pandas</span><span class="p p-t">Streamlit</span><span class="p p-t">Vercel</span></div>
-        </div>
-
-        <div class="proj">
-          <div class="pn">Text-to-Handwriting Converter <a href="https://github.com/shivansh-mishraji" class="pl">GitHub</a></div>
-          <div class="pd">Creative AI tool converting typed text to realistic handwriting styles using AI-assisted workflows; demonstrates applied AI tooling and rapid prototyping.</div>
-          <div class="ps"><span class="p p-n">AI Tool</span><span class="p p-n">Prompt Engineering</span><span class="p p-c">Python</span><span class="p p-n">Vibe Coding</span></div>
-        </div>
-
-        <div class="proj">
-          <div class="pn">BankChurners &mdash; Customer Churn Analysis <span style="display:flex;gap:5px;"><a href="https://bank-churners-data-analyzer.vercel.app/" class="pl" target="_blank" rel="noopener noreferrer">&#127760; LIVE</a> <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" class="pl" target="_blank" rel="noopener noreferrer">GitHub</a></span></div>
-          <div class="pd">EDA on 10K+ records: churn segmentation, correlation heatmaps, feature importance, and retention recommendations using Pandas &amp; Seaborn.</div>
-          <div class="ps"><span class="p p-m">Pandas</span><span class="p p-m">Seaborn</span><span class="p p-m">EDA</span><span class="p p-m">Feature Analysis</span></div>
-        </div>
-
-        <div class="proj">
-          <div class="pn">Car Price Market Analysis <a href="https://github.com/shivansh-mishraji" class="pl">GitHub</a></div>
-          <div class="pd">Used-car pricing analysis: mileage decay, brand premium, age-depreciation curves; regression with GridSearchCV tuning and 5-fold cross-validation.</div>
-          <div class="ps"><span class="p p-m">Scikit-learn</span><span class="p p-m">Regression</span><span class="p p-m">GridSearchCV</span><span class="p p-m">Matplotlib</span></div>
-        </div>
-
-        <div class="proj">
-          <div class="pn">Contact Forge &mdash; AI-Assisted Web App <a href="https://contactforge-cloud-web.vercel.app/" class="pl">&#127760; LIVE</a></div>
-          <div class="pd">Full-stack app built and deployed end-to-end with AI-assisted vibe coding; rapid prototyping and production deployment on Vercel.</div>
-          <div class="ps"><span class="p p-n">Vibe Coding</span><span class="p p-t">Vercel</span><span class="p p-n">Full-Stack</span></div>
-        </div>
-
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">Iris Flower Classification &mdash; Multi-Model Benchmarking</div>
+        <div class="item-date">Live: iris-flower-classification-tan.vercel.app</div>
       </div>
-
-      <div class="sec">
-        <div class="st">Experience &amp; Activities</div>
-
-        <div class="mi">
-          <div class="mh"><div class="mt">ML Pipeline Development &mdash; Self-Directed</div><div class="md2">2024&ndash;Present</div></div>
-          <div class="mo">Academic + Personal Projects &middot; Python / Scikit-learn</div>
-          <div class="mb"><ul>
-            <li>Built 5+ supervised learning projects end-to-end: EDA &rarr; model training &rarr; evaluation &rarr; deployment</li>
-            <li>Containerized Python ML backend with Docker and deployed to Render</li>
-            <li>Applied cross-validation, grid search, and train-test splits consistently across all projects</li>
-          </ul></div>
-        </div>
-
-        <div class="mi">
-          <div class="mh"><div class="mt">Startup Pitch &mdash; ENTREPRENIA</div><div class="md2">2025 &middot; Lucknow</div></div>
-          <div class="mo">Nyaya Mitra (AI Legal-Tech) &middot; Public Presentation to Judges</div>
-          <div class="mb">Presented AI-powered legal accessibility platform concept covering product vision, user problem analysis, MVP strategy, and the Raksha Mode panic-button system design.</div>
-        </div>
-
-        <div class="mi">
-          <div class="mh"><div class="mt">Coderush 2.0 &mdash; Hackathon Participant</div><div class="md2">2025 &middot; Lucknow</div></div>
-          <div class="mo">Dr. Akhilesh Das Gupta Auditorium</div>
-          <div class="mb">Competitive coding &amp; problem-solving event: algorithm implementation, team collaboration, and rapid solution design under time constraints.</div>
-        </div>
+      <div class="item-desc">
+        <ul>
+          <li>Implemented and compared KNN, SVM, Decision Tree, and Logistic Regression classifiers; visualized decision boundaries and reported accuracy, precision, and recall for each.</li>
+        </ul>
       </div>
+      <div class="proj-tech"><strong>Tech Stack:</strong> Python, Scikit-learn, Matplotlib, Classification</div>
+    </div>
 
-      <div class="sec">
-        <div class="st">Analytical &amp; Product Competencies</div>
-        <div class="comp-g">
-          <div class="comp-it"><strong>ML Deployment:</strong>&nbsp;Model serving via Streamlit &amp; FastAPI, Dockerized backends</div>
-          <div class="comp-it"><strong>Data Analysis:</strong>&nbsp;EDA, time-series, cohort/segmentation, KPI reporting</div>
-          <div class="comp-it"><strong>Product Thinking:</strong>&nbsp;MVP design, user-first logic, AI product system design</div>
-          <div class="comp-it"><strong>AI-Assisted Dev:</strong>&nbsp;Prompt engineering &amp; Copilot-driven rapid prototyping</div>
-        </div>
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">Unemployment Analysis &mdash; Socio-Economic Data Study</div>
+        <div class="item-date">Live: unemployment-analysis-with-python-ivory.vercel.app</div>
       </div>
+      <div class="item-desc">
+        <ul>
+          <li>Analyzed real-world unemployment datasets with temporal trend analysis, regional comparisons, and data storytelling visualizations; demonstrated ability to derive policy-relevant insights from open data.</li>
+        </ul>
+      </div>
+      <div class="proj-tech"><strong>Tech Stack:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn</div>
+    </div>
 
-    </div><!-- /main -->
-  </div><!-- /body grid -->
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">Nyaya Mitra &mdash; AI-First Legal Accessibility Platform</div>
+        <div class="item-date">In Development</div>
+      </div>
+      <div class="item-desc">
+        <ul>
+          <li>Designing an AI-powered legal super-app targeting underserved communities; includes a &ldquo;Raksha Mode&rdquo; logic system for emergency legal assistance, demonstrating applied AI product thinking and system design.</li>
+        </ul>
+      </div>
+      <div class="proj-tech"><strong>Tech Stack:</strong> Python, AI Product Design, Vibe Coding, System Architecture</div>
+    </div>
 
-  <div class="ft">
-    <span>Shivansh Mishra &middot; Master Resume &middot; Lucknow, India</span>
-    <span>Open to internships &middot; shivansh-mishraji.github.io</span>
-  </div>
+    <!-- EXPERIENCE & ACTIVITIES -->
+    <div class="sh">Experience &amp; Activities</div>
+
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">ML Pipeline Development &mdash; Self-Directed Academic Projects</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <div class="item-org">Babu Banarasi Das University, Lucknow &middot; Python / Scikit-learn</div>
+      <div class="item-desc">
+        <ul>
+          <li>Independently built 10+ end-to-end ML and data science projects: data cleaning &rarr; EDA &rarr; feature engineering &rarr; model training &rarr; evaluation &rarr; Streamlit deployment.</li>
+          <li>Containerized a Python ML backend with Docker and deployed to Render; gained hands-on CI/CD and cloud deployment experience.</li>
+          <li>Applied systematic model comparison (cross-validation, GridSearchCV, train/test splits) across all projects; consistently documented findings and decisions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">Startup Pitch &mdash; ENTREPRENIA 2025</div>
+        <div class="item-date">2025 &middot; Lucknow, India</div>
+      </div>
+      <div class="item-org">Nyaya Mitra (AI Legal-Tech Startup Concept) &middot; Public Pitch to Judges</div>
+      <div class="item-desc">Presented a complete AI-powered legal accessibility product including user problem framing, market opportunity analysis, MVP strategy, and technical system design to a panel of industry judges.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-hd">
+        <div class="item-title">Coderush 2.0 &mdash; Hackathon Participant</div>
+        <div class="item-date">2025 &middot; Lucknow, India</div>
+      </div>
+      <div class="item-org">Dr. Akhilesh Das Gupta Auditorium</div>
+      <div class="item-desc">Participated in a competitive coding and algorithmic problem-solving hackathon; practiced rapid solution design, team collaboration, and implementation under time constraints.</div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="sh">Education</div>
+
+    <div class="item">
+      <div class="edu-deg">Bachelor of Technology &mdash; Computer Science &amp; Engineering (B.Tech CSE)</div>
+      <div class="edu-inst">Babu Banarasi Das University (BBD University), Lucknow, Uttar Pradesh</div>
+      <div class="edu-det">2024 &ndash; Present &nbsp;&middot;&nbsp; Specialization: Cloud Computing &amp; Machine Learning</div>
+    </div>
+
+    <div class="item">
+      <div class="edu-deg">Higher Secondary Education &mdash; Class XII (PCM + Computer Science)</div>
+      <div class="edu-inst">Red Rose Public School, Lucknow, Uttar Pradesh</div>
+      <div class="edu-det">2022 &ndash; 2024 &nbsp;&middot;&nbsp; Subjects: Mathematics, Physics, Chemistry, Computer Science</div>
+    </div>
+
+    <!-- CORE COMPETENCIES -->
+    <div class="sh">Core Competencies</div>
+    <ul class="comp-list">
+      <li>End-to-end ML pipeline design &amp; deployment</li>
+      <li>Exploratory Data Analysis &amp; statistical insight</li>
+      <li>Python data engineering &amp; preprocessing</li>
+      <li>Regression, classification &amp; model evaluation</li>
+      <li>Data storytelling &amp; business-framed reporting</li>
+      <li>AI-assisted rapid prototyping (Vibe Coding)</li>
+      <li>Docker containerization &amp; cloud deployment</li>
+      <li>SQL querying &amp; relational database design</li>
+      <li>KPI analysis &amp; cohort/segmentation analysis</li>
+      <li>Fast learner &middot; Builder mindset &middot; Team collaboration</li>
+    </ul>
+
+  </main>
+
+  <footer class="ft">
+    <span>Shivansh Mishra &middot; Lucknow, India &middot; Open to internships (ML, Data Science, AI Engineering)</span>
+    <span>shivanshmishraji90@gmail.com &middot; +91 9651165190</span>
+  </footer>
 
 </div><!-- /page -->
 </body>
