@@ -1,4 +1,8 @@
-/* ─── PARTICLES ──────────────────────────────── */
+/* ─── PARTICLES (DISABLED for Performance) ────────── */
+// The legacy 2D particle canvas was running simultaneously with the new 
+// Three.js CinematicBackground, causing massive GPU load and lag.
+// We disable this legacy system and rely entirely on the modern React 3D background.
+/*
 const cnv = document.getElementById('canvas');
 const cx = cnv.getContext('2d');
 let pts = [], mx = -999, my = -999;
@@ -70,12 +74,11 @@ function draw() {
   requestAnimationFrame(draw);
 }
 draw();
+*/
 
 /* ─── CURSOR GLOW ────────────────────────────── */
 const cur = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
   cur.style.left = e.clientX + 'px';
   cur.style.top = e.clientY + 'px';
 });

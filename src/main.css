@@ -386,6 +386,22 @@
 @media(max-width:640px) { .resume-role-grid { grid-template-columns:1fr; } }
 
 /* ══════════════════════════════════════════════════════
+   RESUME ROLE CARDS
+══════════════════════════════════════════════════════ */
+.resume-role-card { background:var(--card); border:1px solid var(--border); border-radius:var(--r); overflow:hidden; transition:border-color var(--t),transform var(--t),box-shadow var(--t); }
+@media (hover: hover) and (pointer: fine) { .resume-role-card:hover { border-color:rgba(124,58,237,.4); transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,.25); } }
+.rrc-top { padding:1.75rem 1.5rem; display:flex; flex-direction:column; gap:.75rem; align-items:flex-start; }
+.rrc-icon { font-size:2.2rem; }
+.rrc-badge { font-size:.65rem; font-weight:700; letter-spacing:.1em; padding:.3rem .75rem; border-radius:50px; border:1px solid; }
+.rrc-body { padding:1.25rem 1.5rem 1.5rem; display:flex; flex-direction:column; gap:.85rem; }
+.rrc-title { font-family:var(--head); font-size:1.05rem; font-weight:700; }
+.rrc-desc { font-size:.82rem; color:var(--txt2); line-height:1.75; }
+.rrc-skills { display:flex; flex-wrap:wrap; gap:.35rem; }
+.rrc-sk { display:inline-block; font-size:.7rem; padding:.22rem .6rem; border-radius:50px; font-family:var(--mono); font-weight:500; }
+.rrc-btn { display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1.25rem; border-radius:50px; color:#fff; text-decoration:none; font-size:.82rem; font-weight:600; transition:transform var(--t),box-shadow var(--t); align-self:flex-start; margin-top:.25rem; }
+@media (hover: hover) and (pointer: fine) { .rrc-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.3); } }
+
+/* ══════════════════════════════════════════════════════
    KEYBOARD ACCESSIBILITY — focus-visible styles
 ══════════════════════════════════════════════════════ */
 *:focus { outline: none; }
