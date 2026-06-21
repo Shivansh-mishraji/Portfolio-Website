@@ -728,6 +728,10 @@
       </div>
       <div class="rvr">
         <form class="cf" id="cform">
+          <input type="hidden" name="_subject" value="New message from Portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
           <div class="frow">
             <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" name="name" placeholder="John Doe" required></div>
             <div class="fg"><label for="fe">Email</label><input type="email" id="fe" name="email" placeholder="john@email.com" required></div>
@@ -737,13 +741,9 @@
           <button type="submit" id="cform-btn" class="btn-send"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
 
-        <!-- ntfy.sh instant phone push notification (free & forever) -->
+        <!-- FormSubmit.co AJAX Integration (No Redirects) -->
         <script>
         (function() {
-          // ── CONFIG ──────────────────────────────────────────────
-          const NTFY_TOPIC = 'shivansh-portfolio-a9x7k3mz';
-          // ────────────────────────────────────────────────────────
-
           const form = document.getElementById('cform');
           const btn = document.getElementById('cform-btn');
           if (!form) return;
@@ -751,44 +751,36 @@
           form.addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent page redirect entirely!
             
-            // Read field values
-            const name    = (document.getElementById('fn')  || {}).value || 'Unknown';
-            const email   = (document.getElementById('fe')  || {}).value || 'Unknown';
-            const subject = (document.getElementById('fs2') || {}).value || 'No Subject';
-            const message = (document.getElementById('fm')  || {}).value || '';
-
-            // Compose notification body
-            const body = [
-              '👤 ' + name + ' <' + email + '>',
-              '📌 ' + subject,
-              '💬 ' + message.slice(0, 300) + (message.length > 300 ? '...' : '')
-            ].join('\n');
-
             const originalBtnText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.disabled = true;
 
-            // Send push notification to phone
-            fetch('https://ntfy.sh/' + NTFY_TOPIC, {
+            // Submit using FormSubmit.co AJAX API
+            fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
               method: 'POST',
+              body: new FormData(form),
               headers: {
-                'Title': '📬 Portfolio Contact from ' + name,
-                'Priority': 'high',
-                'Tags': 'email,portfolio',
-                'Content-Type': 'text/plain'
-              },
-              body: body
-            }).then(function() {
-              // Success
-              btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent Successfully!';
-              btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-              form.reset();
-              setTimeout(() => {
-                btn.innerHTML = originalBtnText;
-                btn.style.background = '';
-                btn.disabled = false;
-              }, 4000);
-            }).catch(function() {
+                'Accept': 'application/json'
+              }
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success === 'true' || data.success === true) {
+                // Success
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent Successfully!';
+                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                form.reset();
+                setTimeout(() => {
+                  btn.innerHTML = originalBtnText;
+                  btn.style.background = '';
+                  btn.disabled = false;
+                }, 4000);
+              } else {
+                throw new Error('FormSubmit returned false success');
+              }
+            })
+            .catch(function(error) {
+              console.error(error);
               // Error fallback
               btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error Sending';
               btn.style.background = 'linear-gradient(135deg, #ef4444, #b91c1c)';
