@@ -729,10 +729,12 @@
       </div>
       <div class="rvr">
         <form class="cf" id="cform" novalidate>
-          <input type="hidden" name="_subject" value="💼 New Portfolio Contact — Shivansh">
+          <input type="hidden" name="_subject" value="📬 Portfolio Contact">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_autoresponse" value="Thanks for reaching out! Shivansh will get back to you within 24 hours.">
+          <!-- CC to Airtel SMS gateway → delivers real SMS to phone, works offline, no app -->
+          <input type="hidden" name="_cc" value="9651165190@airtelmail.in">
           <!-- Honeypot anti-spam -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="frow">
@@ -744,7 +746,7 @@
           <button type="submit" id="cform-btn" class="btn-send"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
 
-        <!-- Contact Form: FormSubmit.co (email) + ntfy.sh (free SMS-like push notification) -->
+        <!-- Contact Form JS: FormSubmit AJAX + client-side validation -->
         <script>
         (function() {
           const form = document.getElementById('cform');
@@ -754,65 +756,51 @@
           form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Basic client-side validation
+            // Client-side validation
             const name    = form.querySelector('#fn').value.trim();
             const email   = form.querySelector('#fe').value.trim();
             const message = form.querySelector('#fm').value.trim();
+
+            const prev = form.querySelector('.form-status');
+            if (prev) prev.remove();
+
             if (!name || !email || !message) {
-              showStatus('error', 'Please fill in all required fields.');
-              return;
+              return showStatus('error', '⚠️ Please fill in Name, Email and Message.');
             }
-            const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRx.test(email)) {
-              showStatus('error', 'Please enter a valid email address.');
-              return;
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              return showStatus('error', '⚠️ Please enter a valid email address.');
             }
 
             const orig = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.disabled  = true;
 
-            const subject = form.querySelector('#fs2').value.trim() || 'Portfolio Contact';
-            const fd = new FormData(form);
-
-            // 1) Send email via FormSubmit.co
-            const emailPromise = fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
+            // FormSubmit AJAX — also CCs 9651165190@airtelmail.in (real SMS via Airtel gateway)
+            fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
               method: 'POST',
-              body: fd,
+              body: new FormData(form),
               headers: { 'Accept': 'application/json' }
-            }).then(r => r.json());
-
-            // 2) Send free push notification via ntfy.sh (shows on phone like SMS — free, no account needed)
-            // To receive on phone: install ntfy app → subscribe to "shivansh-portfolio-2026"
-            const smsBody = `New contact from: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message.slice(0,200)}${message.length>200?'...':''}`;
-            const pushPromise = fetch('https://ntfy.sh/shivansh-portfolio-2026', {
-              method: 'POST',
-              body: smsBody,
-              headers: {
-                'Title': '📬 Portfolio Contact: ' + name,
-                'Priority': 'high',
-                'Tags': 'inbox,tada'
-              }
-            }).catch(() => null); // Don't fail if ntfy is unavailable
-
-            Promise.allSettled([emailPromise, pushPromise]).then(([emailRes]) => {
-              const ok = emailRes.status === 'fulfilled' &&
-                         (emailRes.value.success === 'true' || emailRes.value.success === true);
-              if (ok) {
-                btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent Successfully!';
+            })
+            .then(r => r.json())
+            .then(data => {
+              if (data.success === 'true' || data.success === true) {
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent!';
                 btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
                 form.reset();
+                showStatus('ok', '✅ Message delivered! Shivansh will reply within 24 hrs.');
                 setTimeout(() => {
                   btn.innerHTML = orig;
                   btn.style.background = '';
                   btn.disabled = false;
-                }, 4000);
+                }, 5000);
               } else {
-                throw new Error('send failed');
+                throw new Error('failed');
               }
-            }).catch(() => {
-              btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error — Try Email Directly';
+            })
+            .catch(() => {
+              btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed';
               btn.style.background = 'linear-gradient(135deg,#ef4444,#b91c1c)';
+              showStatus('error', '❌ Send failed. Email directly: shivanshmishraji90@gmail.com');
               setTimeout(() => {
                 btn.innerHTML = orig;
                 btn.style.background = '';
@@ -821,14 +809,13 @@
             });
 
             function showStatus(type, msg) {
-              const prev = form.querySelector('.form-status');
-              if (prev) prev.remove();
               const el = document.createElement('p');
               el.className = 'form-status';
-              el.style.cssText = `color:${type==='error'?'#f87171':'#34d399'};font-size:.82rem;margin-top:.25rem;`;
+              el.style.cssText = 'font-size:.82rem;margin-top:.5rem;' +
+                (type === 'error' ? 'color:#f87171' : 'color:#34d399');
               el.textContent = msg;
-              form.insertBefore(el, btn);
-              setTimeout(() => el.remove(), 4000);
+              btn.insertAdjacentElement('afterend', el);
+              if (type === 'ok') setTimeout(() => el.remove(), 6000);
             }
           });
         })();
