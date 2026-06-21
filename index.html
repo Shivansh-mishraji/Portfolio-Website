@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="/src/main.css">
 </head>
 <body>
+  <!-- Skip navigation for accessibility -->
+  <a class="skip-nav" href="#about">Skip to main content</a>
+
   <div id="cinematic-bg-container"></div>
   <div id="onboarding-container"></div>
   <div id="custom-cursor-container"></div>
@@ -48,7 +51,7 @@
 <!-- ════════════════════════════════════════════
      NAV
 ════════════════════════════════════════════ -->
-<nav id="nav">
+<nav id="nav" role="navigation" aria-label="Main navigation">
   <a href="#hero" class="logo">SM<span style="color:var(--cyan)">.</span></a>
   <ul class="nav-ul">
     <li><a href="#about">About</a></li>
@@ -59,18 +62,16 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <div class="burger" id="burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  <div class="burger" id="burger" onclick="toggleNav()" aria-label="Toggle mobile menu" aria-expanded="false" role="button"><span></span><span></span><span></span></div>
 </nav>
 
-<div class="mob-nav" id="mobnav">
+<div class="mob-nav" id="mobnav" role="dialog" aria-label="Mobile navigation">
   <a href="#about" onclick="closeNav()">About</a>
   <a href="#skills" onclick="closeNav()">Skills</a>
   <a href="#projects" onclick="closeNav()">Projects</a>
   <a href="#experience" onclick="closeNav()">Experience</a>
-  <a href="#focus" onclick="closeNav()">Focus</a>
   <a href="#resume" onclick="closeNav()">Resume</a>
   <a href="#education" onclick="closeNav()">Education</a>
-  <a href="#interests" onclick="closeNav()">Interests</a>
   <a href="#contact" onclick="closeNav()">Contact</a>
 </div>
 
@@ -95,7 +96,7 @@
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-p" id="h-projects"><i class="fas fa-rocket"></i> View Projects</a>
-          <a href="resume-master.html" target="_blank" rel="noopener noreferrer" class="btn-o" id="h-resume" style="border-color:rgba(124,58,237,.5);color:var(--violet-l);"><i class="fas fa-file-alt"></i> Download Resume</a>
+          <a href="resume-master.html" target="_blank" rel="noopener noreferrer" class="btn-o" id="h-resume" style="border-color:rgba(124,58,237,.5);color:var(--violet-l);" aria-label="View resume (opens in new tab, use Ctrl+P to save as PDF)"><i class="fas fa-file-alt"></i> View Resume</a>
           <a href="#contact" class="btn-o" id="h-contact"><i class="fas fa-envelope"></i> Get In Touch</a>
         </div>
         <div class="hero-socials">
@@ -114,7 +115,7 @@
           <div class="hero-orbit orbit2"><div class="orbit-dot od2" style="top:50%;left:100%;transform:translate(-50%,-50%)"></div></div>
           <div class="hero-photo-ring">
             <div class="hero-photo-inner">
-              <img src="profile.jpg" alt="Shivansh Mishra" onerror="this.style.display='none';this.parentElement.querySelector('.ph-fallback').style.display='flex'">
+              <img src="profile.jpg" alt="Shivansh Mishra" loading="eager" decoding="async" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';this.parentElement.querySelector('.ph-fallback').style.display='flex'">
               <div class="ph-fallback" style="display:none">🧑‍💻</div>
             </div>
           </div>
@@ -408,13 +409,13 @@
 
 
 
-      <!-- Auto-Synced Repo: Kaggle-Boost -->
+      <!-- Kaggle-Boost -->
       <div class="pcard rv">
-        <span class="pbadge badge-ai" style="background:rgba(234, 179, 8, 0.1);color:#eab308;border:1px solid rgba(234, 179, 8, 0.2);">IN PROGRESS</span>
+        <span class="pbadge badge-ai" style="background:rgba(234,179,8,0.1);color:#eab308;border:1px solid rgba(234,179,8,0.2);">IN PROGRESS</span>
         <div class="picon" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,182,212,.1))">🔥</div>
         <h3 class="ptitle">Kaggle-Boost</h3>
-        <p class="pdesc">KaggleBoost — Autonomous Kaggle Profile Enhancement System Entry point: orchestrates scraping, cleaning, packaging, and uploading.</p>
-        <div class="ptags"><span class="ptag">Code</span><span class="ptag">GitHub</span></div>
+        <p class="pdesc">Autonomous Kaggle Profile Enhancement System — orchestrates scraping, cleaning, packaging, and uploading datasets to maximize profile visibility.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Automation</span><span class="ptag">GitHub</span></div>
         <div class="plinks">
           <a href="https://github.com/Shivansh-mishraji/Kaggle-Boost" target="_blank" rel="noopener noreferrer" class="plk plk-g"><i class="fab fa-github"></i> View Code</a>
         </div>
@@ -548,7 +549,7 @@
     </div>
 
     <!-- ROLE-SPECIFIC CARDS — 2×2 grid -->
-    <div class="rv" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2rem;">
+    <div class="resume-role-grid rv">
 
       <!-- ML Engineer -->
       <div class="resume-role-card" onclick="window.open('resume-ml-engineer.html','_blank')" id="cv-ml" style="cursor:pointer;">
@@ -727,69 +728,108 @@
         </div>
       </div>
       <div class="rvr">
-        <form class="cf" id="cform">
-          <input type="hidden" name="_subject" value="New message from Portfolio">
+        <form class="cf" id="cform" novalidate>
+          <input type="hidden" name="_subject" value="💼 New Portfolio Contact — Shivansh">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! Shivansh will get back to you within 24 hours.">
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="frow">
-            <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" name="name" placeholder="John Doe" required></div>
-            <div class="fg"><label for="fe">Email</label><input type="email" id="fe" name="email" placeholder="john@email.com" required></div>
+            <div class="fg"><label for="fn">Your Name *</label><input type="text" id="fn" name="name" placeholder="John Doe" required autocomplete="name"></div>
+            <div class="fg"><label for="fe">Email *</label><input type="email" id="fe" name="email" placeholder="john@email.com" required autocomplete="email"></div>
           </div>
-          <div class="fg"><label for="fs2">Subject</label><input type="text" id="fs2" name="subject" placeholder="Internship / Collaboration / Just Saying Hi"></div>
-          <div class="fg"><label for="fm">Message</label><textarea id="fm" name="message" placeholder="Hi Shivansh, I'd love to connect about..." required></textarea></div>
+          <div class="fg"><label for="fs2">Subject</label><input type="text" id="fs2" name="subject" placeholder="Internship / Collaboration / Just Saying Hi" autocomplete="off"></div>
+          <div class="fg"><label for="fm">Message *</label><textarea id="fm" name="message" placeholder="Hi Shivansh, I'd love to connect about..." required></textarea></div>
           <button type="submit" id="cform-btn" class="btn-send"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
 
-        <!-- FormSubmit.co AJAX Integration (No Redirects) -->
+        <!-- Contact Form: FormSubmit.co (email) + ntfy.sh (free SMS-like push notification) -->
         <script>
         (function() {
           const form = document.getElementById('cform');
-          const btn = document.getElementById('cform-btn');
-          if (!form) return;
+          const btn  = document.getElementById('cform-btn');
+          if (!form || !btn) return;
 
           form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent page redirect entirely!
-            
-            const originalBtnText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
+            e.preventDefault();
 
-            // Submit using FormSubmit.co AJAX API
-            fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
+            // Basic client-side validation
+            const name    = form.querySelector('#fn').value.trim();
+            const email   = form.querySelector('#fe').value.trim();
+            const message = form.querySelector('#fm').value.trim();
+            if (!name || !email || !message) {
+              showStatus('error', 'Please fill in all required fields.');
+              return;
+            }
+            const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRx.test(email)) {
+              showStatus('error', 'Please enter a valid email address.');
+              return;
+            }
+
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled  = true;
+
+            const subject = form.querySelector('#fs2').value.trim() || 'Portfolio Contact';
+            const fd = new FormData(form);
+
+            // 1) Send email via FormSubmit.co
+            const emailPromise = fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
               method: 'POST',
-              body: new FormData(form),
+              body: fd,
+              headers: { 'Accept': 'application/json' }
+            }).then(r => r.json());
+
+            // 2) Send free push notification via ntfy.sh (shows on phone like SMS — free, no account needed)
+            // To receive on phone: install ntfy app → subscribe to "shivansh-portfolio-2026"
+            const smsBody = `New contact from: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message.slice(0,200)}${message.length>200?'...':''}`;
+            const pushPromise = fetch('https://ntfy.sh/shivansh-portfolio-2026', {
+              method: 'POST',
+              body: smsBody,
               headers: {
-                'Accept': 'application/json'
+                'Title': '📬 Portfolio Contact: ' + name,
+                'Priority': 'high',
+                'Tags': 'inbox,tada'
               }
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.success === 'true' || data.success === true) {
-                // Success
+            }).catch(() => null); // Don't fail if ntfy is unavailable
+
+            Promise.allSettled([emailPromise, pushPromise]).then(([emailRes]) => {
+              const ok = emailRes.status === 'fulfilled' &&
+                         (emailRes.value.success === 'true' || emailRes.value.success === true);
+              if (ok) {
                 btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent Successfully!';
-                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
                 form.reset();
                 setTimeout(() => {
-                  btn.innerHTML = originalBtnText;
+                  btn.innerHTML = orig;
                   btn.style.background = '';
                   btn.disabled = false;
                 }, 4000);
               } else {
-                throw new Error('FormSubmit returned false success');
+                throw new Error('send failed');
               }
-            })
-            .catch(function(error) {
-              console.error(error);
-              // Error fallback
-              btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error Sending';
-              btn.style.background = 'linear-gradient(135deg, #ef4444, #b91c1c)';
+            }).catch(() => {
+              btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error — Try Email Directly';
+              btn.style.background = 'linear-gradient(135deg,#ef4444,#b91c1c)';
               setTimeout(() => {
-                btn.innerHTML = originalBtnText;
+                btn.innerHTML = orig;
                 btn.style.background = '';
                 btn.disabled = false;
-              }, 4000);
+              }, 5000);
             });
+
+            function showStatus(type, msg) {
+              const prev = form.querySelector('.form-status');
+              if (prev) prev.remove();
+              const el = document.createElement('p');
+              el.className = 'form-status';
+              el.style.cssText = `color:${type==='error'?'#f87171':'#34d399'};font-size:.82rem;margin-top:.25rem;`;
+              el.textContent = msg;
+              form.insertBefore(el, btn);
+              setTimeout(() => el.remove(), 4000);
+            }
           });
         })();
         </script>

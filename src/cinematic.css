@@ -45,12 +45,14 @@
   transform-style: preserve-3d;
 }
 
-/* Base override to ensure body has deep dark background and hidden overflow for cinematic load */
+/* Body background: let main.css control it; html fallback covers the very first paint */
 html {
   background-color: #02020a;
 }
-body {
-  background-color: transparent !important;
+/* Only make body transparent if the cinematic bg container actually loaded */
+#cinematic-bg-container:not(:empty) ~ * body,
+body:has(#cinematic-bg-container:not(:empty)) {
+  background-color: transparent;
 }
 
 #cinematic-bg-container {
@@ -83,6 +85,3 @@ body {
 
 /* Disable heavy SVG noise on mobile to prevent lag */
 @media (max-width: 768px) { .cinematic-grain { display: none !important; } }
-
-/* Mobile nav scroll lock */
-body.nav-open { overflow: hidden; }
