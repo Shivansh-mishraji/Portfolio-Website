@@ -6,152 +6,94 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AdvancedEffects() {
   useEffect(() => {
-    // Only apply heavy effects on non-touch, fine-pointer devices
-    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const isMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 1. Magnetic Buttons — only on desktop/mouse
-    if (isFinePointer) {
-      const magneticElements = document.querySelectorAll('.btn-p, .btn-o, .spill, .nav-ul a');
+    if (reduced) return; // nothing if user prefers reduced motion
 
-      magneticElements.forEach((el) => {
-        const onMove = (e) => {
-          const rect = el.getBoundingClientRect();
-          const x = (e.clientX - rect.left) - rect.width / 2;
-          const y = (e.clientY - rect.top) - rect.height / 2;
-          gsap.to(el, { x: x * 0.35, y: y * 0.35, duration: 0.4, ease: 'power2.out' });
-        };
-        const onLeave = () => {
-          gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.3)' });
-        };
-        el.addEventListener('mousemove', onMove);
-        el.addEventListener('mouseleave', onLeave);
-        // Store for cleanup
-        el._magneticMove = onMove;
-        el._magneticLeave = onLeave;
-      });
-    }
-
-    // 2. Cinematic Scroll Reveals on headings
-    // NOTE: We do NOT split heading text into spans — that breaks CSS gradient clip.
-    // Instead, we animate the whole heading element with a smooth reveal.
-    const headings = document.querySelectorAll('.ttl');
-    headings.forEach((heading) => {
-      ScrollTrigger.create({
-        trigger: heading,
-        start: 'top 88%',
-        onEnter: () => {
-          gsap.fromTo(heading,
-            { opacity: 0, y: 20, skewY: 1 },
-            { opacity: 1, y: 0, skewY: 0, duration: 0.8, ease: 'power3.out' }
-          );
-        },
-        once: true
-      });
+    // 1. Batch scroll reveals — ONE ScrollTrigger per group, not per element
+    ScrollTrigger.batch('.ttl', {
+      start: 'top 90%',
+      onEnter: (els) => gsap.fromTo(els,
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.05 }
+      ),
+      once: true
     });
 
-    // 3. 3D Glassmorphism Cards — tl-card and resume-role-card only
-    // (pcard tilt is handled in main.js to avoid conflicts)
-    if (isFinePointer) {
-      const cards = document.querySelectorAll('.tl-card, .resume-role-card');
+    ScrollTrigger.batch('.fc, .icard, .scard', {
+      start: 'top 92%',
+      onEnter: (els) => gsap.fromTo(els,
+        { opacity: 0, y: 22, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'power3.out', stagger: 0.06 }
+      ),
+      once: true
+    });
 
-      cards.forEach((card) => {
-        // Ensure perspective on parent
-        if (card.parentNode) {
-          card.parentNode.style.perspective = '1000px';
-        }
-
-        // Create glare element
-        const glare = document.createElement('div');
-        glare.className = 'card-glare';
-        glare.style.cssText = `
-          position:absolute;top:0;left:0;width:100%;height:100%;
-          background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,0.12) 25%,transparent 30%);
-          transform:translateX(-100%);pointer-events:none;z-index:10;border-radius:inherit;
-        `;
-
-        if (window.getComputedStyle(card).position === 'static') {
-          card.style.position = 'relative';
-        }
-        card.style.overflow = 'hidden';
-        card.appendChild(glare);
-
+    // 2. Magnetic buttons — throttled, desktop only
+    if (isMouse) {
+      const cleanup = [];
+      document.querySelectorAll('.btn-p, .btn-o, .nav-cta').forEach((el) => {
+        let raf;
         const onMove = (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
-          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
-
-          gsap.to(card, {
-            rotateX,
-            rotateY,
-            translateY: -4,
-            duration: 0.5,
-            ease: 'power2.out',
-            transformPerspective: 1000,
-            overwrite: 'auto'
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const r = el.getBoundingClientRect();
+            gsap.to(el, {
+              x: (e.clientX - r.left - r.width  / 2) * 0.28,
+              y: (e.clientY - r.top  - r.height / 2) * 0.28,
+              duration: 0.35, ease: 'power2.out', overwrite: true
+            });
           });
-
-          const glareX = (x / rect.width) * 200 - 100;
-          gsap.to(glare, { x: `${glareX}%`, duration: 0.2 });
         };
-
         const onLeave = () => {
-          gsap.to(card, {
-            rotateX: 0, rotateY: 0, translateY: 0,
-            duration: 0.8, ease: 'power2.out', overwrite: 'auto'
-          });
-          gsap.to(glare, { x: '-100%', duration: 0.8 });
+          cancelAnimationFrame(raf);
+          gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1,0.4)', overwrite: true });
         };
-
-        card.addEventListener('mousemove', onMove);
-        card.addEventListener('mouseleave', onLeave);
-        card._advMove = onMove;
-        card._advLeave = onLeave;
-      });
-    }
-
-    // 4. Staggered section entry animations (focus cards, interest cards)
-    const groups = [
-      { selector: '.focus-cards .fc', delay: 0.08 },
-      { selector: '.int-g .icard', delay: 0.05 },
-      { selector: '.stats-g .scard', delay: 0.1 },
-    ];
-
-    groups.forEach(({ selector, delay }) => {
-      const items = document.querySelectorAll(selector);
-      items.forEach((item, i) => {
-        ScrollTrigger.create({
-          trigger: item,
-          start: 'top 90%',
-          onEnter: () => {
-            gsap.fromTo(item,
-              { opacity: 0, y: 24, scale: 0.97 },
-              { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'power3.out', delay: i * delay }
-            );
-          },
-          once: true
+        el.addEventListener('mousemove', onMove, { passive: true });
+        el.addEventListener('mouseleave', onLeave);
+        cleanup.push(() => {
+          el.removeEventListener('mousemove', onMove);
+          el.removeEventListener('mouseleave', onLeave);
+          cancelAnimationFrame(raf);
         });
       });
-    });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-
-      // Remove magnetic listeners
-      document.querySelectorAll('.btn-p, .btn-o, .spill, .nav-ul a').forEach((el) => {
-        if (el._magneticMove) el.removeEventListener('mousemove', el._magneticMove);
-        if (el._magneticLeave) el.removeEventListener('mouseleave', el._magneticLeave);
+      // 3. Card tilt — .tl-card only, no glare div injection (DOM mutation causes reflow)
+      document.querySelectorAll('.tl-card').forEach((card) => {
+        let raf2;
+        const onMove = (e) => {
+          cancelAnimationFrame(raf2);
+          raf2 = requestAnimationFrame(() => {
+            const r = card.getBoundingClientRect();
+            gsap.to(card, {
+              rotateX: ((e.clientY - r.top  - r.height / 2) / (r.height / 2)) * -5,
+              rotateY: ((e.clientX - r.left - r.width  / 2) / (r.width  / 2)) *  5,
+              duration: 0.4, ease: 'power2.out',
+              transformPerspective: 900, overwrite: 'auto'
+            });
+          });
+        };
+        const onLeave = () => {
+          cancelAnimationFrame(raf2);
+          gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.7, ease: 'power2.out', overwrite: 'auto' });
+        };
+        card.addEventListener('mousemove', onMove, { passive: true });
+        card.addEventListener('mouseleave', onLeave);
+        cleanup.push(() => {
+          card.removeEventListener('mousemove', onMove);
+          card.removeEventListener('mouseleave', onLeave);
+          cancelAnimationFrame(raf2);
+        });
       });
 
-      // Remove card listeners
-      document.querySelectorAll('.tl-card, .resume-role-card').forEach((card) => {
-        if (card._advMove) card.removeEventListener('mousemove', card._advMove);
-        if (card._advLeave) card.removeEventListener('mouseleave', card._advLeave);
-        const glare = card.querySelector('.card-glare');
-        if (glare) glare.remove();
-      });
-    };
+      return () => {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+        cleanup.forEach(fn => fn());
+      };
+    }
+
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, []);
 
   return null;

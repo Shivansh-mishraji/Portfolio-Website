@@ -76,12 +76,14 @@ function draw() {
 draw();
 */
 
-/* ─── CURSOR GLOW ────────────────────────────── */
+/* ─── CURSOR GLOW (handled by React CustomCursor) ─── */
+// The #cursor div is kept in HTML only as a fallback glow for touch devices
+// On mouse devices, React's CustomCursor component takes over.
 const cur = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cur.style.left = e.clientX + 'px';
-  cur.style.top = e.clientY + 'px';
-});
+if (cur && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  // React CustomCursor is active — hide the CSS-only fallback
+  cur.style.display = 'none';
+}
 
 /* ─── TYPED TEXT ─────────────────────────────── */
 const lines = ['Data Science Enthusiast', 'ML Engineer (in progress)', 'AI Product Builder', 'Vibe Coder & Prototyper', 'Python Developer', 'Cloud Computing Student'];
