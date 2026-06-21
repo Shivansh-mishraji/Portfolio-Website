@@ -58,9 +58,18 @@
 </head>
 <body>
 <div class="dl-bar">
-  <a href="index.html" class="db db-o">← Portfolio</a>
-  <button class="db db-p" onclick="window.print()">⬇ Save as PDF</button>
+  <a href="/" class="db db-o" aria-label="Back to Portfolio">← Back to Portfolio</a>
+  <button class="db db-p" onclick="printResume()" aria-label="Download resume as PDF">⬇ Download PDF</button>
 </div>
+<script>
+function printResume() {
+  const hint = document.createElement('div');
+  hint.textContent = "Tip: In the print dialog, choose 'Save as PDF' as destination.";
+  hint.style.cssText = 'position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#064e3b;color:#6ee7b7;padding:.7rem 1.4rem;border-radius:8px;font-size:.82rem;font-family:Inter,sans-serif;z-index:9999;border:1px solid rgba(110,231,183,.3);box-shadow:0 8px 24px rgba(0,0,0,.3);white-space:nowrap;';
+  document.body.appendChild(hint);
+  setTimeout(() => { window.print(); hint.remove(); }, 800);
+}
+</script>
 <div class="page">
   <div class="hd">
     <div class="hd-top">
@@ -156,7 +165,7 @@
       </div>
     </div>
   </div>
-  <div class="ft"><span>Shivansh Mishra · Data Scientist Resume · Lucknow, India</span><span>Open to internships · resume-webpage-ashy.vercel.app</span></div>
+  <div class="ft"><span>Shivansh Mishra · Data Scientist Resume · Lucknow, India</span><span>Open to internships · shivansh-mishraji.github.io</span></div>
 </div>
 </body>
 </html>
