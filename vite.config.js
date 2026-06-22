@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -8,7 +9,21 @@ const __dirname = dirname(__filename)
 
 // Multi-page app: each resume HTML is its own entry point
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      devOptions: { enabled: false },
+      manifest: {
+        name: 'Shivansh Mishra Portfolio',
+        short_name: 'Shivansh',
+        theme_color: '#04040f',
+        icons: [
+          { src: '/profile.webp', sizes: '512x512', type: 'image/webp', purpose: 'any maskable' }
+        ]
+      }
+    })
+  ],
   build: {
     rollupOptions: {
       input: {
@@ -18,6 +33,13 @@ export default defineConfig({
         'resume-data-scientist': resolve(__dirname, 'resume-data-scientist.html'),
         'resume-data-analyst': resolve(__dirname, 'resume-data-analyst.html'),
         'resume-ai-engineer': resolve(__dirname, 'resume-ai-engineer.html'),
+      },
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'vendor-gsap': ['gsap']
+        }
       }
     }
   }

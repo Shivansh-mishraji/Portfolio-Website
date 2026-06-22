@@ -28,14 +28,14 @@ if (onboardingContainer) {
 
 // Advanced scroll/hover effects (GSAP batched, RAF-throttled)
 // Defer until after first paint so it doesn't block LCP
-requestIdleCallback
-  ? requestIdleCallback(() => {
-      const el = document.createElement('div');
-      document.body.appendChild(el);
-      createRoot(el).render(<AdvancedEffects />);
-    })
-  : setTimeout(() => {
-      const el = document.createElement('div');
-      document.body.appendChild(el);
-      createRoot(el).render(<AdvancedEffects />);
-    }, 300);
+const initAdvancedEffects = () => {
+  const el = document.createElement('div');
+  document.body.appendChild(el);
+  createRoot(el).render(<AdvancedEffects />);
+};
+
+if ('requestIdleCallback' in window) {
+  window.requestIdleCallback(initAdvancedEffects);
+} else {
+  setTimeout(initAdvancedEffects, 300);
+}

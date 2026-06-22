@@ -440,7 +440,8 @@ a:focus-visible, button:focus-visible {
 .hero-orbit, .hero-photo-ring { will-change: transform; }
 .tcur, .hdot { will-change: opacity; }
 .bar-fill { will-change: width; }
-.rv, .rvl, .rvr { will-change: opacity, transform; }
+.rv, .rvl, .rvr { will-change: opacity, transform; touch-action: pan-y; }
+.pcard, .scard, .icard { touch-action: pan-y; }
 
 /* ══════════════════════════════════════════════════════
    PREFERS-REDUCED-MOTION
