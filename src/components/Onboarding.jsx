@@ -55,13 +55,14 @@ export default function Onboarding({ onComplete }) {
         complete: () => {
           // Hold for 1.5 seconds, then fade out directly to the website
           setTimeout(() => {
+            if (!containerRef.current) return;
             gsap.to(containerRef.current, {
               opacity: 0,
               scale: 1.1,
               filter: 'blur(20px)',
               duration: 1.5,
               ease: 'power3.inOut',
-              onComplete: () => onComplete(false)
+              onComplete: () => onComplete()
             });
           }, 1500);
         }

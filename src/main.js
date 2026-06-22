@@ -129,15 +129,26 @@ window.addEventListener('scroll', () => {
 
 /* ─── MOBILE NAV ─────────────────────────────── */
 function toggleNav() {
-  document.getElementById('burger').classList.toggle('open');
-  document.getElementById('mobnav').classList.toggle('open');
-  // Prevent body scroll when nav is open
-  document.body.classList.toggle('nav-open', document.getElementById('mobnav').classList.contains('open'));
+  const burger = document.getElementById('burger');
+  const mobnav = document.getElementById('mobnav');
+  const isOpen = !mobnav.hidden;
+  burger.classList.toggle('open', !isOpen);
+  burger.setAttribute('aria-expanded', String(!isOpen));
+  if (isOpen) {
+    mobnav.hidden = true;
+    document.body.classList.remove('nav-open');
+  } else {
+    mobnav.hidden = false;
+    document.body.classList.add('nav-open');
+  }
 }
 
 function closeNav() {
-  document.getElementById('burger').classList.remove('open');
-  document.getElementById('mobnav').classList.remove('open');
+  const burger = document.getElementById('burger');
+  const mobnav = document.getElementById('mobnav');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  mobnav.hidden = true;
   document.body.classList.remove('nav-open');
 }
 

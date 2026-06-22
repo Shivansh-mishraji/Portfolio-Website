@@ -74,7 +74,7 @@
     .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
     .mob-nav { display:none; position:fixed; inset:0; top:62px; background:rgba(4,4,15,.98); backdrop-filter:blur(24px); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
-    .mob-nav.open { display:flex; }
+    .mob-nav:not([hidden]) { display:flex; }
     .mob-nav a { color:var(--txt); text-decoration:none; font-family:var(--head); font-size:1.8rem; font-weight:700; transition:color var(--t); }
 @media (hover: hover) and (pointer: fine) {     .mob-nav a:hover { color:var(--violet-l); } }
 
@@ -375,9 +375,9 @@
 @media (hover: hover) and (pointer: fine) { .gh-stats img:hover { transform:translateY(-3px); } }
 
 /* ══════════════════════════════════════════════════════
-   TAB ACTIVE STATE FIX (works on touch too)
+   pimpact — project impact callout line
 ══════════════════════════════════════════════════════ */
-.tab.on { background:linear-gradient(135deg,var(--violet),var(--cyan)); border-color:transparent; color:#fff; }
+.pimpact { font-size:.75rem; color:var(--cyan); margin-bottom:.4rem; font-style:italic; }
 
 /* ══════════════════════════════════════════════════════
    RESUME ROLE GRID — responsive
