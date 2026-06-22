@@ -110,14 +110,14 @@
 
       <!-- Left: Text -->
       <div>
-        <div class="hero-badge"><span class="hdot"></span>Available for DS &amp; ML Internships &mdash; June 2026</div>
+        <div class="hero-badge"><span class="hdot"></span>Available for DS &amp; ML Internships &mdash; Open to Opportunities</div>
         <h1 class="hero-name"><span class="grd">Shivansh</span><br>Mishra</h1>
         <div class="hero-role">
           I'm a <span class="tcyan" id="typed"></span><span class="tcur"></span>
         </div>
         <p class="hero-desc">
           Aspiring <strong style="color:var(--violet-l)">ML Engineer</strong> &amp; <strong style="color:var(--cyan)">Data Scientist</strong> &mdash; Pre-final year B.Tech CSE (CGPA 8.0+).<br>
-          Practical ML &amp; Data Science skills backed by <em style="color:var(--txt2)">10+ live deployed projects</em> — EDA, ML pipelines, Scikit-learn, Pandas, SQL, DSA. I build real products that solve real problems &mdash; <em style="color:var(--txt2)">available June 2026.</em>
+          Practical ML &amp; Data Science skills backed by <em style="color:var(--txt2)">10+ live deployed projects</em> — EDA, ML pipelines, Scikit-learn, Pandas, SQL, DSA. I build real products that solve real problems &mdash; <em style="color:var(--txt2)">immediately available.</em>
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-p" id="h-projects"><i class="fas fa-rocket"></i> View Projects</a>
@@ -761,6 +761,10 @@
             <div class="ctlk-ic" style="background:linear-gradient(135deg,#2d333b,#444c56)"><i class="fab fa-github-alt"></i></div>
             <div><div class="ctlk-label">GitHub Secondary</div>Shivanshmishra7275</div>
           </a>
+          <a href="https://www.kaggle.com/shivansh7275" target="_blank" rel="noopener noreferrer" class="ctlk" id="ct-kaggle">
+            <div class="ctlk-ic" style="background:linear-gradient(135deg,#20BEFF,#1095cc)"><i class="fab fa-kaggle"></i></div>
+            <div><div class="ctlk-label">Kaggle</div>shivansh7275</div>
+          </a>
         </div>
       </div>
       <div class="rvr">
@@ -769,8 +773,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_autoresponse" value="Thanks for reaching out! Shivansh will get back to you within 24 hours.">
-          <!-- CC to Airtel SMS gateway → delivers real SMS to phone, works offline, no app -->
-          <input type="hidden" name="_cc" value="9651165190@airtelmail.in">
+          <!-- Offline push notification is now handled via JS using ntfy.sh directly to your phone -->
           <!-- Honeypot anti-spam -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="frow">
@@ -811,19 +814,29 @@
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.disabled  = true;
 
-            // FormSubmit AJAX — also CCs 9651165190@airtelmail.in (real SMS via Airtel gateway)
-            fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
+            // 1. FormSubmit for email backup
+            const pForm = fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
               method: 'POST',
               body: new FormData(form),
               headers: { 'Accept': 'application/json' }
-            })
-            .then(r => r.json())
-            .then(data => {
+            }).then(r => r.json());
+
+            // 2. ntfy.sh for instant offline push notification direct to phone
+            const ntfyTopic = 'shivansh_mishra_portfolio_contact'; 
+            const ntfyMsg = `New Message!\nName: ${name}\nEmail: ${email}\n\n${message}`;
+            const pNtfy = fetch(`https://ntfy.sh/${ntfyTopic}`, {
+              method: 'POST',
+              body: ntfyMsg,
+              headers: { 'Title': 'Portfolio Contact', 'Tags': 'briefcase,email' }
+            });
+
+            Promise.all([pForm, pNtfy])
+            .then(([data]) => {
               if (data.success === 'true' || data.success === true) {
                 btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent!';
                 btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
                 form.reset();
-                showStatus('ok', '✅ Message delivered! Shivansh will reply within 24 hrs.');
+                showStatus('ok', '✅ Message delivered directly to my phone! I will reply soon.');
                 setTimeout(() => {
                   btn.innerHTML = orig;
                   btn.style.background = '';
