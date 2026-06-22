@@ -89,18 +89,37 @@ if (cur && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 const lines = ['Data Science Enthusiast', 'ML Engineer (Aspiring)', 'EDA Practitioner', 'Python & SQL Developer', 'Kaggle Contributor', 'AI-Accelerated Builder', 'Problem Solver & Creator', 'B.Tech CSE · CGPA 8.0+'];
 let li = 0, ci = 0, del = false;
 const tel = document.getElementById('typed');
-function type() {
-  const w = lines[li];
-  if (!del) {
-    tel.textContent = w.slice(0, ++ci);
-    if (ci === w.length) { del = true; setTimeout(type, 1900); return; }
-  } else {
-    tel.textContent = w.slice(0, --ci);
-    if (ci === 0) { del = false; li = (li + 1) % lines.length; }
+let lastTime = 0;
+let waitTime = 0;
+function type(time) {
+  if (!lastTime) lastTime = time;
+  const delta = time - lastTime;
+  
+  if (waitTime > 0) {
+    if (delta > waitTime) {
+      waitTime = 0;
+      lastTime = time;
+    } else {
+      window.requestAnimationFrame(type);
+      return;
+    }
   }
-  setTimeout(type, del ? 55 : 85);
+
+  const speed = del ? 55 : 85;
+  if (delta > speed) {
+    lastTime = time;
+    const w = lines[li];
+    if (!del) {
+      tel.textContent = w.slice(0, ++ci);
+      if (ci === w.length) { del = true; waitTime = 1900; }
+    } else {
+      tel.textContent = w.slice(0, --ci);
+      if (ci === 0) { del = false; li = (li + 1) % lines.length; waitTime = 300; }
+    }
+  }
+  window.requestAnimationFrame(type);
 }
-type();
+window.requestAnimationFrame(type);
 
 /* ─── SCROLL ─────────────────────────────────── */
 const nav2 = document.getElementById('nav');
