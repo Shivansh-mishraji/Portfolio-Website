@@ -6,154 +6,131 @@
   <title>Shivansh Mishra — Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* ── RESET ──────────────────────────────────────────────── */
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-    /* ── WEB CONTROLS (hidden on print) ─────────────────────── */
+    /* ── WEB CONTROLS ────────────────────────────────────────── */
     .web-bar {
-      max-width:780px; margin:1.2rem auto .6rem;
-      display:flex; gap:.6rem; justify-content:flex-end; padding:0 1rem;
+      max-width:760px; margin:1rem auto .5rem;
+      display:flex; gap:.5rem; justify-content:flex-end; padding:0 1rem;
       font-family:'Inter',sans-serif;
     }
     .btn {
       display:inline-flex; align-items:center; gap:.4rem;
-      padding:.5rem 1.15rem; border-radius:6px; font-size:.83rem;
+      padding:.45rem 1rem; border-radius:6px; font-size:.82rem;
       font-weight:600; cursor:pointer; text-decoration:none;
       border:none; font-family:inherit; transition:opacity .18s;
     }
-    .btn:hover { opacity:.82; }
+    .btn:hover { opacity:.8; }
     .btn-dark  { background:#111; color:#fff; }
     .btn-ghost { background:#fff; color:#111; border:1.5px solid #ccc; }
 
-    /* ── PAGE SHELL ─────────────────────────────────────────── */
+    /* ── PAGE SHELL ──────────────────────────────────────────── */
     body {
       font-family:'Inter', 'Calibri', Arial, sans-serif;
       background:#e5e7eb;
       color:#111;
-      font-size:14px;
-      line-height:1.5;
+      font-size:13.5px;
+      line-height:1.45;
     }
 
     .page {
-      max-width:780px;
+      max-width:760px;
       margin:0 auto 2rem;
       background:#fff;
       box-shadow:0 2px 24px rgba(0,0,0,.13);
       border-radius:4px;
-      padding:2.2rem 2.4rem 2rem;
+      padding:1.8rem 2.1rem 1.6rem;
     }
 
-    /* ── HEADER ─────────────────────────────────────────────── */
+    /* ── HEADER ──────────────────────────────────────────────── */
     .r-name {
-      font-size:1.8rem;
-      font-weight:700;
-      letter-spacing:-.02em;
-      text-align:center;
-      color:#111;
-      margin-bottom:.3rem;
+      font-size:1.65rem; font-weight:700; letter-spacing:-.02em;
+      text-align:center; color:#111; margin-bottom:.25rem;
     }
     .r-contact {
-      text-align:center;
-      font-size:.78rem;
-      color:#333;
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:.15rem .5rem;
-      margin-bottom:.1rem;
+      text-align:center; font-size:.75rem; color:#333;
+      display:flex; flex-wrap:wrap; justify-content:center;
+      gap:.1rem .45rem; margin-bottom:.05rem;
+      line-height:1.6;
     }
     .r-contact a { color:#111; text-decoration:none; }
     .r-contact a:hover { text-decoration:underline; }
-    .r-contact .sep { color:#aaa; }
+    .r-contact .sep { color:#bbb; }
 
     /* ── SECTION ─────────────────────────────────────────────── */
-    .r-sec { margin-top:1rem; }
+    .r-sec { margin-top:.75rem; }
     .r-sec-title {
-      font-size:.78rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.1em;
-      color:#111;
+      font-size:.73rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:.1em; color:#111;
       border-bottom:1.5px solid #111;
-      padding-bottom:.2rem;
-      margin-bottom:.55rem;
+      padding-bottom:.15rem; margin-bottom:.45rem;
     }
 
-    /* ── ENTRY (experience / projects / education) ────────────── */
-    .r-entry { margin-bottom:.65rem; }
+    /* ── ENTRY ───────────────────────────────────────────────── */
+    .r-entry { margin-bottom:.5rem; }
     .r-entry-hd {
-      display:flex;
-      justify-content:space-between;
-      align-items:baseline;
-      flex-wrap:wrap;
-      gap:.25rem;
+      display:flex; justify-content:space-between;
+      align-items:baseline; flex-wrap:wrap; gap:.2rem;
     }
-    .r-title { font-size:.88rem; font-weight:700; color:#111; }
-    .r-date  { font-size:.76rem; color:#444; white-space:nowrap; font-style:italic; }
-    .r-org   { font-size:.8rem; color:#333; font-weight:500; margin:.1rem 0 .3rem; }
-    .r-link  { font-size:.73rem; color:#555; margin-left:.4rem; }
+    .r-title { font-size:.85rem; font-weight:700; color:#111; }
+    .r-date  { font-size:.73rem; color:#444; white-space:nowrap; font-style:italic; }
+    .r-org   { font-size:.77rem; color:#333; font-weight:500; margin:.08rem 0 .25rem; }
+    .r-link  { font-size:.7rem; color:#555; margin-left:.35rem; font-weight:400; }
     .r-link a { color:#1a56db; text-decoration:none; }
     .r-link a:hover { text-decoration:underline; }
 
-    /* ── BULLET POINTS ──────────────────────────────────────── */
-    .r-ul {
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
+    /* ── BULLETS ─────────────────────────────────────────────── */
+    .r-ul { list-style:none; padding:0; margin:0; }
     .r-ul li {
-      font-size:.82rem;
-      color:#222;
-      line-height:1.65;
-      padding-left:1.05rem;
-      position:relative;
-      margin-bottom:.12rem;
+      font-size:.79rem; color:#222; line-height:1.6;
+      padding-left:1rem; position:relative; margin-bottom:.08rem;
     }
     .r-ul li::before {
-      content:'•';
-      position:absolute;
-      left:0;
-      color:#111;
-      font-weight:700;
+      content:'▸'; position:absolute; left:0;
+      color:#444; font-size:.7rem; top:.05rem;
     }
 
-    /* ── SKILLS ─────────────────────────────────────────────── */
-    .r-skills { display:flex; flex-direction:column; gap:.3rem; }
-    .r-skill-row { font-size:.82rem; color:#222; }
+    /* ── SKILLS ──────────────────────────────────────────────── */
+    .r-skills { display:flex; flex-direction:column; gap:.22rem; }
+    .r-skill-row { font-size:.79rem; color:#222; line-height:1.55; }
     .r-skill-row strong { color:#111; font-weight:700; }
 
-    /* ── PRINT ──────────────────────────────────────────────── */
+    /* ── ACHIEVEMENTS row ────────────────────────────────────── */
+    .r-ach { font-size:.79rem; color:#222; line-height:1.6; }
+
+    /* ── PRINT ───────────────────────────────────────────────── */
     @media print {
-      html, body { background:#fff !important; font-size:100%; }
+      html, body { background:#fff !important; }
       .web-bar   { display:none !important; }
-      .page      { max-width:100%; margin:0; padding:1.4rem 1.6rem 1.2rem;
-                   box-shadow:none; border-radius:0; }
-      .r-name    { font-size:1.5rem; }
-      .r-entry   { margin-bottom:.5rem; }
-      .r-ul li   { font-size:.8rem; }
-      .r-skill-row { font-size:.8rem; }
-      @page { size:A4; margin:.55in .55in; }
+      .page {
+        max-width:100%; width:100%; margin:0; padding:0;
+        box-shadow:none; border-radius:0;
+      }
+      @page {
+        size: A4;
+        margin: .45in .5in .4in .5in;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Web-only controls -->
+<!-- Web controls -->
 <div class="web-bar">
   <a href="/Portfolio-Website/" class="btn btn-ghost">&#8592; Portfolio</a>
   <button class="btn btn-dark" onclick="window.print()">
-    &#11015; Save as PDF &nbsp;<small style="font-weight:400;opacity:.75">(Ctrl+P → Save as PDF)</small>
+    &#11015; Save as PDF &nbsp;<small style="font-weight:400;opacity:.7">(Ctrl+P → Save as PDF)</small>
   </button>
 </div>
 
 <div class="page">
 
-  <!-- ══ NAME & CONTACT ══════════════════════════════════════ -->
+  <!-- NAME & CONTACT -->
   <div class="r-name">Shivansh Mishra</div>
   <div class="r-contact">
     <span>Lucknow, UP, India</span>
     <span class="sep">|</span>
-    <a href="tel:+919651165190">+91 9651165190</a>
+    <a href="tel:+919651165190">+91&nbsp;9651165190</a>
     <span class="sep">|</span>
     <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a>
     <span class="sep">|</span>
@@ -164,212 +141,180 @@
     <a href="https://www.kaggle.com/shivansh7275" target="_blank">kaggle.com/shivansh7275</a>
   </div>
 
-  <!-- ══ OBJECTIVE ════════════════════════════════════════════ -->
+  <!-- OBJECTIVE -->
   <div class="r-sec">
     <div class="r-sec-title">Objective</div>
-    <div class="r-entry">
-      <ul class="r-ul">
-        <li>Pre-final year B.Tech CSE student (CGPA: 8.0+, Cloud Computing &amp; ML specialization) seeking a <strong>Data Science / ML Engineering internship (June 2026)</strong> where I can apply my theoretical knowledge of machine learning, EDA, and data analysis to real-world problems.</li>
-        <li>Strong conceptual foundation in ML algorithms, EDA workflows, Pandas, NumPy, Scikit-learn, SQL, and DSA. Use AI-assisted development to accelerate implementation and ship production-grade data products.</li>
-      </ul>
+    <div class="r-ul" style="margin-top:.1rem;">
+      <div style="font-size:.79rem;color:#222;line-height:1.6;padding-left:0;">
+        Pre-final year B.Tech CSE student (CGPA&nbsp;8.0+, Cloud Computing &amp; ML specialization) seeking a <strong>Data Science / ML Engineering internship (June&nbsp;2026)</strong>. Strong conceptual foundation in ML algorithms, EDA workflows, Pandas, NumPy, Scikit-learn, SQL, and DSA — ships production-grade data products via AI-assisted development.
+      </div>
     </div>
   </div>
 
-  <!-- ══ EDUCATION ════════════════════════════════════════════ -->
+  <!-- EDUCATION -->
   <div class="r-sec">
     <div class="r-sec-title">Education</div>
 
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">Bachelor of Technology &mdash; Computer Science &amp; Engineering</span>
+        <span class="r-title">B.Tech — Computer Science &amp; Engineering</span>
         <span class="r-date">2024 &ndash; Present</span>
       </div>
-      <div class="r-org">Babu Banarasi Das University (BBD University), Lucknow, Uttar Pradesh</div>
+      <div class="r-org">Babu Banarasi Das University (BBD University), Lucknow &nbsp;&middot;&nbsp; Specialization: Cloud Computing &amp; ML &nbsp;&middot;&nbsp; CGPA: <strong>8.0+ / 10</strong></div>
       <ul class="r-ul">
-        <li><strong>Specialization:</strong> Cloud Computing &amp; Machine Learning &nbsp;&nbsp;|&nbsp;&nbsp; <strong>CGPA:</strong> 8.0+ / 10.0</li>
-        <li>Relevant coursework: Data Structures &amp; Algorithms, Database Management Systems, Python Programming, Machine Learning, Cloud Infrastructure</li>
+        <li>Relevant coursework: Data Structures &amp; Algorithms, DBMS, Python Programming, Machine Learning, Cloud Infrastructure</li>
       </ul>
     </div>
 
-    <div class="r-entry">
+    <div class="r-entry" style="margin-bottom:0">
       <div class="r-entry-hd">
-        <span class="r-title">Higher Secondary &mdash; PCM + Computer Science (Class XII)</span>
+        <span class="r-title">Higher Secondary — PCM + Computer Science (Class XII)</span>
         <span class="r-date">2022 &ndash; 2024</span>
       </div>
       <div class="r-org">Red Rose Public School, Lucknow, Uttar Pradesh</div>
     </div>
   </div>
 
-  <!-- ══ TECHNICAL SKILLS ═════════════════════════════════════ -->
+  <!-- TECHNICAL SKILLS -->
   <div class="r-sec">
     <div class="r-sec-title">Technical Skills</div>
     <div class="r-skills">
       <div class="r-skill-row"><strong>Languages:</strong> Python, SQL, C</div>
-      <div class="r-skill-row"><strong>ML &amp; Data Science:</strong> Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Exploratory Data Analysis (EDA), Feature Engineering, Regression, Classification, Cross-Validation, GridSearchCV, Hyperparameter Tuning</div>
+      <div class="r-skill-row"><strong>ML &amp; Data Science:</strong> Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, EDA, Feature Engineering, Regression, Classification, Cross-Validation, GridSearchCV, Hyperparameter Tuning</div>
       <div class="r-skill-row"><strong>Web &amp; Deployment:</strong> Streamlit, FastAPI, Flask, Vercel, Render, Docker (basic), Git &amp; GitHub</div>
-      <div class="r-skill-row"><strong>Databases &amp; Tools:</strong> MySQL, SQLite, Excel, Google Sheets, Jupyter Notebook, Google Colab, VS Code</div>
-      <div class="r-skill-row"><strong>CS Fundamentals:</strong> Data Structures &amp; Algorithms (DSA), Problem Solving, Logical Reasoning</div>
-      <div class="r-skill-row"><strong>AI-Assisted Development:</strong> GitHub Copilot, Cursor AI, Prompt Engineering (used to accelerate implementation &mdash; concepts and decisions are independently understood)</div>
+      <div class="r-skill-row"><strong>Tools &amp; Databases:</strong> MySQL, SQLite, Jupyter Notebook, Google Colab, VS Code, Excel</div>
+      <div class="r-skill-row"><strong>AI-Assisted Dev:</strong> GitHub Copilot, Cursor AI, Prompt Engineering (used to accelerate implementation; all design &amp; conceptual decisions independently made)</div>
     </div>
   </div>
 
-  <!-- ══ PROJECTS ══════════════════════════════════════════════ -->
+  <!-- PROJECTS -->
   <div class="r-sec">
     <div class="r-sec-title">Projects</div>
 
     <!-- BankChurners -->
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">BankChurners &mdash; Customer Churn Analysis
+        <span class="r-title">BankChurners — Customer Churn Analysis
           <span class="r-link">
-            <a href="https://bank-churners-data-analyzer.vercel.app/" target="_blank">&#127760; Live</a> &nbsp;|&nbsp;
+            <a href="https://bank-churners-data-analyzer.vercel.app/" target="_blank">Live</a> |
             <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" target="_blank">GitHub</a>
           </span>
         </span>
-        <span class="r-date">2024 &ndash; 2025</span>
+        <span class="r-date">2024&ndash;2025</span>
       </div>
-      <div class="r-org">Python &nbsp;&middot;&nbsp; Pandas &nbsp;&middot;&nbsp; Seaborn &nbsp;&middot;&nbsp; Matplotlib &nbsp;&middot;&nbsp; EDA &nbsp;&middot;&nbsp; Vercel</div>
+      <div class="r-org">Python &middot; Pandas &middot; Seaborn &middot; Matplotlib &middot; EDA &middot; Vercel</div>
       <ul class="r-ul">
-        <li>Performed full exploratory data analysis on a real banking dataset of <strong>10,000+ customer records</strong> to identify churn drivers and high-risk customer segments.</li>
-        <li>Built correlation heatmaps, churn rate segmentation charts, and feature importance visualizations using Seaborn and Matplotlib; derived actionable retention strategy recommendations.</li>
-        <li>Deployed analysis as an interactive web report on Vercel; demonstrates ability to translate data findings into business-framed, stakeholder-ready output.</li>
+        <li>Full EDA on <strong>10,000+ real banking records</strong>: churn segmentation, correlation heatmaps, feature importance; deployed as interactive web report on Vercel with actionable retention recommendations.</li>
       </ul>
     </div>
 
     <!-- House Price -->
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">House Price Prediction &mdash; End-to-End ML Deployment
+        <span class="r-title">House Price Prediction — End-to-End ML Deployment
           <span class="r-link">
-            <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank">&#127760; Live</a> &nbsp;|&nbsp;
+            <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank">Live</a> |
             <a href="https://github.com/shivansh-mishraji/house-price-prediction-app" target="_blank">GitHub</a>
           </span>
         </span>
-        <span class="r-date">2024 &ndash; 2025</span>
+        <span class="r-date">2024&ndash;2025</span>
       </div>
-      <div class="r-org">Python &nbsp;&middot;&nbsp; Scikit-learn &nbsp;&middot;&nbsp; Pandas &nbsp;&middot;&nbsp; Streamlit &nbsp;&middot;&nbsp; Vercel</div>
+      <div class="r-org">Python &middot; Scikit-learn &middot; Pandas &middot; Streamlit &middot; Vercel</div>
       <ul class="r-ul">
-        <li>Designed and shipped a complete ML pipeline: data cleaning &rarr; EDA &rarr; feature selection &rarr; trained multiple regression models (Linear, Ridge, Random Forest) &rarr; selected best model by RMSE and R&sup2;.</li>
-        <li>Built a Streamlit web application that serves real-time price predictions from the trained model; deployed to Vercel for public access.</li>
-        <li>Applied consistent best practices throughout: train/test split, cross-validation, and documented model selection rationale with performance metrics.</li>
+        <li>Built complete ML pipeline (data cleaning → EDA → feature selection → multi-model training → RMSE/R² selection); deployed real-time Streamlit prediction app to Vercel with train/test split and cross-validation.</li>
       </ul>
     </div>
 
     <!-- Car Price -->
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">Car Price Prediction &mdash; Regression with GridSearchCV
+        <span class="r-title">Car Price Prediction — Regression with GridSearchCV
           <span class="r-link">
-            <a href="https://car-price-prediction-with-machine-l.vercel.app/" target="_blank">&#127760; Live</a> &nbsp;|&nbsp;
+            <a href="https://car-price-prediction-with-machine-l.vercel.app/" target="_blank">Live</a> |
             <a href="https://github.com/Shivansh-mishraji/Car-Price-Prediction-with-Machine-Learning" target="_blank">GitHub</a>
           </span>
         </span>
-        <span class="r-date">2024 &ndash; 2025</span>
+        <span class="r-date">2024&ndash;2025</span>
       </div>
-      <div class="r-org">Python &nbsp;&middot;&nbsp; Scikit-learn &nbsp;&middot;&nbsp; GridSearchCV &nbsp;&middot;&nbsp; Pandas &nbsp;&middot;&nbsp; Matplotlib</div>
+      <div class="r-org">Python &middot; Scikit-learn &middot; GridSearchCV &middot; Pandas &middot; Matplotlib</div>
       <ul class="r-ul">
-        <li>Engineered domain-specific features (mileage decay curves, brand premium encoding, age-depreciation) on a structured automotive dataset; compared 4 regression algorithms.</li>
-        <li>Applied GridSearchCV with 5-fold cross-validation for hyperparameter tuning; documented final model selection with residual analysis and feature importance plots.</li>
+        <li>Engineered domain features (mileage decay, brand encoding); compared 4 regression algorithms with GridSearchCV 5-fold CV; documented model selection with residual &amp; feature importance plots.</li>
       </ul>
     </div>
 
     <!-- Iris -->
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">Iris Flower Classification &mdash; Multi-Model Benchmarking
+        <span class="r-title">Iris Classification — Multi-Model Benchmark
           <span class="r-link">
-            <a href="https://iris-flower-classification-tan.vercel.app/" target="_blank">&#127760; Live</a> &nbsp;|&nbsp;
+            <a href="https://iris-flower-classification-tan.vercel.app/" target="_blank">Live</a> |
             <a href="https://github.com/shivansh-mishraji/CodeAlpha_-Iris-Flower-Classification-" target="_blank">GitHub</a>
           </span>
         </span>
         <span class="r-date">2024</span>
       </div>
-      <div class="r-org">Python &nbsp;&middot;&nbsp; Scikit-learn &nbsp;&middot;&nbsp; Matplotlib &nbsp;&middot;&nbsp; Classification</div>
+      <div class="r-org">Python &middot; Scikit-learn &middot; Matplotlib &middot; Classification</div>
       <ul class="r-ul">
-        <li>Implemented and benchmarked KNN, SVM, Decision Tree, and Logistic Regression classifiers on the same dataset; visualized decision boundaries and compared accuracy, precision, and recall per model.</li>
-      </ul>
-    </div>
-
-    <!-- Unemployment -->
-    <div class="r-entry">
-      <div class="r-entry-hd">
-        <span class="r-title">Unemployment Trends &mdash; Data Storytelling &amp; EDA
-          <span class="r-link">
-            <a href="https://unemployment-analysis-with-python-ivory.vercel.app/" target="_blank">&#127760; Live</a> &nbsp;|&nbsp;
-            <a href="https://github.com/shivansh-mishraji/CodeAlpha_Unemployment-Analysis-with-Python" target="_blank">GitHub</a>
-          </span>
-        </span>
-        <span class="r-date">2024</span>
-      </div>
-      <div class="r-org">Python &nbsp;&middot;&nbsp; Pandas &nbsp;&middot;&nbsp; NumPy &nbsp;&middot;&nbsp; Matplotlib &nbsp;&middot;&nbsp; Seaborn</div>
-      <ul class="r-ul">
-        <li>Analyzed real government unemployment datasets: temporal trend analysis, state-level regional comparisons, and demographic breakdowns; produced policy-relevant visual narratives for decision-making contexts.</li>
+        <li>Benchmarked KNN, SVM, Decision Tree, and Logistic Regression; visualized decision boundaries and compared accuracy, precision, and recall across all models.</li>
       </ul>
     </div>
 
     <!-- Nyaya Mitra -->
-    <div class="r-entry">
+    <div class="r-entry" style="margin-bottom:0">
       <div class="r-entry-hd">
-        <span class="r-title">Nyaya Mitra &mdash; AI-First Legal Accessibility Platform</span>
-        <span class="r-date">2025 &ndash; Present</span>
+        <span class="r-title">Nyaya Mitra — AI-First Legal Accessibility Platform</span>
+        <span class="r-date">2025&ndash;Present</span>
       </div>
-      <div class="r-org">AI Product Design &nbsp;&middot;&nbsp; System Architecture &nbsp;&middot;&nbsp; Python &nbsp;&middot;&nbsp; In Development</div>
+      <div class="r-org">AI Product Design &middot; System Architecture &middot; Python &middot; In Development</div>
       <ul class="r-ul">
-        <li>Designing an AI-powered platform to make legal help accessible to underserved communities in India; includes a "Raksha Mode" emergency logic system for immediate legal assistance.</li>
-        <li>Demonstrates product thinking, user-first system design, and ability to identify high-impact AI use cases; pitched at ENTREPRENIA 2025 startup pitch competition, Lucknow.</li>
+        <li>Designing AI-powered legal platform for underserved communities with "Raksha Mode" emergency logic; <strong>pitched at ENTREPRENIA 2025</strong> (startup pitch competition, Lucknow) — finalist recognition.</li>
       </ul>
     </div>
-
   </div>
 
-  <!-- ══ EXPERIENCE & ACTIVITIES ═════════════════════════════ -->
+  <!-- EXPERIENCE & ACTIVITIES -->
   <div class="r-sec">
     <div class="r-sec-title">Experience &amp; Activities</div>
 
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">Startup Pitch Finalist &mdash; ENTREPRENIA 2025</span>
-        <span class="r-date">2025 &nbsp;&middot;&nbsp; Lucknow</span>
+        <span class="r-title">Startup Pitch Finalist — ENTREPRENIA 2025</span>
+        <span class="r-date">2025 &middot; Lucknow</span>
       </div>
-      <div class="r-org">Nyaya Mitra (AI Legal-Tech) &nbsp;&middot;&nbsp; Public Presentation to Judges</div>
+      <div class="r-org">Nyaya Mitra (AI Legal-Tech) &middot; Public Presentation to Judges</div>
       <ul class="r-ul">
-        <li>Pitched AI-powered legal platform to panel of judges; covered user problem framing, market sizing, MVP strategy, and technical system design — received finalist recognition.</li>
+        <li>Presented product vision, market sizing, MVP strategy, and system design to panel of judges; received finalist recognition.</li>
       </ul>
     </div>
 
     <div class="r-entry">
       <div class="r-entry-hd">
-        <span class="r-title">Coderush 2.0 &mdash; Hackathon Participant</span>
-        <span class="r-date">2025 &nbsp;&middot;&nbsp; Lucknow</span>
+        <span class="r-title">Coderush 2.0 — Hackathon Participant</span>
+        <span class="r-date">2025 &middot; Lucknow</span>
       </div>
-      <div class="r-org">Dr. Akhilesh Das Gupta Auditorium &nbsp;&middot;&nbsp; Competitive Coding</div>
-      <ul class="r-ul">
-        <li>Participated in competitive coding and algorithmic problem-solving event; practiced rapid solution design, DSA application, and team collaboration under time constraints.</li>
-      </ul>
+      <div class="r-org">Dr. Akhilesh Das Gupta Auditorium &middot; Competitive Coding &amp; Problem Solving</div>
     </div>
 
-    <div class="r-entry">
+    <div class="r-entry" style="margin-bottom:0">
       <div class="r-entry-hd">
         <span class="r-title">Open Source &amp; Kaggle Contributions</span>
-        <span class="r-date">2024 &ndash; Present</span>
+        <span class="r-date">2024&ndash;Present</span>
       </div>
-      <div class="r-org">GitHub: github.com/shivansh-mishraji &nbsp;&middot;&nbsp; Kaggle: kaggle.com/shivansh7275</div>
+      <div class="r-org">GitHub: github.com/shivansh-mishraji &middot; Kaggle: kaggle.com/shivansh7275</div>
       <ul class="r-ul">
-        <li>Actively publishing datasets and notebooks on Kaggle; maintaining public GitHub repositories with documented ML projects, clean READMEs, and reproducible code.</li>
+        <li>Actively publishing datasets and notebooks on Kaggle; maintaining <strong>10+ public GitHub repositories</strong> with documented ML projects, clean READMEs, and reproducible code.</li>
       </ul>
     </div>
-
   </div>
 
-  <!-- ══ ACHIEVEMENTS ══════════════════════════════════════════ -->
+  <!-- ACHIEVEMENTS -->
   <div class="r-sec">
-    <div class="r-sec-title">Achievements &amp; Highlights</div>
+    <div class="r-sec-title">Achievements</div>
     <ul class="r-ul">
-      <li><strong>CGPA 8.0+</strong> in B.Tech CSE — Cloud Computing &amp; ML specialization, BBD University</li>
-      <li>Startup pitch finalist at <strong>ENTREPRENIA 2025</strong> (Nyaya Mitra — AI Legal-Tech)</li>
-      <li>Deployed <strong>10+ live ML and data science projects</strong> on Vercel/Render accessible publicly</li>
-      <li>Participated in <strong>Coderush 2.0</strong> hackathon — competitive coding &amp; problem solving</li>
-      <li>Active open-source contributor on Kaggle (datasets &amp; notebooks) and GitHub</li>
+      <li><strong>CGPA 8.0+</strong> — B.Tech CSE, Cloud Computing &amp; ML specialization, BBD University</li>
+      <li><strong>10+ live deployed</strong> ML &amp; data science projects on Vercel / Render (publicly accessible)</li>
+      <li>Startup pitch <strong>finalist at ENTREPRENIA 2025</strong>; Coderush 2.0 hackathon participant</li>
+      <li>Active Kaggle contributor (datasets &amp; notebooks) and open-source GitHub presence</li>
     </ul>
   </div>
 
