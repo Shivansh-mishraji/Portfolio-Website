@@ -92,6 +92,7 @@ const tel = document.getElementById('typed');
 let lastTime = 0;
 let waitTime = 0;
 function type(time) {
+  if (!tel) return;
   if (!lastTime) lastTime = time;
   const delta = time - lastTime;
   

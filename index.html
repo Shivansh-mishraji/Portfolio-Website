@@ -161,7 +161,7 @@
 <!-- ════════════════════════════════════════════
      ABOUT
 ════════════════════════════════════════════ -->
-<section id="about">
+<section id="about" tabindex="-1">
   <div class="con">
     <div class="about-grid">
       <div class="rvl">
@@ -480,8 +480,8 @@
         <p class="pdesc">Exploratory data analysis and visualization of unemployment trends using Python, Pandas, and Matplotlib.</p>
         <div class="ptags"><span class="ptag">Jupyter Notebook</span><span class="ptag">GitHub</span></div>
         <div class="plinks">
-          <a href="https://unemployment-analysis-with-python-ivory.vercel.app/" target="_blank" class="plk plk-p"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          <a href="https://github.com/Shivansh-mishraji/Unemployment-Analysis-with-Python" target="_blank" class="plk plk-g"><i class="fab fa-github"></i> View Code</a>
+          <a href="https://unemployment-analysis-with-python-ivory.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/Shivansh-mishraji/Unemployment-Analysis-with-Python" target="_blank" rel="noopener noreferrer" class="plk plk-g"><i class="fab fa-github"></i> View Code</a>
         </div>
       </div>
     </div>
@@ -825,6 +825,7 @@
             // Spam trap (Honeypot)
             const honey = form.querySelector('input[name="_honey"]').value;
             if (honey) {
+              form.reset();
               return showStatus('ok', '✅ Message delivered! (Bot trapped silently)');
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
