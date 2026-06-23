@@ -786,7 +786,7 @@
         <form class="cf" id="cform" novalidate>
           <input type="hidden" name="_subject" value="📬 Portfolio Contact">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_autoresponse" value="Thanks for reaching out! Shivansh will get back to you within 24 hours.">
           <!-- Offline push notification is now handled via JS using ntfy.sh directly to your phone -->
           <!-- Honeypot anti-spam -->
@@ -840,7 +840,7 @@
               method: 'POST',
               body: new FormData(form),
               headers: { 'Accept': 'application/json' }
-            }).then(r => r.json());
+            }).then(r => r.json()).catch(e => ({ success: false, error: "captcha/setup required" }));
 
             // 2. ntfy.sh for instant offline push notification direct to phone
             const ntfyTopic = 'shivansh_mishra_portfolio_contact'; 
