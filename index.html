@@ -849,7 +849,7 @@
               method: 'POST',
               body: ntfyMsg,
               headers: { 'Title': 'Portfolio Contact', 'Tags': 'briefcase,email' }
-            });
+            }).catch(e => console.warn('ntfy push notification blocked/failed, ignoring:', e));
 
             Promise.all([pForm, pNtfy])
             .then(([data]) => {
