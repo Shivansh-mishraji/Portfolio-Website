@@ -351,6 +351,7 @@
       .edu-g{ grid-template-columns:1fr; }
     }
     @media(max-width:768px){
+      nav { padding: 1rem 1.25rem; }
       .nav-ul{ display:none; }
       .burger{ display:flex; }
       .proj-grid{ grid-template-columns:1fr; }
@@ -358,11 +359,18 @@
       .frow{ grid-template-columns:1fr; }
       section{ padding:4rem 1.25rem; }
       .tl{ padding-left:1.5rem; }
+      .pcard { padding: 1.5rem; }
+      .ecard { padding: 1.5rem; }
+      .resume-card { grid-template-columns: 1fr; padding: 1.5rem; gap: 2rem; }
+      footer { padding: 2.5rem 1.25rem 2rem; }
     }
     @media(max-width:480px){
-      .int-g{ grid-template-columns:repeat(3,1fr); }
-      .hero-btns{ flex-direction:column; }
+      .int-g{ grid-template-columns:repeat(2,1fr); }
+      .hero-btns{ flex-direction:column; align-items:stretch; }
+      .btn-p, .btn-o { justify-content:center; }
       .focus-cards{ grid-template-columns:1fr; }
+      .stats-g{ grid-template-columns:1fr; }
+      .hero-photo-wrap{ transform:scale(0.65); }
     }
   
     @media (hover: none) and (pointer: coarse), (max-width: 768px) {
@@ -488,6 +496,10 @@ body.nav-open { overflow: hidden; }
 ══════════════════════════════════════════════════════ */
 .mob-nav:not([hidden]) {
   animation: mobNavIn 0.25s ease forwards;
+  justify-content: flex-start;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  overflow-y: auto;
 }
 @keyframes mobNavIn {
   from { opacity:0; transform:translateY(-10px); }
