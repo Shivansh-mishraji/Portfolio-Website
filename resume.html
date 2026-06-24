@@ -4,47 +4,47 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Shivansh Mishra — Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter', sans-serif; background:#f3f4f6; color:#222; font-size:11px; line-height:1.35; -webkit-font-smoothing:antialiased; }
+    body { font-family:'Lora', Georgia, serif; background:#f3f4f6; color:#222; font-size:11px; line-height:1.4; -webkit-font-smoothing:antialiased; }
     
     .web-bar { max-width:800px; margin:1rem auto 0.5rem; display:flex; justify-content:flex-end; gap:.5rem; padding:0 1rem; }
-    .btn { padding:.4rem .8rem; border-radius:4px; font-size:.75rem; font-weight:600; cursor:pointer; text-decoration:none; border:none; transition:all .2s; }
+    .btn { padding:.4rem .8rem; border-radius:4px; font-family:sans-serif; font-size:.75rem; font-weight:600; cursor:pointer; text-decoration:none; border:none; transition:all .2s; }
     .btn-dark { background:#111; color:#fff; }
     .btn-dark:hover { background:#333; }
     .btn-ghost { background:#fff; color:#555; border:1px solid #d1d5db; }
     .btn-ghost:hover { background:#f9fafb; color:#111; border-color:#9ca3af; }
     
-    .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:24px 36px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
-    .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#000; border-radius:4px 4px 0 0; }
+    .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:32px 42px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
+    .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#111; border-radius:4px 4px 0 0; }
     
-    .header { text-align:center; margin-bottom:10px; }
-    .name { font-size:22px; font-weight:700; color:#000; letter-spacing:-.025em; margin-bottom:3px; }
-    .contact { font-size:11px; color:#444; }
+    .header { text-align:center; margin-bottom:12px; }
+    .name { font-family:'Playfair Display', Georgia, serif; font-size:24px; font-weight:700; color:#000; letter-spacing:-.01em; margin-bottom:4px; }
+    .contact { font-family:'Lora', Georgia, serif; font-size:11px; color:#444; }
     .contact a { color:#444; text-decoration:none; transition:color .15s; }
     .contact a:hover { color:#000; text-decoration:underline; }
     .contact span { margin:0 5px; color:#ccc; }
     
-    .section { margin-bottom:10px; }
-    .section-title { font-size:11px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid #000; padding-bottom:2px; margin-bottom:6px; }
+    .section { margin-bottom:12px; }
+    .section-title { font-family:'Playfair Display', Georgia, serif; font-size:12px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #111; padding-bottom:3px; margin-bottom:8px; }
     
-    .item { margin-bottom:6px; }
+    .item { margin-bottom:8px; }
     .item-header { display:flex; justify-content:space-between; align-items:baseline; }
-    .item-title { font-size:12px; font-weight:700; color:#000; }
-    .item-date { font-size:11px; color:#444; font-weight:500; }
-    .item-sub { font-size:11px; font-weight:600; font-style:italic; color:#333; margin-bottom:3px; }
+    .item-title { font-family:'Playfair Display', Georgia, serif; font-size:13px; font-weight:700; color:#000; }
+    .item-date { font-family:'Lora', Georgia, serif; font-size:11px; color:#444; font-weight:500; }
+    .item-sub { font-family:'Lora', Georgia, serif; font-size:11px; font-weight:600; font-style:italic; color:#333; margin-bottom:4px; }
     .item-sub span { font-weight:400; color:#555; font-style:normal; }
     
     ul { list-style:none; padding-left:12px; }
-    ul li { position:relative; margin-bottom:2px; font-size:11px; color:#222; text-align:justify; }
-    ul li::before { content:'•'; position:absolute; left:-10px; color:#000; }
+    ul li { position:relative; margin-bottom:3px; font-size:11px; color:#222; text-align:justify; }
+    ul li::before { content:'•'; position:absolute; left:-10px; color:#111; }
     
-    .skills-grid { display:grid; grid-template-columns:140px 1fr; gap:4px; font-size:11px; }
+    .skills-grid { display:grid; grid-template-columns:140px 1fr; gap:6px; font-size:11px; }
     .skills-grid strong { font-weight:600; color:#111; }
     .skills-grid div { color:#222; }
     
-    .link-txt { font-weight:500; text-decoration:underline; color:#444; font-size:10px; margin-left:4px; }
+    .link-txt { font-family:sans-serif; font-weight:500; text-decoration:underline; color:#444; font-size:9.5px; margin-left:4px; }
     .link-txt:hover { color:#000; }
     
     @media print {
@@ -52,7 +52,7 @@
       .web-bar { display:none; }
       .page { box-shadow:none; padding:0; margin:0; max-width:100%; border-radius:0; }
       .page::before { display:none; }
-      @page { margin: 0.35in 0.4in; size: A4; }
+      @page { margin: 0.4in 0.45in; size: A4; }
     }
   </style>
 </head>
@@ -130,18 +130,6 @@
         <li>Ingested and structured 10,000+ credit records; handled null indices, categorical formatting, and data cleansing routines.</li>
         <li>Designed robust exploratory data analysis pipelines using Seaborn/Matplotlib to extract primary churn drivers and segment customer behaviors.</li>
         <li>Built and launched an interactive analytics dashboard allowing marketing stakeholders to identify high-risk accounts instantly.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <div class="item-title">Nyaya Mitra — AI Platform System Architecture <span style="font-weight:400;color:#555;font-size:10px;margin-left:4px;">[Startup Pitch Finalist]</span></div>
-        <div class="item-date">2025</div>
-      </div>
-      <div class="item-sub">System Design, Architecture, Flow Control, Python</div>
-      <ul>
-        <li>Designed system flow schemas for an AI-first legal consultation app, establishing error-handling logic gates and a safe failover mode.</li>
-        <li>Presented the MVP deployment scaling layout at the ENTREPRENIA 2025 startup showcase, demonstrating strong product design logic.</li>
       </ul>
     </div>
   </div>
