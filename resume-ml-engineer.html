@@ -19,7 +19,7 @@
     .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:24px 36px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
     .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#000; border-radius:4px 4px 0 0; }
     
-    .header { text-align:center; margin-bottom:10px; }
+    .header { text-align:left; margin-bottom:12px; }
     .name { font-size:22px; font-weight:700; color:#000; letter-spacing:-.025em; margin-bottom:3px; }
     .contact { font-size:11px; color:#444; }
     .contact a { color:#444; text-decoration:none; transition:color .15s; }
@@ -27,7 +27,7 @@
     .contact span { margin:0 5px; color:#ccc; }
     
     .section { margin-bottom:10px; }
-    .section-title { font-size:11px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid #000; padding-bottom:2px; margin-bottom:6px; }
+    .section-title { font-size:11px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:1px; border-left:3px solid #000; padding-left:8px; margin-bottom:6px; }
     
     .item { margin-bottom:6px; }
     .item-header { display:flex; justify-content:space-between; align-items:baseline; }
@@ -130,31 +130,6 @@
         <li>Engineered automated data preprocessing pipelines using custom classes for mileage decay and categorical target encoding.</li>
         <li>Executed extensive hyperparameter optimization via GridSearchCV with 5-fold cross-validation, decreasing validation loss variance by 12%.</li>
         <li>Configured reproducible artifact serialization, exporting trained pipeline states to ensure consistent out-of-sample inference.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <div class="item-title">BankChurners — Imbalanced Classification Pipeline <a href="https://bank-churners-data-analyzer.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
-        <div class="item-date">2024 &ndash; 2025</div>
-      </div>
-      <div class="item-sub">Python, Pandas, Seaborn, Feature Engineering, Classification Metrics</div>
-      <ul>
-        <li>Processed 10,000+ credit profiles, implementing feature pipelines and handling class imbalance via model target-weighting adjustments.</li>
-        <li>Optimized predictive churn classifiers, analyzing trade-offs using Precision-Recall curves, F1-scores, and ROC-AUC diagnostics.</li>
-        <li>Developed an interactive Streamlit diagnostic panel to serve live classification predictions for user-inputted credit profiles.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <div class="item-title">Nyaya Mitra — System Architecture &amp; Latency Tuning <span style="font-weight:400;color:#555;font-size:10px;margin-left:4px;">[Startup Pitch Finalist]</span></div>
-        <div class="item-date">2025</div>
-      </div>
-      <div class="item-sub">System Design, Architecture, Python, Failover Logic</div>
-      <ul>
-        <li>Designed backend microservices and evaluation flowcharts for an AI consultation MVP, inserting error-boundary fallback logic.</li>
-        <li>Analyzed latency bottlenecks across API gateways, pitching the scaling blueprint at the ENTREPRENIA 2025 startup showcase.</li>
       </ul>
     </div>
   </div>
