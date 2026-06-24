@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Shivansh Mishra — Master Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Lora', Georgia, serif; background:#f3f4f6; color:#222; font-size:11px; line-height:1.4; -webkit-font-smoothing:antialiased; }
+    
+    .web-bar { max-width:800px; margin:1rem auto 0.5rem; display:flex; justify-content:flex-end; gap:.5rem; padding:0 1rem; }
+    .btn { padding:.4rem .8rem; border-radius:4px; font-family:sans-serif; font-size:.75rem; font-weight:600; cursor:pointer; text-decoration:none; border:none; transition:all .2s; }
+    .btn-dark { background:#111; color:#fff; }
+    .btn-dark:hover { background:#333; }
+    .btn-ghost { background:#fff; color:#555; border:1px solid #d1d5db; }
+    .btn-ghost:hover { background:#f9fafb; color:#111; border-color:#9ca3af; }
+    
+    .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:32px 42px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
+    .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#111; border-radius:4px 4px 0 0; }
+    
+    .header { text-align:center; margin-bottom:12px; }
+    .name { font-family:'Playfair Display', Georgia, serif; font-size:24px; font-weight:700; color:#000; letter-spacing:-.01em; margin-bottom:4px; }
+    .contact { font-family:'Lora', Georgia, serif; font-size:11px; color:#444; }
+    .contact a { color:#444; text-decoration:none; transition:color .15s; }
+    .contact a:hover { color:#000; text-decoration:underline; }
+    .contact span { margin:0 5px; color:#ccc; }
+    
+    .section { margin-bottom:12px; }
+    .section-title { font-family:'Playfair Display', Georgia, serif; font-size:12px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #111; padding-bottom:3px; margin-bottom:8px; }
+    
+    .item { margin-bottom:8px; }
+    .item-header { display:flex; justify-content:space-between; align-items:baseline; }
+    .item-title { font-family:'Playfair Display', Georgia, serif; font-size:13px; font-weight:700; color:#000; }
+    .item-date { font-family:'Lora', Georgia, serif; font-size:11px; color:#444; font-weight:500; }
+    .item-sub { font-family:'Lora', Georgia, serif; font-size:11px; font-weight:600; font-style:italic; color:#333; margin-bottom:4px; }
+    .item-sub span { font-weight:400; color:#555; font-style:normal; }
+    
+    ul { list-style:none; padding-left:12px; }
+    ul li { position:relative; margin-bottom:3px; font-size:11px; color:#222; text-align:justify; }
+    ul li::before { content:'•'; position:absolute; left:-10px; color:#111; }
+    
+    .skills-grid { display:grid; grid-template-columns:140px 1fr; gap:6px; font-size:11px; }
+    .skills-grid strong { font-weight:600; color:#111; }
+    .skills-grid div { color:#222; }
+    
+    .link-txt { font-family:sans-serif; font-weight:500; text-decoration:underline; color:#444; font-size:9.5px; margin-left:4px; }
+    .link-txt:hover { color:#000; }
+    
+    @media print {
+      body { background:#fff; color:#000; font-size:11px; }
+      .web-bar { display:none; }
+      .page { box-shadow:none; padding:0; margin:0; max-width:100%; border-radius:0; }
+      .page::before { display:none; }
+      @page { margin: 0.4in 0.45in; size: A4; }
+    }
+  </style>
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+<body>
+<div class="web-bar">
+  <a href="/Portfolio-Website/" class="btn btn-ghost">← Portfolio</a>
+  <button class="btn btn-dark" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+<div class="page">
+  <div class="header">
+    <div class="name">Shivansh Mishra</div>
+    <div class="contact">
+      Lucknow, UP, India <span>|</span>
+      <a href="tel:+919651165190">+91 9651165190</a> <span>|</span>
+      <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a> <span>|</span>
+      <a href="https://linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivansh-mishra-132b97358</a> <span>|</span>
+      <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer">github.com/shivansh-mishraji</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div style="font-size:11px; color:#222; text-align:justify;">
+      Pre-final year B.Tech Computer Science &amp; Engineering student specializing in Machine Learning and Cloud Computing. Experienced in architecting, containerizing, and deploying end-to-end data pipelines and web applications. Proficient in Python, SQL, Scikit-learn, and modern deployment toolkits (Docker, FastAPI, Streamlit), demonstrated by designing and launching 10+ live-deployed project applications. Passionate about bridging theoretical algorithms with production-ready, scalable software solutions.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="item" style="margin-bottom:0;">
+      <div class="item-header">
+        <div class="item-title">Babu Banarasi Das University, Lucknow</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <div class="item-sub">B.Tech in Computer Science &amp; Engineering <span>(Specialization: Cloud Computing &amp; Machine Learning)</span></div>
+      <ul>
+        <li><strong>Academic Standings:</strong> CGPA: 8.0+ / 10. Relevant Coursework: Data Structures &amp; Algorithms, Machine Learning, Database Management Systems, Cloud Infrastructure, Systems Design, Python.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div><strong>Languages &amp; Core:</strong></div><div>Python, SQL, C, JavaScript, Bash, HTML5/CSS3</div>
+      <div><strong>Libraries &amp; Modeling:</strong></div><div>Scikit-learn, Pandas, NumPy, Feature Engineering, Model Diagnostics, Hyperparameter Tuning</div>
+      <div><strong>MLOps &amp; Hosting:</strong></div><div>Docker, FastAPI, Flask, Streamlit, Git, GitHub Actions, Vercel, Render</div>
+      <div><strong>System Design:</strong></div><div>RESTful APIs, Containerization, Relational Databases, Scalable Infrastructure, Reproducible Pipelines</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Projects</div>
+    
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">House Price Inference System — End-to-End ML App <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/house-price-prediction-app" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
+        <div class="item-date">2024 &ndash; 2025</div>
+      </div>
+      <div class="item-sub">Python, Scikit-learn, Pandas, Streamlit, Vercel, GitHub Actions</div>
+      <ul>
+        <li>Architected an end-to-end regression application that structures data collection, automated preprocessing, and model scoring.</li>
+        <li>Compared model architectures (Linear vs. Ridge Regression) using RMSE and R² diagnostics to select the best predictor for deployment.</li>
+        <li>Deployed the interactive inference app to Vercel, integrating automated CI/CD checks via GitHub Actions for staging quality control.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">BankChurners — Predictive Customer Analysis <a href="https://bank-churners-data-analyzer.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
+        <div class="item-date">2024 &ndash; 2025</div>
+      </div>
+      <div class="item-sub">Python, Pandas, Seaborn, Matplotlib, Streamlit, Predictive Modeling</div>
+      <ul>
+        <li>Ingested and structured 10,000+ credit records; handled null indices, categorical formatting, and data cleansing routines.</li>
+        <li>Designed robust exploratory data analysis pipelines using Seaborn/Matplotlib to extract primary churn drivers and segment customer behaviors.</li>
+        <li>Built and launched an interactive analytics dashboard allowing marketing stakeholders to identify high-risk accounts instantly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experience &amp; Open Source Contributions</div>
+    <div class="item" style="margin-bottom:0;">
+      <div class="item-header">
+        <div class="item-title">ML &amp; Software Engineering Contributor</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <ul>
+        <li>Created and maintained 10+ public GitHub repositories showcasing clean code structure, comprehensive README documents, and automated scripts.</li>
+        <li>Published verified analytics datasets and model evaluation logs on Kaggle, emphasizing notebook clarity and pipeline repeatability.</li>
+        <li>Competed in the Coderush 2.0 Hackathon (2025), writing algorithmic logic to solve optimization problems under strict deadlines.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

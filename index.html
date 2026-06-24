@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' wss: https://formsubmit.co https://ntfy.sh; form-action 'self' https://formsubmit.co; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
+  <title>Shivansh Mishra | ML Builder & AI Product Explorer</title>
+  <meta name="description" content="Shivansh Mishra — Entry-Level Data Science and ML Builder | AI Product Explorer. B.Tech CSE student specializing in Cloud Computing & Machine Learning.">
+  <meta name="keywords" content="Shivansh Mishra, Data Science, Machine Learning, Portfolio, Python, AI Product, MLOps, Lucknow">
+  <meta name="author" content="Shivansh Mishra">
+  <meta property="og:title" content="Shivansh Mishra | ML Builder & AI Product Explorer">
+  <meta property="og:description" content="Building AI-first products with practical thinking. Entry-Level Data Science and ML Builder.">
+  <meta property="og:image" content="https://shivansh-mishraji.github.io/Portfolio-Website/profile.jpg">
+  <meta property="og:url" content="https://shivansh-mishraji.github.io/Portfolio-Website/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shivansh Mishra | ML Builder & AI Product Explorer">
+  <meta name="twitter:description" content="Building AI-first products with practical thinking. Entry-Level Data Science and ML Builder.">
+  <meta name="twitter:image" content="https://shivansh-mishraji.github.io/Portfolio-Website/profile.jpg">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shivansh-mishraji.github.io/Portfolio-Website/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/profile.webp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#04040f">
+
+  <link rel="preload" href="/profile.webp" as="image" fetchpriority="high" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shivansh Mishra",
+    "url": "https://shivansh-mishraji.github.io/Portfolio-Website/",
+    "image": "https://shivansh-mishraji.github.io/Portfolio-Website/profile.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/shivansh-mishra-132b97358",
+      "https://github.com/shivansh-mishraji",
+      "https://www.kaggle.com/shivansh7275"
+    ],
+    "jobTitle": "ML Engineer & Data Scientist (Aspiring)",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Babu Banarasi Das University"
+    },
+    "knowsAbout": ["Machine Learning", "Data Science", "Python", "SQL", "EDA", "Scikit-learn"]
+  }
+  </script>
+
+
+  <script type="module" crossorigin src="/assets/main-BP8Q6-M3.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-gsap-B2JeSRMT.js">
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-D9-fqq9M.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-D6l68DgW.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-CtRT-HVy.css">
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+<body>
+  <!-- Skip navigation for accessibility -->
+  <a class="skip-nav" href="#about">Skip to main content</a>
+
+  <div id="cinematic-bg-container"></div>
+  <div id="onboarding-container"></div>
+  <div id="custom-cursor-container"></div>
+
+<!-- Progress -->
+<div id="prog"></div>
+
+<!-- Canvas -->
+<canvas id="canvas"></canvas>
+
+<!-- Cursor glow -->
+<div id="cursor"></div>
+
+<!-- Back to top -->
+<button id="btt" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="logo">SM<span style="color:var(--cyan)">.</span></a>
+  <ul class="nav-ul">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" onclick="toggleNav()" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobnav" type="button"><span></span><span></span><span></span></button>
+</nav>
+
+<nav class="mob-nav" id="mobnav" role="dialog" aria-modal="true" aria-label="Mobile navigation" hidden>
+  <a href="#about" onclick="closeNav()">About</a>
+  <a href="#skills" onclick="closeNav()">Skills</a>
+  <a href="#projects" onclick="closeNav()">Projects</a>
+  <a href="#experience" onclick="closeNav()">Experience</a>
+  <a href="#resume" onclick="closeNav()">Resume</a>
+  <a href="#education" onclick="closeNav()">Education</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="con">
+    <div class="hero-grid">
+
+      <!-- Left: Text -->
+      <div>
+        <div class="hero-badge"><span class="hdot"></span>Available for DS &amp; ML Internships &mdash; Open to Opportunities</div>
+        <h1 class="hero-name"><span class="grd">Shivansh</span><br>Mishra</h1>
+        <div class="hero-role">
+          I'm a <span class="tcyan" id="typed"></span><span class="tcur"></span>
+        </div>
+        <p class="hero-desc">
+          Aspiring <strong style="color:var(--violet-l)">ML Engineer</strong> &amp; <strong style="color:var(--cyan)">Data Scientist</strong> &mdash; Pre-final year B.Tech CSE (CGPA 8.0+).<br>
+          Practical ML &amp; Data Science skills backed by <em style="color:var(--txt2)">10+ live deployed projects</em> — EDA, ML pipelines, Scikit-learn, Pandas, SQL, DSA. I build real products that solve real problems &mdash; <em style="color:var(--txt2)">immediately available.</em>
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-p" id="h-projects"><i class="fas fa-rocket"></i> View Projects</a>
+          <a href="resume-master.html" target="_blank" rel="noopener noreferrer" class="btn-o" id="h-resume" style="border-color:rgba(124,58,237,.5);color:var(--violet-l);" aria-label="View resume (opens in new tab, use Ctrl+P to save as PDF)"><i class="fas fa-file-alt"></i> View Resume</a>
+          <a href="#contact" class="btn-o" id="h-contact"><i class="fas fa-envelope"></i> Get In Touch</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer" class="spill" id="h-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer" class="spill" id="h-github"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/Shivanshmishra7275" target="_blank" rel="noopener noreferrer" class="spill" id="h-github2"><i class="fab fa-github-alt"></i> Alt Account</a>
+          <a href="mailto:shivanshmishraji90@gmail.com" class="spill" id="h-email"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.kaggle.com/shivansh7275" target="_blank" rel="noopener noreferrer" class="spill" id="h-kaggle"><i class="fab fa-kaggle"></i> Kaggle</a>
+        </div>
+      </div>
+
+      <!-- Right: Photo -->
+      <div class="hero-photo-wrap">
+        <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+          <div class="hero-orbit orbit1"><div class="orbit-dot od1" style="top:0;left:50%;transform:translate(-50%,-50%)"></div></div>
+          <div class="hero-orbit orbit2"><div class="orbit-dot od2" style="top:50%;left:100%;transform:translate(-50%,-50%)"></div></div>
+          <div class="hero-photo-ring">
+            <div class="hero-photo-inner">
+              <picture>
+                <source srcset="/assets/profile-DHR-JP3D.webp" type="image/webp">
+                <img src="/assets/profile-CFWOS5FU.jpg" alt="Shivansh Mishra" loading="eager" decoding="async" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';this.parentElement.parentElement.querySelector('.ph-fallback').style.display='flex'">
+              </picture>
+              <div class="ph-fallback" style="display:none">🧑‍💻</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="smouse"></div><span>SCROLL</span></div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════ -->
+<section id="about" tabindex="-1">
+  <div class="con">
+    <div class="about-grid">
+      <div class="rvl">
+        <span class="lbl">// about me</span>
+        <h2 class="ttl">Architecting AI solutions. Bridging data science and product engineering.</h2>
+        <div class="about-text">
+          <p>I'm <span class="hi">Shivansh Mishra</span>, a pre-final year B.Tech CSE student at BBD University, Lucknow, specializing in <span class="hi">Cloud Computing &amp; Machine Learning</span>.</p>
+          <p>I have solid <span class="hi">practical and hands-on knowledge</span> of ML, EDA, Pandas, NumPy, Scikit-learn, SQL, C, and DSA &mdash; proven by <span class="hi">10+ live deployed projects</span> accessible publicly. Not notebooks sitting on a local machine. <em style="color:var(--cyan)">Real apps solving real problems, in production.</em></p>
+        </div>
+        <div class="focus-list">
+          <div class="fl-item"><span class="fl-icon">🎯</span><span><strong style="color:var(--txt)">What I bring as a fresher:</strong> Practical ML/DS skills proven by 10+ live deployed apps, 8.0+ CGPA, active Kaggle contributor, strong logical thinking &amp; problem-solving, and the ability to ship production-grade data products fast.</span></div>
+          <div class="fl-item"><span class="fl-icon">🤖</span><span><strong style="color:var(--txt)">Skills I apply in practice:</strong> EDA &middot; ML pipelines &middot; Feature Engineering &middot; Pandas &middot; NumPy &middot; Scikit-learn &middot; SQL &middot; DSA &middot; Streamlit &middot; Python &middot; Git</span></div>
+          <div class="fl-item"><span class="fl-icon">⚡</span><span><strong style="color:var(--txt)">How I build:</strong> I own every decision — data cleaning, model selection, evaluation metrics, deployment. I use <em style="color:var(--cyan)">AI-assisted development</em> for speed, but the <em>thinking, debugging, and understanding</em> is entirely mine.</span></div>
+          <div class="fl-item"><span class="fl-icon">📈</span><span><strong style="color:var(--txt)">Target roles:</strong> Data Science Intern &middot; ML Engineering Intern &middot; Data Analyst Intern &mdash; open to remote or Lucknow-based.</span></div>
+        </div>
+        <div class="contact-chips">
+          <span class="cchip"><span class="ic"><i class="fas fa-map-marker-alt"></i></span>Lucknow, UP · Remote OK</span>
+          <span class="cchip" style="background:rgba(16,185,129,.08);border-color:rgba(16,185,129,.2);color:var(--green)"><span class="ic"><i class="fas fa-graduation-cap"></i></span>CGPA 8.0+</span>
+          <a href="tel:+919651165190" class="cchip" id="about-phone"><span class="ic"><i class="fas fa-phone"></i></span>+91 9651165190</a>
+          <a href="mailto:shivanshmishraji90@gmail.com" class="cchip" id="about-mail"><span class="ic"><i class="fas fa-envelope"></i></span>shivanshmishraji90@gmail.com</a>
+          <a href="https://www.kaggle.com/shivansh7275" target="_blank" rel="noopener noreferrer" class="cchip" style="background:rgba(32,155,216,.08);border-color:rgba(32,155,216,.25);color:#20b2aa"><span class="ic"><i class="fab fa-kaggle"></i></span>Kaggle Profile</a>
+        </div>
+      </div>
+
+      <div class="rvr">
+        <div class="stats-g">
+          <div class="scard"><div class="snum" data-count="10">0</div><div class="slbl">Live Projects</div></div>
+          <div class="scard"><div class="snum" data-count="8">0</div><div class="slbl">CGPA (out of 10)</div></div>
+          <div class="scard"><div class="snum" data-count="15">0</div><div class="slbl">Technologies</div></div>
+          <div class="scard"><div class="snum" data-count="2">0</div><div class="slbl">Events / Pitches</div></div>
+        </div>
+
+        <!-- GitHub Activity Stats -->
+        <div class="gh-stats rv" style="transition-delay:.3s">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=shivansh-mishraji&show_icons=true&theme=transparent&title_color=a78bfa&icon_color=06b6d4&text_color=94a3b8&border_color=ffffff15&hide_border=false&hide_rank=true&hide=issues,prs"
+            alt="Shivansh's GitHub Stats"
+            loading="lazy"
+            width="400"
+            height="165"
+          >
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivansh-mishraji&layout=compact&theme=transparent&title_color=a78bfa&text_color=94a3b8&border_color=ffffff15&hide=javascript,html,css,batchfile&custom_title=Core%20ML%20Languages"
+            alt="Core ML Languages"
+            loading="lazy"
+            width="400"
+            height="165"
+            style="margin-bottom: 1rem;"
+          >
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivansh-mishraji&layout=compact&theme=transparent&title_color=a78bfa&text_color=94a3b8&border_color=ffffff15&hide=jupyter%20notebook,python,c,sql&custom_title=Vibe-Coded%20Web%20%26%20Mobile%20Stack"
+            alt="Vibe-Coded Web & Mobile Stack"
+            loading="lazy"
+            width="400"
+            height="165"
+          >
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SKILLS
+════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// expertise</span>
+      <h2 class="ttl">Skills &amp; Technologies</h2>
+      <p class="sub">A curated view of my technical toolkit — core languages to production tooling.</p>
+    </div>
+    <div class="rv">
+      <div class="tabs">
+        <button class="tab on" onclick="switchTab('core',this)" id="tab-core">Core Languages</button>
+        <button class="tab" onclick="switchTab('ds',this)" id="tab-ds">Data Science &amp; ML</button>
+        <button class="tab" onclick="switchTab('web',this)" id="tab-web">Web, Mobile &amp; Backend</button>
+        <button class="tab" onclick="switchTab('tools',this)" id="tab-tools">Tools &amp; DevOps</button>
+        <button class="tab" onclick="switchTab('soft',this)" id="tab-soft">Soft Skills</button>
+      </div>
+
+      <!-- Core Languages -->
+      <div class="panel on" id="panel-core">
+        <div class="bars">
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fab fa-python"></i>Python</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" data-pct="85"></div></div></div>
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-database"></i>SQL</span><span class="bar-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-pct="75"></div></div></div>
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-terminal"></i>C Programming</span><span class="bar-pct">65%</span></div><div class="bar-track"><div class="bar-fill" data-pct="65"></div></div></div>
+        </div>
+        <p style="margin-top:1.25rem;font-size:.82rem;color:var(--txt3);display:flex;align-items:center;gap:.5rem;"><i class="fas fa-info-circle" style="color:var(--cyan)"></i>Other languages (JS, React, FastAPI etc.) are used via <strong style="color:var(--violet-l)">AI-assisted vibe coding</strong> — see Web, Mobile &amp; Backend tab.</p>
+      </div>
+
+      <!-- Data Science & ML -->
+      <div class="panel" id="panel-ds">
+        <div class="bars">
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-table"></i>Pandas &amp; NumPy</span><span class="bar-pct">82%</span></div><div class="bar-track"><div class="bar-fill" data-pct="82"></div></div></div>
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-brain"></i>Scikit-learn</span><span class="bar-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-pct="75"></div></div></div>
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-chart-bar"></i>Matplotlib &amp; Seaborn</span><span class="bar-pct">72%</span></div><div class="bar-track"><div class="bar-fill" data-pct="72"></div></div></div>
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-flask"></i>Jupyter Notebook</span><span class="bar-pct">80%</span></div><div class="bar-track"><div class="bar-fill" data-pct="80"></div></div></div>
+          <div class="bar-row"><div class="bar-hd"><span class="bar-name"><i class="fas fa-robot"></i>ML Pipelines &amp; EDA</span><span class="bar-pct">70%</span></div><div class="bar-track"><div class="bar-fill" data-pct="70"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Web, Mobile & Backend -->
+      <div class="panel" id="panel-web">
+        <div class="tags-g">
+          <span class="stag"><i class="fab fa-react"></i>React (via AI)</span>
+          <span class="stag"><i class="fas fa-mobile-alt"></i>Mobile App Dev (via AI)</span>
+          <span class="stag"><i class="fas fa-server"></i>FastAPI (via AI)</span>
+          <span class="stag"><i class="fas fa-fire"></i>Flask (via AI)</span>
+          <span class="stag"><i class="fab fa-html5"></i>HTML5 / CSS3</span>
+          <span class="stag"><i class="fab fa-js"></i>JavaScript</span>
+          <span class="stag"><i class="fas fa-globe"></i>Streamlit</span>
+          <span class="stag"><i class="fas fa-cloud-upload-alt"></i>Vercel</span>
+          <span class="stag"><i class="fas fa-server"></i>Render</span>
+        </div>
+      </div>
+
+      <!-- Tools & DevOps -->
+      <div class="panel" id="panel-tools">
+        <div class="tags-g">
+          <span class="stag"><i class="fab fa-git-alt"></i>Git &amp; GitHub</span>
+          <span class="stag"><i class="fab fa-docker"></i>Docker</span>
+          <span class="stag"><i class="fas fa-robot"></i>GitHub Copilot</span>
+
+          <span class="stag"><i class="fas fa-code"></i>VS Code</span>
+          <span class="stag"><i class="fas fa-flask"></i>Postman</span>
+          <span class="stag"><i class="fab fa-google"></i>Google Colab</span>
+          <span class="stag"><i class="fas fa-database"></i>MySQL &amp; SQLite</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="panel" id="panel-soft">
+        <div class="tags-g">
+          <span class="stag">🎯 Logical Thinking</span>
+          <span class="stag">🧩 Problem Solving</span>
+          <span class="stag">🤝 Team Collaboration</span>
+          <span class="stag">⚡ Fast Learner</span>
+          <span class="stag">🎤 Public Speaking</span>
+          <span class="stag">🧠 Systems Thinking</span>
+          <span class="stag">🚀 Builder Mindset</span>
+          <span class="stag">🎨 Creative Prototyping</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     PROJECTS
+════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// work</span>
+      <h2 class="ttl">Projects &amp; Builds</h2>
+      <p class="sub">From ML models to live deployed products — everything I've shipped.</p>
+    </div>
+    <div class="proj-grid">
+
+      <!-- ★ FEATURED: Nyaya Mitra -->
+      <div class="pcard rv" style="transition-delay:.04s;border-color:rgba(124,58,237,.35)">
+        <span class="pbadge badge-ai">AI PRODUCT</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(236,72,153,.1))">⚖️</div>
+        <h3 class="ptitle">Nyaya Mitra — AI Legal Super-App</h3>
+        <p class="pimpact">💡 Problem: Legal help is inaccessible to 90% of India's population due to cost &amp; complexity.</p>
+        <p class="pdesc">AI-first legal accessibility platform with a "Raksha Mode" emergency logic system. Demonstrates product thinking, system architecture, and AI-first design for high-impact social problems. Pitched at ENTREPRENIA 2025.</p>
+        <div class="ptags"><span class="ptag">AI Product</span><span class="ptag">System Design</span><span class="ptag">Legal Tech</span><span class="ptag">Vibe Coding</span></div>
+        <div class="plinks">
+          <span class="plk" style="background:rgba(124,58,237,.12);color:var(--violet-l);border-radius:50px;cursor:default;border:1px solid rgba(124,58,237,.2)"><i class="fas fa-code-branch"></i> In Development</span>
+        </div>
+      </div>
+
+      <!-- ★ FEATURED: Contact Forge -->
+      <div class="pcard rv" style="transition-delay:.06s;border-color:rgba(16,185,129,.25)">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(6,182,212,.1))">☁️</div>
+        <h3 class="ptitle">Contact Forge — Cloud Web App</h3>
+        <p class="pimpact">💡 Shipped a functional cloud web application.</p>
+        <p class="pdesc">A robust cloud-hosted web application deployed on Vercel. Demonstrates modern web development workflows, cloud deployment, and creating functional, user-centric interfaces.</p>
+        <div class="ptags"><span class="ptag">Web App</span><span class="ptag">Cloud</span><span class="ptag">Vercel</span></div>
+        <div class="plinks">
+          <a href="https://contactforge-cloud-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        </div>
+      </div>
+
+      <!-- ★ FEATURED: ML Career Roadmap -->
+      <div class="pcard rv" style="transition-delay:.07s;border-color:rgba(234,179,8,.25)">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(124,58,237,.1))">🗺️</div>
+        <h3 class="ptitle">ML Career Roadmap — Learning Guide</h3>
+        <p class="pimpact">💡 A comprehensive guide for aspiring ML engineers.</p>
+        <p class="pdesc">Structured roadmap covering fundamentals, projects, tools, and career paths for data science and machine learning. Built to help others navigate the complex AI ecosystem.</p>
+        <div class="ptags"><span class="ptag">Documentation</span><span class="ptag">Learning Guide</span><span class="ptag">ML</span><span class="ptag">Career</span></div>
+        <div class="plinks">
+          <a href="https://ml-career-roadmap.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-roadmap-live"><i class="fas fa-external-link-alt"></i> Live Guide</a>
+          <a href="https://github.com/shivansh-mishraji/ML-Career-Roadmap" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-roadmap-gh"><i class="fab fa-github"></i> View Guide</a>
+        </div>
+      </div>
+
+      <!-- ★ FEATURED: BankChurners -->
+      <div class="pcard rv" style="transition-delay:.08s;border-color:rgba(236,72,153,.25)">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(124,58,237,.1))">💳</div>
+        <h3 class="ptitle">BankChurners — Customer Churn Analysis</h3>
+        <p class="pimpact">💡 Analyzed 10,000+ customer records to identify who leaves a bank and why.</p>
+        <p class="pdesc">Full EDA on real banking dataset: churn segmentation, correlation heatmaps, feature importance ranking, and retention strategy recommendations. Deployed as an interactive web report.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Seaborn</span><span class="ptag">EDA</span><span class="ptag">10K+ Records</span></div>
+        <div class="plinks">
+          <a href="https://bank-churners-data-analyzer.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-bank-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-bank-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- ★ FEATURED: House Price Prediction -->
+      <div class="pcard rv" style="transition-delay:.12s;border-color:rgba(6,182,212,.25)">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,182,212,.1))">🏠</div>
+        <h3 class="ptitle">House Price Prediction — End-to-End ML</h3>
+        <p class="pimpact">💡 Full pipeline: raw data → trained model → live Streamlit app in production.</p>
+        <p class="pdesc">Complete ML pipeline from data cleaning through EDA, feature selection, multiple regression models, cross-validation, to a deployed Streamlit app serving real-time predictions. Best model selected by RMSE + R².</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Scikit-Learn</span><span class="ptag">Pandas</span><span class="ptag">Streamlit</span><span class="ptag">Vercel</span></div>
+        <div class="plinks">
+          <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-house-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/house-price-prediction-app" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-house-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- Car Price Prediction -->
+      <div class="pcard rv" style="transition-delay:.16s">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(236,72,153,.1))">🚗</div>
+        <h3 class="ptitle">Car Price Prediction — GridSearchCV</h3>
+        <p class="pimpact">💡 Compared 4 regression algorithms with 5-fold CV to find optimal used-car pricing model.</p>
+        <p class="pdesc">Feature engineering on structured auto data (mileage decay, age curves, brand encoding). GridSearchCV hyperparameter tuning. Documented model selection rationale with residual plots.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Scikit-Learn</span><span class="ptag">GridSearchCV</span><span class="ptag">Regression</span></div>
+        <div class="plinks">
+          <a href="https://car-price-prediction-with-machine-l.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-car-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/Shivansh-mishraji/Car-Price-Prediction-with-Machine-Learning" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-car-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- Iris Classification -->
+      <div class="pcard rv" style="transition-delay:.20s">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(6,182,212,.1))">🌸</div>
+        <h3 class="ptitle">Iris Classification — Multi-Model Benchmark</h3>
+        <p class="pimpact">💡 Benchmarked KNN, SVM, Decision Tree &amp; Logistic Regression on the same dataset.</p>
+        <p class="pdesc">Comparative ML study with decision boundary visualizations, accuracy/precision/recall per model, and systematic model selection reasoning documented with Matplotlib charts.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Scikit-Learn</span><span class="ptag">Matplotlib</span><span class="ptag">Classification</span></div>
+        <div class="plinks">
+          <a href="https://iris-flower-classification-tan.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-iris-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/CodeAlpha_-Iris-Flower-Classification-" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-iris-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- Unemployment Analysis -->
+      <div class="pcard rv" style="transition-delay:.24s">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(6,182,212,.15),rgba(124,58,237,.1))">📈</div>
+        <h3 class="ptitle">Unemployment Trends — Data Storytelling</h3>
+        <p class="pimpact">💡 Turned raw government data into clear visual narratives for decision-making.</p>
+        <p class="pdesc">Temporal trend analysis, regional unemployment comparisons, and policy-relevant insights derived from real open datasets. Demonstrates data storytelling and business-framed reporting skills.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">NumPy</span><span class="ptag">Matplotlib</span><span class="ptag">EDA</span></div>
+        <div class="plinks">
+          <a href="https://unemployment-analysis-with-python-ivory.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-unemp-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/CodeAlpha_Unemployment-Analysis-with-Python" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-unemp-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- Kaggle-Boost -->
+      <div class="pcard rv" style="transition-delay:.28s">
+        <span class="pbadge badge-ai" style="background:rgba(234,179,8,0.1);color:#eab308;border:1px solid rgba(234,179,8,0.2);">IN PROGRESS</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,182,212,.1))">🔥</div>
+        <h3 class="ptitle">Kaggle-Boost — Profile Automation</h3>
+        <p class="pimpact">💡 Automated scraping + dataset packaging to grow Kaggle visibility.</p>
+        <p class="pdesc">Python automation pipeline that orchestrates data scraping, cleaning, packaging, and uploading to Kaggle. Demonstrates scripting, API integration, and workflow automation skills.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Automation</span><span class="ptag">Kaggle API</span><span class="ptag">Scripting</span></div>
+        <div class="plinks">
+          <a href="https://github.com/Shivansh-mishraji/Kaggle-Boost" target="_blank" rel="noopener noreferrer" class="plk plk-g"><i class="fab fa-github"></i> View Code</a>
+        </div>
+      </div>
+
+
+
+
+      <!-- Text to Handwriting -->
+      <div class="pcard rv" style="transition-delay:.36s">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(16,185,129,.1))">✍️</div>
+        <h3 class="ptitle">Text-to-Handwriting Converter</h3>
+        <p class="pdesc">A creative web tool converting digital text into handwritten-style output using Canvas API, custom fonts, and image generation techniques.</p>
+        <div class="ptags"><span class="ptag">JavaScript</span><span class="ptag">Canvas API</span><span class="ptag">HTML/CSS</span><span class="ptag">Web Tool</span></div>
+        <div class="plinks">
+          <a href="https://shivansh-mishraji.github.io/Text-to-Handwriting-converter/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-handwrite-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/Text-to-Handwriting-converter" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-handwrite-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- Password Generator -->
+      <div class="pcard rv" style="transition-delay:.40s">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(6,182,212,.1))">🔑</div>
+        <h3 class="ptitle">Secure Password Generator</h3>
+        <p class="pdesc">A production-ready web application for generating cryptographically secure passwords with customizable length and character types.</p>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Flask</span><span class="ptag">Security</span><span class="ptag">Vercel</span></div>
+        <div class="plinks">
+          <a href="https://random-password-generator-by-shivansh-mishra.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-password-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/password-generator" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-password-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+      <!-- Typing Speed Test -->
+      <div class="pcard rv" style="transition-delay:.44s">
+        <span class="pbadge badge-live">LIVE</span>
+        <div class="picon" style="background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(236,72,153,.1))">⌨️</div>
+        <h3 class="ptitle">TypeMaster Pro</h3>
+        <p class="pdesc">A fully featured, highly polished typing speed test web application built entirely with HTML, CSS, and Vanilla JavaScript, featuring multiple themes and analytics.</p>
+        <div class="ptags"><span class="ptag">JavaScript</span><span class="ptag">HTML/CSS</span><span class="ptag">Web App</span><span class="ptag">Canvas</span></div>
+        <div class="plinks">
+          <a href="https://typing-speed-test-two-eta.vercel.app/" target="_blank" rel="noopener noreferrer" class="plk plk-p" id="proj-typing-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/shivansh-mishraji/Typing-Speed-Test" target="_blank" rel="noopener noreferrer" class="plk plk-g" id="proj-typing-gh"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// journey</span>
+      <h2 class="ttl">Experience &amp; Activities</h2>
+      <p class="sub">Events, deployments, and hands-on experiences that have shaped my skills.</p>
+    </div>
+    <div class="tl rv">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026 · Ongoing</div>
+        <div class="tl-card">
+          <div class="tl-title">AI-First Product Development</div>
+          <div class="tl-org">Self-directed · Vibe Coding Methodology</div>
+          <div class="tl-desc">Rapidly prototyping and shipping full-stack AI applications using AI-assisted workflows. Building and deploying MVPs end-to-end — concept → architecture → build → Vercel/Render deployment. Projects include Nyaya Mitra and Contact Forge.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2025 · BBD University</div>
+        <div class="tl-card">
+          <div class="tl-title">ML Pipeline Development</div>
+          <div class="tl-org">Academic Projects · Python / Scikit-Learn</div>
+          <div class="tl-desc">Built multiple end-to-end ML projects: EDA, feature engineering, model training, cross-validation, and deployment using Streamlit. Delivered house price prediction, car price prediction, churn analysis, and unemployment data analysis.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2025 · Lucknow</div>
+        <div class="tl-card">
+          <div class="tl-title">Startup Pitch — ENTREPRENIA</div>
+          <div class="tl-org">Legal-Tech Concept · Public Speaking</div>
+          <div class="tl-desc">Pitched a legal-tech startup concept (Nyaya Mitra) at ENTREPRENIA. Developed and presented the product vision, market opportunity, and MVP strategy including the Raksha Mode panic button system to a panel of judges.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2025 · Lucknow</div>
+        <div class="tl-card">
+          <div class="tl-title">Coderush 2.0 Hackathon</div>
+          <div class="tl-org">Dr. Akhilesh Das Gupta Auditorium</div>
+          <div class="tl-desc">Participated in Coderush 2.0 — a competitive coding and problem-solving hackathon. Practiced algorithmic thinking, rapid implementation, and cross-functional teamwork under time constraints.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024 · DevOps</div>
+        <div class="tl-card">
+          <div class="tl-title">Docker Containerization &amp; Render Deployment</div>
+          <div class="tl-org">MVP Application · Backend Deployment</div>
+          <div class="tl-desc">Containerized a Python backend MVP using Docker and deployed it to Render. Gained hands-on experience with containerization, environment configuration, CI/CD basics, and cloud deployment workflows.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CURRENT FOCUS
+════════════════════════════════════════════ -->
+<section id="focus">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// now</span>
+      <h2 class="ttl">Current Focus</h2>
+      <p class="sub">What I'm actively studying, building, and working toward right now.</p>
+    </div>
+    <div class="focus-cards rv">
+      <div class="fc">
+        <div class="fc-icon">🧪</div>
+        <div class="fc-title">ML Fundamentals</div>
+        <div class="fc-desc">Strengthening core machine learning through project-based learning — preprocessing, EDA, feature thinking, and model evaluation.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">📊</div>
+        <div class="fc-title">MLOps &amp; Deployment</div>
+        <div class="fc-desc">Exploring deployment patterns and practical MLOps workflows — from Jupyter notebooks to reproducible, production-ready pipelines.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">🚀</div>
+        <div class="fc-title">AI-First Products</div>
+        <div class="fc-desc">Building SaaS-style applications and AI-first digital products with real user value — shipping usable tools, not just experiments.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">🌐</div>
+        <div class="fc-title">Open Source &amp; Collaboration</div>
+        <div class="fc-desc">Contributing to open source, expanding the GitHub portfolio, and connecting with the ML/AI community for internships and collabs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ════════════════════════════════════════════
+     RESUME / CV DOWNLOAD
+════════════════════════════════════════════ -->
+<section id="resume">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// download</span>
+      <h2 class="ttl">Resume &amp; CV</h2>
+      <p class="sub">Role-specific resumes tailored for each career path. For a general application, use the <strong style="color:var(--violet-l)">Download Resume</strong> button above. Open any card → <strong style="color:var(--violet-l)">Ctrl+P → Save as PDF</strong>.</p>
+    </div>
+
+    <!-- ROLE-SPECIFIC CARDS — 2×2 grid -->
+    <div class="resume-role-grid rv">
+
+      <!-- ML Engineer -->
+      <div class="resume-role-card" onclick="window.open('resume-ml-engineer.html','_blank')" id="cv-ml" style="cursor:pointer;">
+        <div class="rrc-top" style="background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(99,102,241,.1));">
+          <div class="rrc-icon">🤖</div>
+          <div class="rrc-badge" style="background:rgba(124,58,237,.2);color:var(--violet-l);border-color:rgba(124,58,237,.35);">ML ENGINEER</div>
+        </div>
+        <div class="rrc-body">
+          <h3 class="rrc-title">Machine Learning Engineer</h3>
+          <p class="rrc-desc">End-to-end ML pipelines, Scikit-learn, cross-validation, GridSearchCV, and production deployment.</p>
+          <div class="rrc-skills">
+            <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">Scikit-learn</span>
+            <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">Pipelines</span>
+            <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">Deployment</span>
+            <span class="rrc-sk" style="background:rgba(124,58,237,.1);color:var(--violet-l);">Python</span>
+          </div>
+          <a href="resume-ml-engineer.html" target="_blank" rel="noopener noreferrer" class="rrc-btn" id="dl-ml" onclick="event.stopPropagation()" style="background:linear-gradient(135deg,var(--violet),#6366f1);"><i class="fas fa-external-link-alt"></i> View &amp; Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Data Scientist -->
+      <div class="resume-role-card" onclick="window.open('resume-data-scientist.html','_blank')" id="cv-ds" style="cursor:pointer;">
+        <div class="rrc-top" style="background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(6,182,212,.1));">
+          <div class="rrc-icon">📊</div>
+          <div class="rrc-badge" style="background:rgba(16,185,129,.2);color:var(--green);border-color:rgba(16,185,129,.35);">DATA SCIENTIST</div>
+        </div>
+        <div class="rrc-body">
+          <h3 class="rrc-title">Data Scientist</h3>
+          <p class="rrc-desc">EDA, statistical analysis, data visualization, insight storytelling, and predictive modeling on real-world datasets.</p>
+          <div class="rrc-skills">
+            <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">EDA</span>
+            <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">Statistics</span>
+            <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">Visualization</span>
+            <span class="rrc-sk" style="background:rgba(16,185,129,.1);color:var(--green);">Seaborn</span>
+          </div>
+          <a href="resume-data-scientist.html" target="_blank" rel="noopener noreferrer" class="rrc-btn" id="dl-ds" onclick="event.stopPropagation()" style="background:linear-gradient(135deg,#059669,var(--cyan));"><i class="fas fa-external-link-alt"></i> View &amp; Download PDF</a>
+        </div>
+      </div>
+
+      <!-- AI Engineer -->
+      <div class="resume-role-card" onclick="window.open('resume-ai-engineer.html','_blank')" id="cv-ai" style="cursor:pointer;">
+        <div class="rrc-top" style="background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(139,92,246,.1));">
+          <div class="rrc-icon">🧠</div>
+          <div class="rrc-badge" style="background:rgba(99,102,241,.2);color:#a5b4fc;border-color:rgba(99,102,241,.35);">AI ENGINEER</div>
+        </div>
+        <div class="rrc-body">
+          <h3 class="rrc-title">AI Engineer</h3>
+          <p class="rrc-desc">AI-first product thinking, vibe coding with GitHub Copilot, Nyaya Mitra, and end-to-end AI app deployment.</p>
+          <div class="rrc-skills">
+            <span class="rrc-sk" style="background:rgba(99,102,241,.1);color:#a5b4fc;">AI Products</span>
+            <span class="rrc-sk" style="background:rgba(99,102,241,.1);color:#a5b4fc;">Vibe Coding</span>
+            <span class="rrc-sk" style="background:rgba(99,102,241,.1);color:#a5b4fc;">Deployment</span>
+            <span class="rrc-sk" style="background:rgba(99,102,241,.1);color:#a5b4fc;">System Design</span>
+          </div>
+          <a href="resume-ai-engineer.html" target="_blank" rel="noopener noreferrer" class="rrc-btn" id="dl-ai" onclick="event.stopPropagation()" style="background:linear-gradient(135deg,#4f46e5,var(--violet));"><i class="fas fa-external-link-alt"></i> View &amp; Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Data Analyst -->
+      <div class="resume-role-card" onclick="window.open('resume-data-analyst.html','_blank')" id="cv-da" style="cursor:pointer;">
+        <div class="rrc-top" style="background:linear-gradient(135deg,rgba(245,158,11,.18),rgba(234,179,8,.1));">
+          <div class="rrc-icon">📈</div>
+          <div class="rrc-badge" style="background:rgba(245,158,11,.2);color:var(--amber);border-color:rgba(245,158,11,.35);">DATA ANALYST</div>
+        </div>
+        <div class="rrc-body">
+          <h3 class="rrc-title">Data Analyst</h3>
+          <p class="rrc-desc">SQL querying, business-framed EDA, KPI tracking, trend analysis, and data storytelling for decision-making.</p>
+          <div class="rrc-skills">
+            <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">SQL</span>
+            <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">KPI Analysis</span>
+            <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">Trends</span>
+            <span class="rrc-sk" style="background:rgba(245,158,11,.1);color:var(--amber);">Reporting</span>
+          </div>
+          <a href="resume-data-analyst.html" target="_blank" rel="noopener noreferrer" class="rrc-btn" id="dl-da" onclick="event.stopPropagation()" style="background:linear-gradient(135deg,#d97706,#b45309);"><i class="fas fa-external-link-alt"></i> View &amp; Download PDF</a>
+        </div>
+      </div>
+
+    </div><!-- /2x2 grid -->
+
+    <!-- How-to tip -->
+    <div class="rv" style="margin-top:1.5rem;">
+      <div style="background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.18);border-radius:var(--r);padding:1rem 1.4rem;display:flex;align-items:center;gap:1rem;">
+        <i class="fas fa-lightbulb" style="color:var(--cyan);font-size:1.1rem;flex-shrink:0;"></i>
+        <div style="font-size:.82rem;color:var(--txt2);line-height:1.6;">Click any card → resume opens in a new tab. Press <kbd style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:.1rem .4rem;font-family:var(--mono);font-size:.76rem;">Ctrl+P</kbd> → select <strong>Save as PDF</strong>. Each resume is print-optimized for A4, single page.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     EDUCATION
+════════════════════════════════════════════ -->
+<section id="education">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// background</span>
+      <h2 class="ttl">Education</h2>
+      <p class="sub">Academic foundation driving my technical journey.</p>
+    </div>
+    <div class="edu-g">
+      <div class="ecard rv" style="transition-delay:.05s">
+        <div class="eicon">🎓</div>
+        <div class="edeg">B.Tech — Computer Science &amp; Engineering</div>
+        <div class="einst">Babu Banarasi Das University, Lucknow</div>
+        <div class="edate">2024 — Present</div>
+        <div class="edet">Specialization: <strong style="color:var(--violet-l)">Cloud Computing &amp; Machine Learning</strong>. Focused on data science, AI systems, ML algorithms, and full-stack software engineering.</div>
+      </div>
+      <div class="ecard rv" style="transition-delay:.1s">
+        <div class="eicon">📚</div>
+        <div class="edeg">Higher Secondary Education (Class XII)</div>
+        <div class="einst">Red Rose Public School, Lucknow</div>
+        <div class="edate">2022 — 2024</div>
+        <div class="edet">Strong foundation in Mathematics, Physics, and Computer Science. Developed early interest in programming, logical reasoning, and problem-solving that sparked the journey into software and data.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     INTERESTS
+════════════════════════════════════════════ -->
+<section id="interests">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// beyond code</span>
+      <h2 class="ttl">Interests &amp; Hobbies</h2>
+      <p class="sub">What keeps me inspired outside of tech.</p>
+    </div>
+    <div class="int-g rv" role="list">
+      <div class="icard" id="int-cycling" role="listitem" tabindex="0"><span class="iemoji">🚴</span><div class="iname">Cycling</div></div>
+      <div class="icard" id="int-travel" role="listitem" tabindex="0"><span class="iemoji">✈️</span><div class="iname">Traveling</div></div>
+      <div class="icard" id="int-garden" role="listitem" tabindex="0"><span class="iemoji">🌿</span><div class="iname">Gardening</div></div>
+      <div class="icard" id="int-cricket" role="listitem" tabindex="0"><span class="iemoji">🏏</span><div class="iname">Cricket</div></div>
+      <div class="icard" id="int-anime" role="listitem" tabindex="0"><span class="iemoji">🎌</span><div class="iname">Anime</div></div>
+      <div class="icard" id="int-yoga" role="listitem" tabindex="0"><span class="iemoji">🧘</span><div class="iname">Yoga</div></div>
+      <div class="icard" id="int-music" role="listitem" tabindex="0"><span class="iemoji">🎵</span><div class="iname">Music</div></div>
+      <div class="icard" id="int-ai" role="listitem" tabindex="0"><span class="iemoji">🤖</span><div class="iname">AI &amp; Robotics</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="con">
+    <div class="rv">
+      <span class="lbl">// let's connect</span>
+      <h2 class="ttl">Get In Touch</h2>
+      <p class="sub">Open to internships, AI/ML collaborations, open-source contributions, and startup opportunities.</p>
+    </div>
+    <div class="ct-grid">
+      <div class="rvl">
+        <div class="ct-info">
+          <h3>Let's build something meaningful together.</h3>
+          <p>Whether you have an internship role, a project idea, a collaboration opportunity, or just want to talk data science and AI — my inbox is always open.</p>
+        </div>
+        <div class="ct-links">
+          <a href="mailto:shivanshmishraji90@gmail.com" class="ctlk" id="ct-email">
+            <div class="ctlk-ic" style="background:linear-gradient(135deg,var(--violet),var(--cyan))"><i class="fas fa-envelope"></i></div>
+            <div><div class="ctlk-label">Email</div>shivanshmishraji90@gmail.com</div>
+          </a>
+          <a href="https://www.linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer" class="ctlk" id="ct-linkedin">
+            <div class="ctlk-ic" style="background:linear-gradient(135deg,#0077b5,#00a0dc)"><i class="fab fa-linkedin"></i></div>
+            <div><div class="ctlk-label">LinkedIn</div>Shivansh Mishra</div>
+          </a>
+          <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer" class="ctlk" id="ct-github">
+            <div class="ctlk-ic" style="background:linear-gradient(135deg,#24292e,#3a3a4a)"><i class="fab fa-github"></i></div>
+            <div><div class="ctlk-label">GitHub Primary</div>shivansh-mishraji</div>
+          </a>
+          <a href="https://github.com/Shivanshmishra7275" target="_blank" rel="noopener noreferrer" class="ctlk" id="ct-github2">
+            <div class="ctlk-ic" style="background:linear-gradient(135deg,#2d333b,#444c56)"><i class="fab fa-github-alt"></i></div>
+            <div><div class="ctlk-label">GitHub Secondary</div>Shivanshmishra7275</div>
+          </a>
+          <a href="https://www.kaggle.com/shivansh7275" target="_blank" rel="noopener noreferrer" class="ctlk" id="ct-kaggle">
+            <div class="ctlk-ic" style="background:linear-gradient(135deg,#20BEFF,#1095cc)"><i class="fab fa-kaggle"></i></div>
+            <div><div class="ctlk-label">Kaggle</div>shivansh7275</div>
+          </a>
+        </div>
+      </div>
+      <div class="rvr">
+        <form class="cf" id="cform" novalidate>
+          <input type="hidden" name="_subject" value="📬 Portfolio Contact">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! Shivansh will get back to you within 24 hours.">
+          <!-- Offline push notification is now handled via JS using ntfy.sh directly to your phone -->
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="frow">
+            <div class="fg"><label for="fn">Your Name *</label><input type="text" id="fn" name="name" placeholder="John Doe" required autocomplete="name"></div>
+            <div class="fg"><label for="fe">Email *</label><input type="email" id="fe" name="email" placeholder="john@email.com" required autocomplete="email"></div>
+          </div>
+          <div class="fg"><label for="fs2">Subject</label><input type="text" id="fs2" name="subject" placeholder="Internship / Collaboration / Just Saying Hi" autocomplete="off"></div>
+          <div class="fg"><label for="fm">Message *</label><textarea id="fm" name="message" placeholder="Hi Shivansh, I'd love to connect about..." required></textarea></div>
+          <button type="submit" id="cform-btn" class="btn-send"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+
+        <!-- Contact Form JS: FormSubmit AJAX + client-side validation -->
+        <script>
+        (function() {
+          const form = document.getElementById('cform');
+          const btn  = document.getElementById('cform-btn');
+          if (!form || !btn) return;
+
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Client-side validation
+            const name    = form.querySelector('#fn').value.trim();
+            const email   = form.querySelector('#fe').value.trim();
+            const message = form.querySelector('#fm').value.trim();
+
+            const prev = form.querySelector('.form-status');
+            if (prev) prev.remove();
+
+            if (!name || !email || !message) {
+              return showStatus('error', '⚠️ Please fill in Name, Email and Message.');
+            }
+
+            // Spam trap (Honeypot)
+            const honey = form.querySelector('input[name="_honey"]').value;
+            if (honey) {
+              form.reset();
+              return showStatus('ok', '✅ Message delivered! (Bot trapped silently)');
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              return showStatus('error', '⚠️ Please enter a valid email address.');
+            }
+
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled  = true;
+
+            // 1. FormSubmit for email backup
+            const pForm = fetch('https://formsubmit.co/ajax/shivanshmishraji90@gmail.com', {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            }).then(r => r.json()).catch(e => ({ success: false, error: "captcha/setup required" }));
+
+            // 2. ntfy.sh for instant offline push notification direct to phone
+            const ntfyTopic = 'shivansh_mishra_portfolio_contact'; 
+            const ntfyMsg = `New Message!\nName: ${name}\nEmail: ${email}\n\n${message}`;
+            const pNtfy = fetch(`https://ntfy.sh/${ntfyTopic}`, {
+              method: 'POST',
+              body: ntfyMsg,
+              headers: { 'Title': 'Portfolio Contact', 'Tags': 'briefcase,email' }
+            }).catch(e => console.warn('ntfy push notification blocked/failed, ignoring:', e));
+
+            Promise.all([pForm, pNtfy])
+            .then(([data]) => {
+              if (data.success === 'true' || data.success === true) {
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent!';
+                btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+                form.reset();
+                showStatus('ok', '✅ Message delivered directly to my phone! I will reply soon.');
+                setTimeout(() => {
+                  btn.innerHTML = orig;
+                  btn.style.background = '';
+                  btn.disabled = false;
+                }, 5000);
+              } else {
+                throw new Error('failed');
+              }
+            })
+            .catch(() => {
+              btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed';
+              btn.style.background = 'linear-gradient(135deg,#ef4444,#b91c1c)';
+              showStatus('error', '❌ Send failed. Email directly: shivanshmishraji90@gmail.com');
+              setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.style.background = '';
+                btn.disabled = false;
+              }, 5000);
+            });
+
+            function showStatus(type, msg) {
+              const el = document.createElement('p');
+              el.className = 'form-status';
+              el.style.cssText = 'font-size:.82rem;margin-top:.5rem;' +
+                (type === 'error' ? 'color:#f87171' : 'color:#34d399');
+              el.textContent = msg;
+              btn.insertAdjacentElement('afterend', el);
+              if (type === 'ok') setTimeout(() => el.remove(), 6000);
+            }
+          });
+        })();
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <span class="ft-logo">Shivansh Mishra</span>
+  <div class="ft-socials">
+    <a href="https://www.linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer" class="fts" id="ft-li"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer" class="fts" id="ft-gh1"><i class="fab fa-github"></i></a>
+    <a href="https://github.com/Shivanshmishra7275" target="_blank" rel="noopener noreferrer" class="fts" id="ft-gh2"><i class="fab fa-github-alt"></i></a>
+    <a href="mailto:shivanshmishraji90@gmail.com" class="fts" id="ft-em"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p class="ft-copy">&copy; 2026 <span>Shivansh Mishra</span>. ML Builder &amp; AI Product Explorer · Lucknow, India ❤️</p>
+</footer>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Shivansh Mishra — Data Analyst Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', sans-serif; background:#f3f4f6; color:#222; font-size:11px; line-height:1.4; -webkit-font-smoothing:antialiased; }
+    
+    .web-bar { max-width:800px; margin:1rem auto 0.5rem; display:flex; justify-content:flex-end; gap:.5rem; padding:0 1rem; }
+    .btn { padding:.4rem .8rem; border-radius:4px; font-family:'Outfit', sans-serif; font-size:.75rem; font-weight:600; cursor:pointer; text-decoration:none; border:none; transition:all .2s; }
+    .btn-dark { background:#111; color:#fff; }
+    .btn-dark:hover { background:#333; }
+    .btn-ghost { background:#fff; color:#555; border:1px solid #d1d5db; }
+    .btn-ghost:hover { background:#f9fafb; color:#111; border-color:#9ca3af; }
+    
+    .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:32px 42px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
+    .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#0f172a; border-radius:4px 4px 0 0; }
+    
+    .header { background:#0f172a; color:#fff; padding:20px 24px; border-radius:6px; margin-bottom:14px; text-align:left; }
+    .name { font-family:'Outfit', sans-serif; font-size:24px; font-weight:700; color:#fff; letter-spacing:-.02em; margin-bottom:4px; }
+    .contact { font-size:11px; color:#cbd5e1; }
+    .contact a { color:#cbd5e1; text-decoration:none; transition:color .15s; }
+    .contact a:hover { color:#fff; text-decoration:underline; }
+    .contact span { margin:0 5px; color:#475569; }
+    
+    .section { margin-bottom:12px; }
+    .section-title { font-family:'Outfit', sans-serif; font-size:11px; font-weight:700; color:#0f172a; text-transform:uppercase; letter-spacing:1px; border-bottom:2px solid #0f172a; padding-bottom:3px; margin-bottom:8px; }
+    
+    .item { margin-bottom:8px; }
+    .item-header { display:flex; justify-content:space-between; align-items:baseline; }
+    .item-title { font-family:'Outfit', sans-serif; font-size:12px; font-weight:700; color:#0f172a; }
+    .item-date { font-size:11px; color:#444; font-weight:500; }
+    .item-sub { font-size:11px; font-weight:600; font-style:italic; color:#333; margin-bottom:4px; }
+    .item-sub span { font-weight:400; color:#555; font-style:normal; }
+    
+    ul { list-style:none; padding-left:12px; }
+    ul li { position:relative; margin-bottom:3px; font-size:11px; color:#222; text-align:justify; }
+    ul li::before { content:'•'; position:absolute; left:-10px; color:#0f172a; }
+    
+    .skills-grid { display:grid; grid-template-columns:145px 1fr; gap:6px; font-size:11px; }
+    .skills-grid strong { font-family:'Outfit', sans-serif; font-weight:600; color:#0f172a; }
+    .skills-grid div { color:#222; }
+    
+    .link-txt { font-family:'Outfit', sans-serif; font-weight:500; text-decoration:underline; color:#444; font-size:9.5px; margin-left:4px; }
+    .link-txt:hover { color:#0f172a; }
+    
+    @media print {
+      body { background:#fff; color:#000; font-size:11px; }
+      .web-bar { display:none; }
+      .page { box-shadow:none; padding:0; margin:0; max-width:100%; border-radius:0; }
+      .page::before { display:none; }
+      .header { background:#0f172a !important; color:#fff !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      .contact, .contact a { color:#cbd5e1 !important; }
+      @page { margin: 0.35in 0.4in; size: A4; }
+    }
+  </style>
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+<body>
+<div class="web-bar">
+  <a href="/Portfolio-Website/" class="btn btn-ghost">← Portfolio</a>
+  <button class="btn btn-dark" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+<div class="page">
+  <div class="header">
+    <div class="name">Shivansh Mishra</div>
+    <div class="contact">
+      Lucknow, UP, India <span>|</span>
+      <a href="tel:+919651165190">+91 9651165190</a> <span>|</span>
+      <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a> <span>|</span>
+      <a href="https://linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivansh-mishra-132b97358</a> <span>|</span>
+      <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer">github.com/shivansh-mishraji</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div style="font-size:11px; color:#222; text-align:justify;">
+      Pre-final year B.Tech CSE student specializing in Data Analytics and Business Intelligence. Experienced in data preparation, SQL querying, ETL routines, and building interactive visualization dashboards. Proficient in Python, SQL, Pandas, Seaborn, and Streamlit, with a history of launching 10+ live analytical web applications. Passionate about parsing messy transactional records to extract actionable customer retention metrics and business KPIs.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="item" style="margin-bottom:0;">
+      <div class="item-header">
+        <div class="item-title">Babu Banarasi Das University, Lucknow</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <div class="item-sub">B.Tech in Computer Science &amp; Engineering <span>(Specialization: Cloud Computing &amp; Machine Learning)</span></div>
+      <ul>
+        <li><strong>Academic Standings:</strong> CGPA: 8.0+ / 10. Relevant Coursework: Database Management (DBMS), SQL Data Structuring, Applied Data Analytics, Systems Logic, Cloud Infrastructure, Python.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div><strong>Analytics &amp; Visuals:</strong></div><div>Exploratory Data Analysis (EDA), Cohort Segmentation, Trend &amp; Churn Metrics, Seaborn, Matplotlib</div>
+      <div><strong>Data Preparation &amp; SQL:</strong></div><div>SQL Queries (Data Wrangling, Joins, Aggregations), ETL Pipelines, Pandas, NumPy, Schema Formatting</div>
+      <div><strong>Dashboards &amp; Hosting:</strong></div><div>Streamlit Interactive Interfaces, Git, GitHub Actions, Vercel, Render, Spreadsheet Modeling</div>
+      <div><strong>Core Tech:</strong></div><div>Python, SQL, HTML5/CSS3, JavaScript, Bash Shell Scripts</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Projects</div>
+    
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">BankChurners — Customer Retention Analytics <a href="https://bank-churners-data-analyzer.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/BankChurners-DataAnalyzer" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
+        <div class="item-date">2024 &ndash; 2025</div>
+      </div>
+      <div class="item-sub">Python, Pandas, Seaborn, Customer Cohorts, Streamlit, Business KPIs</div>
+      <ul>
+        <li>Cleaned, prepared, and formatted 10,000+ credit records, sorting null indices and mapping categorical fields.</li>
+        <li>Conducted deep cohort analysis using Pandas, isolating churn triggers linked to card inactivity and contact frequencies.</li>
+        <li>Developed an interactive Streamlit dashboard visualizing customer attrition curves, providing immediate recommendations for retention.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">House Price Prediction — Interactive Pricing UI <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/house-price-prediction-app" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
+        <div class="item-date">2024 &ndash; 2025</div>
+      </div>
+      <div class="item-sub">Python, Streamlit, Data Visualization, Vercel, Interface Design</div>
+      <ul>
+        <li>Created a customer-facing pricing calculator using Streamlit, configuring slider metrics and value grids.</li>
+        <li>Visualized property valuation sensitivity charts, enabling non-technical users to observe feature interactions.</li>
+        <li>Managed code deployment to Vercel, ensuring high availability and seamless frontend query latency.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experience &amp; Open Source Contributions</div>
+    <div class="item" style="margin-bottom:0;">
+      <div class="item-header">
+        <div class="item-title">Data Analytics &amp; Open Source Contributor</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <ul>
+        <li>Published verified dataset descriptions and visualization dashboards on Kaggle, verifying cleaning and analysis steps.</li>
+        <li>Maintained 10+ public GitHub repositories featuring clean data analysis pipelines, SQL scripts, and documentation.</li>
+        <li>Collaborated on competitive code challenges in Coderush 2.0 (2025), utilizing Pandas for quick dataset indexing and optimization.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

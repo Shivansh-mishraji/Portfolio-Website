@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Shivansh Mishra — ML Engineer Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter', sans-serif; background:#f3f4f6; color:#222; font-size:11px; line-height:1.4; -webkit-font-smoothing:antialiased; }
+    
+    .web-bar { max-width:800px; margin:1rem auto 0.5rem; display:flex; justify-content:flex-end; gap:.5rem; padding:0 1rem; }
+    .btn { padding:.4rem .8rem; border-radius:4px; font-family:'JetBrains Mono', monospace; font-size:.75rem; font-weight:600; cursor:pointer; text-decoration:none; border:none; transition:all .2s; }
+    .btn-dark { background:#111; color:#fff; }
+    .btn-dark:hover { background:#333; }
+    .btn-ghost { background:#fff; color:#555; border:1px solid #d1d5db; }
+    .btn-ghost:hover { background:#f9fafb; color:#111; border-color:#9ca3af; }
+    
+    .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:32px 42px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
+    .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#000; border-radius:4px 4px 0 0; }
+    
+    .header { text-align:left; margin-bottom:12px; }
+    .name { font-family:'JetBrains Mono', monospace; font-size:24px; font-weight:700; color:#000; letter-spacing:-.02em; margin-bottom:4px; }
+    .contact { font-family:'JetBrains Mono', monospace; font-size:10px; color:#444; }
+    .contact a { color:#444; text-decoration:none; transition:color .15s; }
+    .contact a:hover { color:#000; text-decoration:underline; }
+    .contact span { margin:0 5px; color:#ccc; }
+    
+    .section { margin-bottom:12px; }
+    .section-title { font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:0.5px; border-left:3px solid #000; padding-left:8px; border-bottom:none; margin-bottom:8px; padding-bottom:0; }
+    
+    .item { margin-bottom:8px; }
+    .item-header { display:flex; justify-content:space-between; align-items:baseline; }
+    .item-title { font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; color:#000; }
+    .item-date { font-family:'JetBrains Mono', monospace; font-size:10.5px; color:#555; font-weight:500; }
+    .item-sub { font-size:11px; font-weight:600; font-style:italic; color:#333; margin-bottom:4px; }
+    .item-sub span { font-weight:400; color:#555; font-style:normal; }
+    
+    ul { list-style:none; padding-left:12px; }
+    ul li { position:relative; margin-bottom:3px; font-size:11px; color:#222; text-align:justify; }
+    ul li::before { content:'•'; position:absolute; left:-10px; color:#000; }
+    
+    .skill-group { display:flex; align-items:baseline; font-size:11px; margin-bottom:4px; }
+    .skill-group strong { font-family:'JetBrains Mono', monospace; font-weight:700; color:#000; width:170px; flex-shrink:0; }
+    .skills-pills { display:flex; flex-wrap:wrap; gap:4px; }
+    .pill { font-family:'JetBrains Mono', monospace; font-size:9.5px; background:#f1f5f9; border:1px solid #cbd5e1; color:#0f172a; padding:1px 6px; border-radius:4px; font-weight:500; }
+    
+    .link-txt { font-family:'JetBrains Mono', monospace; font-weight:500; text-decoration:underline; color:#444; font-size:9.5px; margin-left:4px; }
+    .link-txt:hover { color:#000; }
+    
+    @media print {
+      body { background:#fff; color:#000; font-size:11px; }
+      .web-bar { display:none; }
+      .page { box-shadow:none; padding:0; margin:0; max-width:100%; border-radius:0; }
+      .page::before { display:none; }
+      @page { margin: 0.4in 0.4in; size: A4; }
+    }
+  </style>
+<link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+<body>
+<div class="web-bar">
+  <a href="/Portfolio-Website/" class="btn btn-ghost">← Portfolio</a>
+  <button class="btn btn-dark" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+<div class="page">
+  <div class="header">
+    <div class="name">Shivansh Mishra</div>
+    <div class="contact">
+      Lucknow, UP, India <span>|</span>
+      <a href="tel:+919651165190">+91 9651165190</a> <span>|</span>
+      <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a> <span>|</span>
+      <a href="https://linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivansh-mishra-132b97358</a> <span>|</span>
+      <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer">github.com/shivansh-mishraji</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div style="font-size:11px; color:#222; text-align:justify;">
+      Pre-final year B.Tech CSE student specializing in Machine Learning Engineering and MLOps. Strong background in pipeline design, Scikit-learn modeling, and containerized API serving. Experienced in hyperparameter tuning (GridSearchCV), cross-validation protocols, and model evaluation metrics (RMSE, F1, R²). Proven track record of architecting reproducible workflows and launching 10+ live predictive microservices. Passionate about deploying, monitoring, and scaling production-grade ML systems.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="item" style="margin-bottom:0;">
+      <div class="item-header">
+        <div class="item-title">Babu Banarasi Das University, Lucknow</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <div class="item-sub">B.Tech in Computer Science &amp; Engineering <span>(Specialization: Cloud Computing &amp; Machine Learning)</span></div>
+      <ul>
+        <li><strong>Academic Standings:</strong> CGPA: 8.0+ / 10. Relevant Coursework: Machine Learning Systems, Data Structures &amp; Algorithms, Database Management (DBMS), Systems Design, Cloud Orchestration, Python.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+      <div class="skill-group">
+        <strong>ML Modeling &amp; Validation:</strong>
+        <div class="skills-pills">
+          <span class="pill">Scikit-learn</span>
+          <span class="pill">GridSearchCV</span>
+          <span class="pill">Cross-Validation</span>
+          <span class="pill">Regression &amp; Classification</span>
+          <span class="pill">Residual Analytics</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <strong>Data Engineering:</strong>
+        <div class="skills-pills">
+          <span class="pill">Pandas</span>
+          <span class="pill">NumPy</span>
+          <span class="pill">Feature Engineering</span>
+          <span class="pill">Imbalance Handling</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <strong>MLOps &amp; Deployment:</strong>
+        <div class="skills-pills">
+          <span class="pill">Docker</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">Streamlit</span>
+          <span class="pill">Git</span>
+          <span class="pill">GitHub Actions</span>
+          <span class="pill">Vercel</span>
+          <span class="pill">Render</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <strong>Core Languages &amp; Sys:</strong>
+        <div class="skills-pills">
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Bash Shell Scripting</span>
+          <span class="pill">REST API Design</span>
+          <span class="pill">Relational DBs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Projects</div>
+    
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">House Price Inference System — Modular ML App <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/house-price-prediction-app" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
+        <div class="item-date">2024 &ndash; 2025</div>
+      </div>
+      <div class="item-sub">Python, Scikit-learn, Pandas, Streamlit, Vercel, REST API Serving</div>
+      <ul>
+        <li>Architected a modular Scikit-learn modeling pipeline integrating data cleaning, automated feature scaling, and estimator fitting.</li>
+        <li>Evaluated model algorithms (Linear vs. Ridge Regression) using RMSE and R² metrics to systematically select the highest-performing model.</li>
+        <li>Wrapped the inference model in a Streamlit container, deploying to Vercel with integrated automated validation checks.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <div class="item-title">Car Price Optimization — GridSearchCV Pipeline <a href="https://car-price-prediction-with-machine-l.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a></div>
+        <div class="item-date">2024 &ndash; 2025</div>
+      </div>
+      <div class="item-sub">Python, Scikit-learn, GridSearchCV, 5-Fold Cross-Validation, Pipelines</div>
+      <ul>
+        <li>Engineered automated data preprocessing pipelines using custom classes for mileage decay and categorical target encoding.</li>
+        <li>Executed extensive hyperparameter optimization via GridSearchCV with 5-fold cross-validation, decreasing validation loss variance by 12%.</li>
+        <li>Configured reproducible artifact serialization, exporting trained pipeline states to ensure consistent out-of-sample inference.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experience &amp; Open Source Contributions</div>
+    <div class="item" style="margin-bottom:0;">
+      <div class="item-header">
+        <div class="item-title">ML Engineering &amp; Open Source Contributor</div>
+        <div class="item-date">2024 &ndash; Present</div>
+      </div>
+      <ul>
+        <li>Maintained 10+ public GitHub repositories demonstrating PEP8 coding standards, detailed workflow documentations, and reproducible configurations.</li>
+        <li>Published analytical datasets and model training logs on Kaggle, verifying pipeline inputs and validation notebook reproducibility.</li>
+        <li>Participated in Coderush 2.0 Hackathon (2025), creating optimized algorithms to resolve numeric constraints under strict time limits.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
