@@ -1,5 +1,7 @@
 <div align="center">
 
+![Portfolio Banner](https://capsule-render.vercel.app/api?type=waving&height=280&text=Shivansh%20Mishra&fontSize=62&fontAlign=50&fontAlignY=45&color=0:0d1117,50:1a0533,100:0d2137&fontColor=a78bfa&desc=ML%20Builder%20%26%20AI%20Product%20Explorer%20%7C%2010%2B%20Live%20Projects&descFontColor=67e8f9&descAlignY=65&animation=fadeIn)
+
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=32&pause=1000&color=7C3AED&center=true&vCenter=true&width=650&lines=Shivansh+Mishra;ML+Builder+%26+AI+Product+Explorer;Data+Science+%7C+Machine+Learning;10%2B+Live+Deployed+Projects" alt="Typing SVG" /></a>
 
 <p align="center">
