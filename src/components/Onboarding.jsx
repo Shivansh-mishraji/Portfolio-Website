@@ -87,7 +87,7 @@ export default function Onboarding({ onComplete }) {
         <div ref={subtitleRef} style={{
           fontFamily: 'var(--mono)', fontSize: '1rem', color: 'var(--cyan)', letterSpacing: '0.3em', opacity: 1, textAlign: 'center', textTransform: 'uppercase'
         }}>
-          Future ML Engineer
+          Future AI Engineer
         </div>
       </div>
 
