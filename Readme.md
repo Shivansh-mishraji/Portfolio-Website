@@ -1,69 +1,143 @@
 <div align="center">
 
-<!-- Dynamic Typing Header -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=7C3AED&center=true&vCenter=true&width=600&lines=Shivansh+Mishra;AI+%26+ML+Engineer;Full-Stack+Vibe+Coder;Data+Science+Builder" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=32&pause=1000&color=7C3AED&center=true&vCenter=true&width=650&lines=Shivansh+Mishra;ML+Builder+%26+AI+Product+Explorer;Data+Science+%7C+Machine+Learning;10%2B+Live+Deployed+Projects" alt="Typing SVG" /></a>
 
 <p align="center">
-  A highly optimized, fully responsive, and interactive personal portfolio showcasing projects in Machine Learning, Data Science, and Full-Stack AI Product Development.
+  <strong>🚀 Personal Portfolio Website</strong> — A cinematic, fully responsive, production-grade portfolio showcasing Machine Learning, Data Science, and AI product engineering.
 </p>
 
-<!-- Tech Stack Badges -->
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JS" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <a href="https://www.kaggle.com/shivansh7275" target="_blank"><img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" alt="Kaggle" /></a>
-  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" alt="GSAP" />
-  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
+  <a href="https://shivansh-mishraji.github.io/Portfolio-Website/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Live_Portfolio-7C3AED?style=for-the-badge" alt="Live Site" />
+  </a>
+  <img src="https://img.shields.io/badge/Status-Active-10b981?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/License-MIT-06b6d4?style=for-the-badge" alt="License" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
 </p>
 
 </div>
 
 ---
 
-## 🚀 Interactive UI & Performance Engine
+## 👤 About
 
-This portfolio isn't just a static page — it's a **multi-page Vite/React hybrid** web experience with cinematic animations and production-grade performance.
+**Shivansh Mishra** — Pre-final year B.Tech CSE student at BBD University, Lucknow, specializing in **Cloud Computing & Machine Learning** (CGPA 8.0+).
 
-- **Interactive 3D Dynamics**: Dynamic HTML5 particle canvas (2D) + Three.js React-Fiber cinematic background (3D), custom WebGL particle fields with live mouse repulsion physics.
-- **Cinematic Effects**: GSAP ScrollTrigger reveal animations, magnetic hover on nav/buttons, glassmorphism tilt cards with glare effects, custom SVG grain overlay.
-- **Extreme Mobile Smoothness**:
-  - ⚡ **Adaptive Particles**: Count scales 200 (mobile) → 500 (tablet) → 800 (desktop)
-  - 🎯 **Touch Guard**: Three.js entirely disabled on touch-only devices
-  - 🌀 **Scroll Debouncing**: `requestAnimationFrame` + `passive:true` listeners
-  - 📱 **Touch Optimized**: All hover effects guarded by `(hover: hover) and (pointer: fine)`
-- **Multi-Page App**: Vite configured with Rollup multi-entry for all 5 resume variants + main portfolio
+Aspiring **ML Engineer** & **Data Scientist** with 10+ live deployed projects, active Kaggle contributions, and a passion for building AI-first products that solve real problems.
 
-## 🛡️ Enterprise Security
-
-- **Zero Tabnabbing**: All external links sandboxed with `rel="noopener noreferrer"`
-- **Spam Mitigation**: Contact form has invisible honeypot (`_honey`) + FormSubmit captcha
-- **Strict CSP**: `Content-Security-Policy` meta tag whitelisting only required domains
-- **Form Security**: Input validation (required fields, email type, textarea minlength)
-
-## 📱 Instant SMS Notifications
-
-Contact form messages trigger **instant push notifications** to Shivansh's phone via [ntfy.sh](https://ntfy.sh) — a 100% free, open-source push notification service. No paid SMS gateway needed.
-
-- Fire-and-forget JavaScript `fetch` to `https://ntfy.sh/` on form submit
-- High-priority notification with sender name, email, subject, message
-- Backup copy sent to Gmail via FormSubmit.co
-- Works forever, no account required
-
-## ♿ Accessibility (WCAG 2.1)
-
-- `:focus-visible` keyboard navigation with cyan outline
-- `.skip-nav` skip-to-content link for screen readers
-- `aria-label` on all interactive elements
-- `prefers-reduced-motion` disables all CSS animations
-- Semantic HTML5 with proper heading hierarchy
+📍 Lucknow, UP · Remote OK &nbsp;|&nbsp; 📧 shivanshmishraji90@gmail.com &nbsp;|&nbsp; 📞 +91 9651165190
 
 ---
 
-## 📊 Developer Metrics
+## ✨ Features
+
+### 🎨 Visual & Animation Engine
+- **Custom Particle Canvas** — HTML5 2D canvas with 200–800 adaptive particles + live mouse repulsion physics
+- **Three.js Cinematic Background** — 3D WebGL particle field (disabled on touch devices for performance)
+- **GSAP ScrollTrigger** — Smooth section reveal animations on scroll
+- **Magnetic Hover** — Buttons and nav links follow cursor with physics-based attraction
+- **Glassmorphism Cards** — Project cards with 3D tilt + glare effects
+- **Custom Cursor** — Animated glow cursor (desktop only)
+- **Typewriter Effect** — Animated role text in the hero section
+
+### ⚡ Performance
+| Optimization | Detail |
+|---|---|
+| Adaptive particles | 200 mobile → 500 tablet → 800 desktop |
+| Touch guard | Three.js disabled on touch-only devices |
+| Scroll debouncing | `requestAnimationFrame` + `passive:true` |
+| Image optimization | `.webp` with `<picture>` fallback to `.jpg` |
+| Font preloading | `rel="preload"` + `font-display:swap` |
+| CSS animations | Disabled via `prefers-reduced-motion` |
+
+### 🛡️ Security
+- **Zero Tabnabbing** — All external links use `rel="noopener noreferrer"`
+- **Strict CSP** — Content-Security-Policy meta tag whitelisting trusted domains only
+- **Honeypot Spam Trap** — Invisible `_honey` field catches bots silently
+- **Input Validation** — Client-side name/email/message validation before send
+
+### ♿ Accessibility (WCAG 2.1)
+- Skip-to-content link (`.skip-nav`) for screen readers
+- `aria-label` on all interactive elements
+- `:focus-visible` keyboard navigation with visible outline
+- Semantic HTML5 with proper heading hierarchy (`h1` → `h2` → `h3`)
+
+### 📬 Contact Form
+- Submissions delivered to Gmail via **FormSubmit.co** (free, no backend needed)
+- Auto-response email sent to the visitor
+- Spam protection via honeypot + hidden captcha field
+
+---
+
+## 🗂️ Project Structure
+
+```
+Portfolio-Website/
+├── index.html              # Main portfolio (single-page)
+├── resume-master.html      # Master resume (all roles)
+├── resume-ml-engineer.html # ML Engineer resume
+├── resume-data-scientist.html
+├── resume-data-analyst.html
+├── resume-ai-engineer.html
+├── resume.html             # General resume
+├── profile.webp / .jpg     # Profile photo (WebP + fallback)
+├── src/
+│   ├── main.js             # Core JS (animations, canvas, nav, tabs)
+│   ├── main.css            # Primary stylesheet (dark theme, components)
+│   ├── cinematic.jsx       # Three.js + GSAP cinematic background
+│   ├── cinematic.css       # Cinematic styles
+│   └── components/         # React components (cursor, onboarding, etc.)
+├── vite.config.js          # Multi-page Vite build config
+└── package.json
+```
+
+---
+
+## 🚀 Live Projects Showcased
+
+| Project | Type | Live |
+|---|---|---|
+| Nyaya Mitra — AI Legal Super-App | AI Product | In Development |
+| Contact Forge — Cloud Web App | Full-Stack | [Live](https://contactforge-cloud-web.vercel.app/) |
+| ML Career Roadmap | Guide | [Live](https://ml-career-roadmap.vercel.app/) |
+| BankChurners — Customer Churn EDA | Data Science | [Live](https://bank-churners-data-analyzer.vercel.app/) |
+| House Price Prediction | ML (Scikit-learn) | [Live](https://house-price-prediction-app-tau.vercel.app) |
+| Car Price Prediction (GridSearchCV) | ML | [Live](https://car-price-prediction-with-machine-l.vercel.app/) |
+| Iris Classification Benchmark | ML | [Live](https://iris-flower-classification-tan.vercel.app/) |
+| Unemployment Trends Analysis | EDA | [Live](https://unemployment-analysis-with-python-ivory.vercel.app/) |
+| Text-to-Handwriting Converter | Web Tool | [Live](https://text-to-handwriting-converter-mu.vercel.app/) |
+| Kaggle-Boost Automation | Python Scripting | [GitHub](https://github.com/Shivansh-mishraji/Kaggle-Boost) |
+
+---
+
+## 💻 Running Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/shivansh-mishraji/Portfolio-Website.git
+cd Portfolio-Website
+
+# 2. Install dependencies
+npm install
+
+# 3. Start dev server (with hot-reload)
+npm run dev
+
+# 4. Build for production
+npm run build
+```
+
+---
+
+## 📊 GitHub Stats
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=shivansh-mishraji&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a" alt="GitHub Stats" />
@@ -75,37 +149,17 @@ Contact form messages trigger **instant push notifications** to Shivansh's phone
 
 ---
 
-## 🐛 Bug Fixes (v2.0)
+## 🔗 Connect
 
-| # | Fix | File |
-|---|-----|------|
-| 1 | Mobile nav completely broken (functions in dead comment block) | `main.js` |
-| 2 | Section headings lost gradient (AdvancedEffects split text nodes) | `AdvancedEffects.jsx` |
-| 3 | Undefined `--navy-deep` CSS variable | `CinematicBackground.jsx` |
-| 4 | 3D tilt conflict on project cards (dual listeners) | `AdvancedEffects.jsx` + `main.js` |
-| 5 | Divide-by-zero in particle repulsion (d=0 → NaN) | `main.js` |
-| 6 | Custom cursor applied on touch devices | `CustomCursor.jsx` |
-| 7 | Grain overlay covered onboarding screen | `cinematic.css` |
-| 8 | Contact form redirect hardcoded to old Vercel URL | `index.html` |
-| 9 | Resume back-link broke in new tab / Vercel deploys | All resume HTMLs |
-| 10 | Resume files missing from Vite build (not in rollupOptions) | `vite.config.js` |
+<p align="center">
+  <a href="https://www.linkedin.com/in/shivansh-mishra-132b97358" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://github.com/shivansh-mishraji" target="_blank"><img src="https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://www.kaggle.com/shivansh7275" target="_blank"><img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" /></a>
+  <a href="mailto:shivanshmishraji90@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+</p>
 
 ---
 
-## 💻 Running Locally
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Start the development server
-npm run dev
-
-# 3. Build for production (multi-page)
-npm run build
-```
-
----
 <div align="center">
-  <i>Built by Shivansh Mishra — Continuous learner, builder, and AI enthusiast.</i>
+  <i>Built with ❤️ by Shivansh Mishra — Continuous learner, builder, and AI enthusiast · Lucknow, India</i>
 </div>
