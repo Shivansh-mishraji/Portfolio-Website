@@ -142,11 +142,11 @@ npm run build
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=shivansh-mishraji&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-fast.vercel.app/api?username=shivansh-mishraji&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0f172a" alt="GitHub Stats" />
   <br/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=shivansh-mishraji&theme=tokyonight&hide_border=true&background=0f172a" alt="GitHub Streak" />
   <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivansh-mishraji&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=shivansh-mishraji&layout=compact&theme=tokyonight&hide_border=true&bg_color=0f172a" alt="Top Languages" />
 </div>
 
 ---
