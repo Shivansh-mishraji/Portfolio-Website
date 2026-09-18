@@ -86,7 +86,7 @@ if (cur && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 }
 
 /* ─── TYPED TEXT ─────────────────────────────── */
-const lines = ['Future AI Engineer 🤖', 'AI Product Builder', 'Data Science Enthusiast', 'ML Pipeline Developer', 'EDA & Insight Storyteller', 'Python & SQL Developer', 'Kaggle Contributor', 'AI-Accelerated Creator', 'B.Tech CSE · CGPA 8.0+'];
+const lines = ['Backend AI & Systems Engineer 🚀', 'FastAPI & Python Architect', 'Google Gemini AI Integrator', 'SQL & Database Systems Builder', 'ML Pipeline Developer', 'Kaggle Contributor', 'B.Tech CSE · CGPA 8.0+'];
 let li = 0, ci = 0, del = false;
 const tel = document.getElementById('typed');
 let lastTime = 0;
@@ -134,7 +134,7 @@ window.addEventListener('scroll', () => {
       if (dh > 0) prog.style.width = (sy / dh * 100) + '%';
       nav2.classList.toggle('stuck', sy > 50);
       btt.classList.toggle('show', sy > 400);
-      const secs = ['about', 'skills', 'projects', 'experience', 'focus', 'resume', 'education', 'interests', 'contact'];
+      const secs = ['about', 'skills', 'projects', 'experience', 'focus', 'certifications', 'resume', 'education', 'interests', 'contact'];
       let cur2 = '';
       secs.forEach(id => {
         const el = document.getElementById(id);

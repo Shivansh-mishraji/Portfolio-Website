@@ -251,6 +251,46 @@
     .fc-desc { color:var(--txt2); font-size:.85rem; line-height:1.7; }
 
     /* ══════════════════════════════════════════════════════
+       CERTIFICATIONS & CREDENTIALS
+    ══════════════════════════════════════════════════════ */
+    #certifications { background:linear-gradient(180deg,transparent,rgba(16,185,129,.02),transparent); }
+    .cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.6rem; margin-bottom:2.5rem; }
+    .cert-card { background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:1.85rem; display:flex; flex-direction:column; justify-content:space-between; transition:border-color var(--t),transform var(--t),box-shadow var(--t); position:relative; overflow:hidden; }
+    .cert-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--green),var(--cyan)); transform:scaleX(0); transform-origin:left; transition:transform var(--t); }
+@media (hover: hover) and (pointer: fine) {
+    .cert-card:hover { border-color:rgba(16,185,129,.45); transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.25), 0 0 30px rgba(16,185,129,.15); }
+    .cert-card:hover::before { transform:scaleX(1); }
+}
+    .cert-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.1rem; }
+    .cert-icon { font-size:1.8rem; }
+    .cert-badge { font-family:var(--mono); font-size:.65rem; padding:.2rem .6rem; border-radius:50px; background:rgba(16,185,129,.12); border:1px solid rgba(16,185,129,.35); color:var(--green); font-weight:600; letter-spacing:.05em; }
+    .cert-title { font-family:var(--head); font-size:1.08rem; font-weight:700; margin-bottom:.35rem; color:var(--txt); }
+    .cert-issuer { color:var(--cyan); font-size:.82rem; font-weight:500; margin-bottom:.85rem; font-family:var(--mono); }
+    .cert-desc { color:var(--txt2); font-size:.86rem; line-height:1.75; margin-bottom:1.3rem; flex:1; }
+    .cert-footer { border-top:1px solid var(--border); padding-top:1rem; }
+    .cert-link { display:inline-flex; align-items:center; gap:.5rem; color:var(--violet-l); text-decoration:none; font-size:.82rem; font-weight:600; transition:all var(--t); }
+@media (hover: hover) and (pointer: fine) { .cert-link:hover { color:#fff; transform:translateX(3px); } }
+
+    .cert-hub-cta { background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(6,182,212,.05)); border:1px solid rgba(124,58,237,.25); border-radius:var(--r); padding:2rem 2.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .chc-text h4 { font-family:var(--head); font-size:1.25rem; font-weight:700; margin-bottom:.35rem; }
+    .chc-text p { color:var(--txt2); font-size:.9rem; line-height:1.6; max-width:650px; }
+
+    /* Flagship Project Card Enhancement */
+    .flagship-card { box-shadow:0 12px 35px rgba(0,0,0,.25), 0 0 25px rgba(16,185,129,.1); }
+@media (hover: hover) and (pointer: fine) {
+    .flagship-card:hover { border-color:rgba(16,185,129,.7) !important; box-shadow:0 24px 60px rgba(0,0,0,.35), 0 0 50px rgba(16,185,129,.25) !important; }
+}
+
+    /* Archived Projects Collapsible Drawer */
+    .more-projects-drawer { grid-column: 1 / -1; margin-top: 1.5rem; text-align: center; }
+    .more-projects-btn { cursor: pointer; padding: .85rem 1.6rem; border-radius: 50px; background: rgba(255,255,255,.04); border: 1px solid var(--border); color: var(--txt2); font-family: var(--head); font-size: .88rem; font-weight: 600; display: inline-flex; align-items: center; gap: .6rem; transition: all var(--t); list-style: none; user-select: none; }
+    .more-projects-btn::-webkit-details-marker { display: none; }
+@media (hover: hover) and (pointer: fine) {
+    .more-projects-btn:hover { border-color: var(--violet); color: var(--violet-l); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,.2); }
+}
+    .more-projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; margin-top: 1.6rem; text-align: left; }
+
+    /* ══════════════════════════════════════════════════════
        EDUCATION
     ══════════════════════════════════════════════════════ */
 
