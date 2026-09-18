@@ -2,167 +2,616 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Shivansh Mishra — AI Engineer Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivansh Mishra — Backend AI Engineer Resume</title>
+  <meta name="description" content="1-Page Defensible Resume of Shivansh Mishra — Backend AI Engineer specializing in FastAPI, Google Gemini LLMs, in-memory stream processing, and PostgreSQL."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter', sans-serif; background:#f3f4f6; color:#222; font-size:11px; line-height:1.45; -webkit-font-smoothing:antialiased; }
-    
-    .web-bar { max-width:800px; margin:1rem auto 0.5rem; display:flex; justify-content:flex-end; gap:.5rem; padding:0 1rem; }
-    .btn { padding:.4rem .8rem; border-radius:4px; font-family:'Lora', serif; font-size:.75rem; font-weight:600; cursor:pointer; text-decoration:none; border:none; transition:all .2s; }
-    .btn-dark { background:#111; color:#fff; }
-    .btn-dark:hover { background:#333; }
-    .btn-ghost { background:#fff; color:#555; border:1px solid #d1d5db; }
-    .btn-ghost:hover { background:#f9fafb; color:#111; border-color:#9ca3af; }
-    
-    .page { max-width:800px; margin:0 auto 2rem; background:#fff; padding:32px 42px; box-shadow:0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.03); border-radius:4px; position:relative; }
-    .page::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:#111; border-radius:4px 4px 0 0; }
-    
-    .header { text-align:left; margin-bottom:12px; }
-    .name { font-family:'Lora', serif; font-size:24px; font-weight:700; color:#000; letter-spacing:-.01em; margin-bottom:4px; }
-    .contact { font-size:11px; color:#444; }
-    .contact a { color:#444; text-decoration:none; transition:color .15s; }
-    .contact a:hover { color:#000; text-decoration:underline; }
-    .contact span { margin:0 5px; color:#ccc; }
-    
-    .section { margin-bottom:12px; }
-    .section-title { font-family:'Lora', serif; font-size:12px; font-weight:700; color:#000; text-transform:uppercase; letter-spacing:0.5px; border-bottom:3px double #111; padding-bottom:3px; margin-bottom:8px; }
-    
-    .item { margin-bottom:8px; }
-    .item-header { display:flex; justify-content:space-between; align-items:baseline; }
-    .item-title { font-family:'Lora', serif; font-size:13px; font-weight:700; color:#000; }
-    .item-date { font-size:11px; color:#444; font-weight:500; }
-    .item-sub { font-size:11px; font-weight:600; font-style:italic; color:#333; margin-bottom:4px; }
-    .item-sub span { font-weight:400; color:#555; font-style:normal; }
-    
-    ul { list-style:none; padding-left:12px; }
-    ul li { position:relative; margin-bottom:3px; font-size:11px; color:#222; text-align:justify; }
-    ul li::before { content:'•'; position:absolute; left:-10px; color:#111; }
-    
-    .skills-grid { display:grid; grid-template-columns:140px 1fr; gap:6px; font-size:11px; }
-    .skills-grid strong { font-family:'Lora', serif; font-weight:600; color:#000; }
-    .skills-grid div { color:#222; }
-    
-    .link-txt { font-family:sans-serif; font-weight:500; text-decoration:underline; color:#444; font-size:9.5px; margin-left:4px; }
-    .link-txt:hover { color:#000; }
-    
+    /* ==========================================================================
+       STRICT 1-PAGE ATS RESUME STYLING
+       ========================================================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      font-size: 9.6px;
+      line-height: 1.34;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Screen Navigation Bar (Hidden in Print / PDF) */
+    .web-bar {
+      max-width: 800px;
+      margin: 0.85rem auto 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.5rem;
+    }
+
+    .web-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge-ats {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .badge-ats::before {
+      content: "✓";
+      font-weight: 800;
+    }
+
+    .web-bar-right {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.38rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .btn-dark {
+      background: #0f172a;
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-dark:hover {
+      background: #1e293b;
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-ghost:hover {
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    /* Resume Document Canvas */
+    .page {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      background: #ffffff;
+      padding: 22px 34px;
+      box-shadow: 0 6px 18px -4px rgba(15, 23, 42, 0.07);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    /* Top Accent Line */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #0f172a;
+      border-radius: 4px 4px 0 0;
+    }
+
+    /* ==========================================================================
+       HEADER & CONTACT SECTION
+       ========================================================================== */
+    .header {
+      text-align: center;
+      margin-bottom: 7px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .title-line {
+      font-size: 10px;
+      font-weight: 600;
+      color: #2563eb;
+      letter-spacing: 0.02em;
+      margin-bottom: 3.5px;
+      text-transform: uppercase;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2px 7px;
+      font-size: 9.2px;
+      color: #475569;
+      line-height: 1.25;
+    }
+
+    .contact-row a {
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-row a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    .contact-sep {
+      color: #cbd5e1;
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS (STANDARD ATS PARSEABLE)
+       ========================================================================== */
+    .section {
+      margin-bottom: 6px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 10.2px;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1.4px solid #0f172a;
+      padding-bottom: 1.2px;
+      margin-bottom: 4px;
+    }
+
+    /* ==========================================================================
+       CONTENT ITEMS & BULLETS
+       ========================================================================== */
+    .summary-text {
+      font-size: 9.2px;
+      color: #1e293b;
+      line-height: 1.34;
+      text-align: justify;
+    }
+
+    .item {
+      margin-bottom: 4px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .item-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .item-date {
+      font-size: 9.2px;
+      font-weight: 600;
+      color: #475569;
+      white-space: nowrap;
+    }
+
+    .item-sub {
+      font-size: 9px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+
+    .item-sub .tech-stack {
+      font-weight: 500;
+      color: #2563eb;
+    }
+
+    .link-badge {
+      display: inline-block;
+      font-size: 8.5px;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+      margin-left: 3px;
+      border-bottom: 1px dotted #2563eb;
+    }
+
+    .link-badge:hover {
+      color: #1d4ed8;
+      border-bottom-style: solid;
+    }
+
+    /* Strict ATS Bullets */
+    ul.bullets {
+      list-style-type: none;
+      padding-left: 11px;
+    }
+
+    ul.bullets li {
+      position: relative;
+      margin-bottom: 1.5px;
+      font-size: 9.1px;
+      color: #1e293b;
+      line-height: 1.32;
+      text-align: justify;
+    }
+
+    ul.bullets li::before {
+      content: "•";
+      position: absolute;
+      left: -8px;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 9.5px;
+    }
+
+    ul.bullets li strong {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* Skills Category */
+    .skills-category {
+      margin-bottom: 2px;
+      font-size: 9.1px;
+      line-height: 1.32;
+      color: #1e293b;
+    }
+
+    .skills-category strong {
+      font-weight: 700;
+      color: #0f172a;
+      display: inline-block;
+      min-width: 140px;
+    }
+
+    /* Certifications Grid */
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.1px;
+      margin-bottom: 1.5px;
+      color: #1e293b;
+    }
+
+    .cert-item strong {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .cert-issuer {
+      color: #475569;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       PRINT STYLESHEET (GUARANTEED STRICT 1-PAGE A4 & LETTER)
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0.25in 0.35in;
+    }
+
     @media print {
-      body { background:#fff; color:#000; font-size:11px; }
-      .web-bar { display:none; }
-      .page { box-shadow:none; padding:0; margin:0; max-width:100%; border-radius:0; }
-      .page::before { display:none; }
-      @page { margin: 0.4in 0.4in; size: A4; }
+      html, body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 8.9px !important;
+        line-height: 1.28 !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      .web-bar {
+        display: none !important;
+      }
+
+      .page {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+      }
+
+      .page::before {
+        display: none !important;
+      }
+
+      .header {
+        margin-bottom: 5px !important;
+        padding-bottom: 3px !important;
+      }
+
+      .name {
+        font-size: 18px !important;
+        color: #000000 !important;
+      }
+
+      .title-line {
+        color: #000000 !important;
+        font-size: 9.4px !important;
+        margin-bottom: 2px !important;
+      }
+
+      .section {
+        margin-bottom: 5px !important;
+        page-break-inside: avoid !important;
+      }
+
+      .section-title {
+        color: #000000 !important;
+        border-bottom-color: #000000 !important;
+        margin-bottom: 3px !important;
+        font-size: 9.6px !important;
+        padding-bottom: 1px !important;
+      }
+
+      .item {
+        margin-bottom: 3px !important;
+        page-break-inside: avoid !important;
+      }
+
+      .item-title {
+        color: #000000 !important;
+        font-size: 9.5px !important;
+      }
+
+      .item-sub .tech-stack {
+        color: #000000 !important;
+      }
+
+      .link-badge {
+        color: #000000 !important;
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      .contact-row a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+
+      ul.bullets li {
+        font-size: 8.8px !important;
+        line-height: 1.26 !important;
+        color: #000000 !important;
+        margin-bottom: 1px !important;
+      }
+
+      .summary-text, .skills-category, .cert-item {
+        font-size: 8.8px !important;
+        color: #000000 !important;
+      }
     }
   </style>
 <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
 <body>
+
+<!-- Web Navigation & Actions Bar (Hidden in Print / PDF export) -->
 <div class="web-bar">
-  <a href="/Portfolio-Website/" class="btn btn-ghost">← Portfolio</a>
-  <button class="btn btn-dark" onclick="window.print()">⬇ Save as PDF</button>
+  <div class="web-bar-left">
+    <a href="/Portfolio-Website/" class="btn btn-ghost">← Back to Portfolio</a>
+    <span class="badge-ats">100% ATS Single-Page &bull; Ready to Apply</span>
+  </div>
+  <div class="web-bar-right">
+    <button class="btn btn-dark" onclick="window.print()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Save as PDF / Print
+    </button>
+  </div>
 </div>
+
+<!-- Resume Canvas -->
 <div class="page">
-  <div class="header">
-    <div class="name">Shivansh Mishra</div>
-    <div class="contact">
-      Lucknow, UP, India <span>|</span>
-      <a href="tel:+919651165190">+91 9651165190</a> <span>|</span>
-      <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a> <span>|</span>
-      <a href="https://linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivansh-mishra-132b97358</a> <span>|</span>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="name">Shivansh Mishra</h1>
+    <div class="title-line">Backend AI Engineer &bull; Cloud &amp; High-Throughput API Architecture</div>
+    <div class="contact-row">
+      <span>Lucknow, UP, India</span>
+      <span class="contact-sep">|</span>
+      <a href="tel:+919651165190">+91 9651165190</a>
+      <span class="contact-sep">|</span>
+      <a href="mailto:shivanshmishraji90@gmail.com">shivanshmishraji90@gmail.com</a>
+      <span class="contact-sep">|</span>
+      <a href="https://linkedin.com/in/shivansh-mishra-132b97358" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivansh-mishra-132b97358</a>
+      <span class="contact-sep">|</span>
       <a href="https://github.com/shivansh-mishraji" target="_blank" rel="noopener noreferrer">github.com/shivansh-mishraji</a>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Professional Summary</div>
-    <div style="font-size:11px; color:#222; text-align:justify;">
-      Pre-final year B.Tech CSE student specializing in AI Product Engineering and Application Design. Experienced in building end-to-end AI applications, integrating API models, managing prompt pipelines, and structuring failover execution schemas. Proficient in Python, FastAPI, and Streamlit, with a focus on developer efficiency and rapid system prototyping. Demonstrated ability to translate raw algorithmic models into highly available, user-centric AI solutions.
+    <div class="contact-row" style="margin-top: 1.5px;">
+      <a href="https://leetcode.com/u/Shivansh-123/" target="_blank" rel="noopener noreferrer">leetcode.com/u/Shivansh-123</a>
+      <span class="contact-sep">|</span>
+      <a href="https://www.hackerrank.com/profile/shivanshmishra83" target="_blank" rel="noopener noreferrer">hackerrank.com/profile/shivanshmishra83</a>
+      <span class="contact-sep">|</span>
+      <a href="https://shivansh-mishraji.github.io/Portfolio-Website/" target="_blank" rel="noopener noreferrer">shivansh-mishraji.github.io/Portfolio-Website</a>
     </div>
-  </div>
+  </header>
 
-  <div class="section">
-    <div class="section-title">Education</div>
-    <div class="item" style="margin-bottom:0;">
-      <div class="item-header">
-        <div class="item-title">Babu Banarasi Das University, Lucknow</div>
-        <div class="item-date">2024 &ndash; Present</div>
-      </div>
-      <div class="item-sub">B.Tech in Computer Science &amp; Engineering <span>(Specialization: Cloud Computing &amp; Machine Learning)</span></div>
-      <ul>
-        <li><strong>Academic Standings:</strong> CGPA: 8.0+ / 10. Relevant Coursework: AI Systems Design, Cloud Services, Data Structures &amp; Algorithms, Database Management, Python.</li>
-      </ul>
+  <!-- PROFESSIONAL SUMMARY -->
+  <section class="section">
+    <h2 class="section-title">Professional Summary</h2>
+    <p class="summary-text">
+      Pre-final year B.Tech Computer Science student specializing in Backend AI Architecture, Distributed Systems, and High-Throughput APIs. Demonstrated expertise in building resilient asynchronous microservices using <strong>FastAPI, SQLAlchemy 2.0 ORM, PostgreSQL</strong>, and <strong>Google Gemini LLM</strong> pipelines. Experienced in in-memory binary stream parsing (PyMuPDF), zero-retention BYOK security protocols, and deterministic AST fallback engines backed by <strong>38 passing Pytest unit tests</strong>. Proficient in algorithmic problem solving (LeetCode &amp; HackerRank) and production containerization with Docker and GitHub Actions CI/CD.
+    </p>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="section">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-category">
+      <strong>Backend &amp; Architecture:</strong>
+      <span>Python 3.12, FastAPI (Async/Await), SQLAlchemy 2.0 ORM, Pydantic v2, RESTful APIs, Starlette, HTTP Middleware, Connection Pooling, Alembic</span>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Technical Skills</div>
-    <div class="skills-grid">
-      <div><strong>AI &amp; System Design:</strong></div><div>Google Gemini 2.5 Flash API, In-Memory Stream Processing (PyMuPDF), BYOK Security Architecture, AST Rule Engines</div>
-      <div><strong>Backend &amp; Core:</strong></div><div>Python 3.12, FastAPI (Async REST), SQLAlchemy 2.0 ORM, Pydantic v2, SQL &amp; ACID Transactions, PostgreSQL</div>
-      <div><strong>Testing &amp; DevOps:</strong></div><div>Pytest (38 Unit Tests), Docker, Git &amp; GitHub Actions (CI/CD), Vercel, Render</div>
-      <div><strong>Frontend &amp; Tools:</strong></div><div>React 19 &amp; Vite, Streamlit, Scikit-learn, Pandas, NumPy, Postman, VS Code</div>
+    <div class="skills-category">
+      <strong>AI Systems &amp; LLMs:</strong>
+      <span>Google Gemini 2.5 Flash API, In-Memory Stream Processing (PyMuPDF / fitz), Zero-Persistence BYOK Protocol, Deterministic AST Rule Engines, Fallbacks</span>
     </div>
-  </div>
+    <div class="skills-category">
+      <strong>Databases &amp; Storage:</strong>
+      <span>PostgreSQL, SQLite, ACID Transactions, Relational Schema Design, Indexing Strategies, Query Optimization</span>
+    </div>
+    <div class="skills-category">
+      <strong>DevOps, Testing &amp; Cloud:</strong>
+      <span>Pytest (38 Unit Tests, Mocking, Coverage), Docker, Git, GitHub Actions (CI/CD Workflows), Vercel, Render, Linux / Bash, Postman</span>
+    </div>
+    <div class="skills-category">
+      <strong>Core Computer Science:</strong>
+      <span>Data Structures &amp; Algorithms, Object-Oriented Design (OOP), System Design, Algorithmic Optimization (LeetCode, HackerRank)</span>
+    </div>
+  </section>
 
-  <div class="section">
-    <div class="section-title">Projects</div>
+  <!-- KEY PROJECTS (DEFENSIBLE & RELEVANT ONLY) -->
+  <section class="section">
+    <h2 class="section-title">Key Projects</h2>
 
+    <!-- Flagship: AI-Powered Resume Analyzer -->
     <div class="item">
       <div class="item-header">
-        <div class="item-title">AI-Powered Resume Analyzer &amp; ATS Semantic Engine <a href="https://ai-powered-resume-analyzer-pi.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/Shivansh-mishraji/AI-Powered-Resume-Analyzer.git" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
-        <div class="item-date">2026</div>
+        <span class="item-title">AI-Powered Resume Analyzer &amp; ATS Semantic Engine</span>
+        <span class="item-date">2026</span>
       </div>
-      <div class="item-sub">FastAPI, Google Gemini 2.5 Flash, PyMuPDF, React 19, Vite, Pytest, Vercel</div>
-      <ul>
-        <li>Architected high-throughput async candidate intelligence engine extracting deep resume-to-job ATS alignment in &lt;1.8s.</li>
-        <li>Implemented in-memory streaming binary extraction via PyMuPDF (zero temporary disk footprint) for high security and performance.</li>
-        <li>Engineered zero-persistence BYOK (Bring-Your-Own-Key) header protocol and deterministic AST rule fallback with bounded scoring.</li>
-        <li>Authored complete test suite with 38 passing Pytest unit tests verifying schema validation, failure recovery, and boundary cases.</li>
-      </ul>
-    </div>
-    
-    <div class="item">
-      <div class="item-header">
-        <div class="item-title">Nyaya Mitra — AI Platform Architecture <span style="font-weight:400;color:#555;font-size:10px;margin-left:4px;">[Startup Pitch Finalist]</span></div>
-        <div class="item-date">2025</div>
+      <div class="item-sub">
+        <span class="tech-stack">FastAPI (Async), Google Gemini 2.5 Flash, PyMuPDF, React 19, Vite, Pydantic v2, Pytest, Vercel</span>
+        <a href="https://ai-powered-resume-analyzer-pi.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-badge">[Live Demo]</a>
+        <a href="https://github.com/Shivansh-mishraji/AI-Powered-Resume-Analyzer.git" target="_blank" rel="noopener noreferrer" class="link-badge">[GitHub Repo]</a>
       </div>
-      <div class="item-sub">System Design, Prompt Pipelines, Failover Logic, Python, REST API</div>
-      <ul>
-        <li>Designed the end-to-end system architecture of an AI-powered legal consultation app, establishing validation logic gates.</li>
-        <li>Created a custom failover logic loop ("Raksha Mode") to catch API interruptions and route request tokens to backup handlers.</li>
-        <li>Presented the MVP deployment scaling layout at the ENTREPRENIA 2025 startup showcase, achieving competition finalist status.</li>
+      <ul class="bullets">
+        <li><strong>High-Throughput Intelligence Engine:</strong> Architected an asynchronous backend evaluating candidate resumes against job descriptions, returning multi-dimensional semantic compatibility scores in <strong>&lt; 1.8 seconds</strong>.</li>
+        <li><strong>In-Memory Stream Processing:</strong> Implemented direct binary stream parsing via PyMuPDF (<code>fitz.open(stream=..., filetype='pdf')</code>) with reading-order sorting, eliminating disk I/O bottlenecks and guaranteeing <strong>zero temporary disk footprint</strong> (no files written to <code>/tmp</code>).</li>
+        <li><strong>Zero-Retention BYOK Security:</strong> Engineered a Bring-Your-Own-Key protocol where Gemini API keys are passed transiently via the <code>X-Gemini-API-Key</code> HTTP header, processed exclusively in volatile RAM with zero database persistence.</li>
+        <li><strong>Deterministic Dual-Engine Fallback:</strong> Designed an offline-capable AST rule engine that computes tokenized set-intersection match metrics ($[0, 100]\%$ bounded) whenever upstream LLM APIs encounter rate limits (HTTP 429) or network anomalies.</li>
+        <li><strong>Comprehensive Automated Testing:</strong> Authored a complete test suite of <strong>38 passing Pytest unit tests</strong> verifying Pydantic schema validation, mocked API failures, boundary conditions, and corrupt file guards (&lt; 50 character scanned-PDF detection).</li>
       </ul>
     </div>
 
+    <!-- Project 2: Nyaya Mitra -->
     <div class="item">
       <div class="item-header">
-        <div class="item-title">House Price Prediction — Real-Time Inference App <a href="https://house-price-prediction-app-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="link-txt">[Live]</a> <a href="https://github.com/shivansh-mishraji/house-price-prediction-app" target="_blank" rel="noopener noreferrer" class="link-txt">[GitHub]</a></div>
-        <div class="item-date">2024 &ndash; 2025</div>
+        <span class="item-title">Nyaya Mitra — AI Legal Consultation Architecture</span>
+        <span class="item-date">2025</span>
       </div>
-      <div class="item-sub">Python, Streamlit, Vercel, GitHub Actions, CI/CD Pipeline</div>
-      <ul>
-        <li>Developed and launched a real-time predictive dashboard with Streamlit, serving inference calculations immediately.</li>
-        <li>Constructed backend model pipelines with Scikit-learn, configuring data validation checks on runtime queries.</li>
-        <li>Automated version check updates and static testing routines by writing custom GitHub Action deployment pipelines.</li>
+      <div class="item-sub">
+        <span class="tech-stack">System Design, Prompt Pipelines, Failover Logic, Python, REST APIs</span>
+        <span style="font-weight:600; color:#2563eb; font-size:8.8px; margin-left:3px;">[Startup Showcase — ENTREPRENIA 2025]</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Legal Query System Design:</strong> Architected backend service workflows and multi-tier prompt pipelines for an AI legal consultation platform, presenting the prototype system design at the ENTREPRENIA 2025 Startup Showcase.</li>
+        <li><strong>Fault-Tolerant Failover ("Raksha Mode"):</strong> Engineered an automated failover loop that detects LLM latency spikes and gracefully reroutes requests to pre-indexed statutory legal guidelines without service interruptions.</li>
+        <li><strong>Hallucination Defense &amp; Guardrails:</strong> Formulated structured validation logic gates using strict Pydantic schemas to ensure outputs adhere strictly to verified Indian legal statutes and constitutional provisions.</li>
       </ul>
     </div>
-  </div>
 
-  <div class="section">
-    <div class="section-title">Experience &amp; Open Source Contributions</div>
-    <div class="item" style="margin-bottom:0;">
+  </section>
+
+  <!-- EXPERIENCE & OPEN SOURCE CONTRIBUTIONS -->
+  <section class="section">
+    <h2 class="section-title">Experience &amp; Open Source Contributions</h2>
+    <div class="item">
       <div class="item-header">
-        <div class="item-title">AI Product Contributor &amp; Open Source Engineer</div>
-        <div class="item-date">2024 &ndash; Present</div>
+        <span class="item-title">AI &amp; Backend Software Engineering Contributor</span>
+        <span class="item-date">2024 &ndash; Present</span>
       </div>
-      <ul>
-        <li>Leveraged AI assistance (GitHub Copilot) to accelerate coding speed, reducing time-to-MVP for small projects by 3x.</li>
-        <li>Maintained 10+ public GitHub repositories showcasing structured API schemas, reproducible setups, and automated testing logs.</li>
-        <li>Participated in competitive programming in Coderush 2.0 (2025), optimizing performance constraints under pressure.</li>
+      <div class="item-sub">
+        <span class="tech-stack">Open Source Development, Distributed Systems Research, Algorithmic Problem Solving</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Repository Engineering:</strong> Authored and maintained <strong>10+ public GitHub repositories</strong> with clean architectural modularity, comprehensive documentation, reproducible Docker setups, and test suites.</li>
+        <li><strong>Algorithmic Problem Solving:</strong> Actively solve complex algorithmic challenges across <strong>LeetCode</strong> and <strong>HackerRank</strong>, demonstrating proficiency in data structures, time/space complexity optimization, and dynamic programming.</li>
+        <li><strong>Hackathon Competition:</strong> Competed in the <strong>Coderush 2.0 Hackathon (2025)</strong>, engineering optimal algorithmic solutions under strict execution time and memory limits.</li>
       </ul>
     </div>
-  </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Babu Banarasi Das University, Lucknow</span>
+        <span class="item-date">2024 &ndash; Present</span>
+      </div>
+      <div class="item-sub">
+        Bachelor of Technology in Computer Science &amp; Engineering &bull; <em>Specialization: Cloud Computing &amp; Machine Learning</em>
+      </div>
+      <ul class="bullets">
+        <li><strong>Academic Standing:</strong> Current CGPA: <strong>8.0+ / 10</strong>.</li>
+        <li><strong>Core Coursework:</strong> Data Structures &amp; Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, System Design, Object-Oriented Programming (OOP), Cloud Architecture.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+  <section class="section">
+    <h2 class="section-title">Certifications &amp; Achievements</h2>
+    <div class="cert-item">
+      <span><strong>IBM SkillsBuild:</strong> Artificial Intelligence Fundamentals &amp; Cloud Computing Essentials</span>
+      <span class="cert-issuer">IBM Credential</span>
+    </div>
+    <div class="cert-item">
+      <span><strong>HackerRank:</strong> Problem Solving (Certified) &bull; Python (Certified)</span>
+      <span class="cert-issuer">HackerRank Verified</span>
+    </div>
+    <div class="cert-item">
+      <span><strong>HackerRank:</strong> SQL Relational Systems (Complex Joins, Aggregations, &amp; Query Execution)</span>
+      <span class="cert-issuer">HackerRank Verified</span>
+    </div>
+    <div class="cert-item">
+      <span><strong>ENTREPRENIA 2025:</strong> Startup Showcase &amp; Ideathon Participant (Nyaya Mitra Architecture)</span>
+      <span class="cert-issuer">Startup Showcase</span>
+    </div>
+  </section>
 
 </div>
+
 </body>
 </html>
