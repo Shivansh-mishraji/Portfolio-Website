@@ -86,7 +86,7 @@ if (cur && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 }
 
 /* ─── TYPED TEXT ─────────────────────────────── */
-const lines = ['Backend AI & Systems Engineer 🚀', 'FastAPI & Python Architect', 'Google Gemini AI Integrator', 'SQL & Database Systems Builder', 'ML Pipeline Developer', 'Kaggle Contributor', 'B.Tech CSE · CGPA 8.0+'];
+const lines = ['Backend AI Engineer 🚀', 'FastAPI & Python Architect', 'High-Throughput Backend Builder', 'Google Gemini AI Integrator', 'SQLAlchemy & Database Systems', 'B.Tech CSE · CGPA 8.0+'];
 let li = 0, ci = 0, del = false;
 const tel = document.getElementById('typed');
 let lastTime = 0;
